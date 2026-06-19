@@ -6,6 +6,8 @@ extends Node
 ## "progress" value so the soundtrack evolves with game state.
 ##
 ## Usage (from any script):
+##   SoundChain.set_audio_base_dir("res://audio/level1")
+##   SoundChain.set_bus(&"Music")
 ##   SoundChain.load_metadata("res://my_soundtrack.json")
 ##   SoundChain.set_progress(0.3)
 ##   SoundChain.start(12345)
@@ -45,6 +47,9 @@ var _next_done  := false ## Whether next selection has happened this cycle
 var _timer      : Timer
 var _pool       : Array[AudioStreamPlayer] = []
 var _active     := {}   ## AudioStreamPlayer → segment_name
+
+var _bus_name   := &"Master"       ## Audio bus for all players
+var _audio_base := "res://segments"  ## Base directory for segment audio files
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -141,6 +146,21 @@ func is_playing() -> bool:
 	return _playing and not _paused
 
 
+## Set the audio bus used by all players.  Call before [method start];
+## existing players are updated immediately.
+func set_bus(bus: StringName) -> void:
+	_bus_name = bus
+	for p in _pool:
+		if is_instance_valid(p):
+			p.bus = _bus_name
+
+
+## Set the base directory for resolving segment audio files whose path is not
+## explicitly given in metadata.  Default is "res://segments".
+func set_audio_base_dir(path: String) -> void:
+	_audio_base = path
+
+
 ## Read-only accessors (useful for debug / UI).
 func get_progress() -> float:  return _progress
 func get_bpm() -> float:       return _bpm
@@ -162,7 +182,7 @@ func _ready() -> void:
 	_pool.clear()
 	for _i in MAX_PLAYERS:
 		var p := AudioStreamPlayer.new()
-		p.bus = &"Master"
+		p.bus = _bus_name
 		p.finished.connect(_on_player_done.bind(p))
 		add_child(p)
 		_pool.append(p)
@@ -335,7 +355,7 @@ func _resolve_audio(seg: Dictionary, seg_name: String) -> String:
 			return p
 
 	for ext in [".wav", ".ogg"]:
-		var p : String = "res://segments/" + seg_name + ext
+		var p : String = _audio_base + "/" + seg_name + ext
 		if FileAccess.file_exists(p):
 			return p
 
