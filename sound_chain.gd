@@ -10,6 +10,7 @@ extends Node
 ##   SoundChain.set_bus(&"Music")
 ##   SoundChain.load_metadata("res://my_soundtrack.json")
 ##   SoundChain.set_progress(0.3)
+##   SoundChain.set_playback_speed(0.7)  # temporary slowdown effect
 ##   SoundChain.start(12345)
 ##   SoundChain.pause()
 ##   SoundChain.stop()
@@ -48,8 +49,9 @@ var _timer      : Timer
 var _pool       : Array[AudioStreamPlayer] = []
 var _active     := {}   ## AudioStreamPlayer → segment_name
 
-var _bus_name   := &"Master"       ## Audio bus for all players
-var _audio_base := "res://segments"  ## Base directory for segment audio files
+var _bus_name        := &"Master"       ## Audio bus for all players
+var _audio_base      := "res://segments"  ## Base directory for segment audio files
+var _playback_speed  := 1.0                ## Playback speed / pitch scale (1.0 = normal)
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -161,9 +163,18 @@ func set_audio_base_dir(path: String) -> void:
 	_audio_base = path
 
 
+## Set playback speed (1.0 = normal, 0.5 = half, 2.0 = double).
+## Changes pitch as well — intended for temporary sound effects.
+## Updates all currently-playing and idle players immediately.
+func set_playback_speed(speed: float) -> void:
+	_playback_speed = maxf(0.05, speed)
+	_apply_playback_speed()
+
+
 ## Read-only accessors (useful for debug / UI).
 func get_progress() -> float:  return _progress
 func get_bpm() -> float:       return _bpm
+func get_playback_speed() -> float: return _playback_speed
 func get_current_segment() -> String: return _cur_name
 
 # ---------------------------------------------------------------------------
@@ -183,6 +194,7 @@ func _ready() -> void:
 	for _i in MAX_PLAYERS:
 		var p := AudioStreamPlayer.new()
 		p.bus = _bus_name
+		p.pitch_scale = _playback_speed
 		p.finished.connect(_on_player_done.bind(p))
 		add_child(p)
 		_pool.append(p)
@@ -197,7 +209,7 @@ func _exit_tree() -> void:
 
 func _setup_timer() -> void:
 	if _timer:
-		_timer.wait_time = _beat_secs
+		_timer.wait_time = _beat_secs / _playback_speed
 
 
 func _setup_pool() -> void:
@@ -207,6 +219,15 @@ func _setup_pool() -> void:
 			player.stop()
 			player.stream = null
 	_active.clear()
+
+
+## Push _playback_speed to all players (active + idle) and rescale beat clock.
+func _apply_playback_speed() -> void:
+	if _timer:
+		_timer.wait_time = _beat_secs / _playback_speed
+	for p in _pool:
+		if is_instance_valid(p):
+			p.pitch_scale = _playback_speed
 
 # ---------------------------------------------------------------------------
 # Beat clock
@@ -347,7 +368,7 @@ func _pick_any_valid() -> String:
 # ---------------------------------------------------------------------------
 
 ## Resolve the audio file path for a segment.
-## Priority: explicit "audio" field → res://segments/{name}.wav → .ogg.
+## Priority: explicit "audio" field → {_audio_base}/{name}.wav → .ogg.
 func _resolve_audio(seg: Dictionary, seg_name: String) -> String:
 	if seg.has("audio"):
 		var p: String = seg["audio"]
@@ -384,6 +405,7 @@ func _start_segment(seg_name: String, at_beat: int) -> void:
 		push_warning("SoundChain: all %d players busy — skipping '%s'" % [MAX_PLAYERS, seg_name])
 		return
 
+	player.pitch_scale = _playback_speed
 	player.stream = stream
 	player.play()
 	_active[player] = seg_name
