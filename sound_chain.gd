@@ -512,7 +512,7 @@ func _load_wav_fallback(path: String) -> AudioStream:
 		return null
 
 	# Validate RIFF header
-	if data.get_string_from_ascii(0, 4) != "RIFF":
+	if data.slice(0, 4).get_string_from_ascii() != "RIFF":
 		return null
 
 	# Parse format info from WAV header
