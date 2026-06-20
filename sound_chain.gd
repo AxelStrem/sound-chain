@@ -498,6 +498,7 @@ func _progress_distance(seg: Dictionary) -> float:
 
 ## Fallback loader for .wav files when ResourceLoader can't handle
 ## absolute filesystem paths (e.g. exported builds).
+## Properly scans RIFF chunks instead of assuming fixed header offsets.
 func _load_wav_fallback(path: String) -> AudioStream:
 	if not path.ends_with(".wav"):
 		return null
@@ -507,31 +508,52 @@ func _load_wav_fallback(path: String) -> AudioStream:
 	var data := file.get_buffer(file.get_length())
 	file.close()
 
-	# WAV header is 44 bytes; PCM data starts at byte 44
-	if data.size() < 44:
+	if data.size() < 12:
 		return null
-
-	# Validate RIFF header
 	if data.slice(0, 4).get_string_from_ascii() != "RIFF":
 		return null
+	if data.slice(8, 12).get_string_from_ascii() != "WAVE":
+		return null
 
-	# Parse format info from WAV header
-	var channels := _decode_u16(data, 22)
-	var sample_rate := _decode_u32(data, 24)
-	var bits_per_sample := _decode_u16(data, 34)
-	var data_size := _decode_u32(data, 40)
+	# Scan RIFF chunks; extract fmt  and data chunks wherever they appear.
+	var pos := 12
+	var audio_format := -1
+	var num_channels := -1
+	var sample_rate := -1
+	var bits_per_sample := -1
+	var pcm_data: PackedByteArray = PackedByteArray()
 
-	var header_size := 44
-	if data_size > data.size() - header_size:
-		data_size = data.size() - header_size
+	while pos + 8 <= data.size():
+		var chunk_id := data.slice(pos, pos + 4).get_string_from_ascii()
+		var chunk_size := _decode_u32(data, pos + 4)
+		pos += 8
 
-	var pcm := data.slice(header_size, header_size + data_size)
+		if chunk_id == "fmt ":
+			if chunk_size < 16 or pos + chunk_size > data.size():
+				return null
+			audio_format = _decode_u16(data, pos)
+			num_channels = _decode_u16(data, pos + 2)
+			sample_rate = _decode_u32(data, pos + 4)
+			bits_per_sample = _decode_u16(data, pos + 14)
+
+		elif chunk_id == "data":
+			var usable := mini(chunk_size, data.size() - pos)
+			pcm_data = data.slice(pos, pos + usable)
+
+		pos += chunk_size
+
+	# Validate what we parsed.
+	if audio_format != 1:
+		push_warning("SoundChain: WAV fallback only supports PCM (format 1), got %d" % audio_format)
+		return null
+	if pcm_data.is_empty():
+		return null
 
 	var stream := AudioStreamWAV.new()
 	stream.format = AudioStreamWAV.FORMAT_16_BITS if bits_per_sample == 16 else AudioStreamWAV.FORMAT_8_BITS
-	stream.mix_rate = sample_rate
-	stream.stereo = channels == 2
-	stream.data = pcm
+	stream.mix_rate = maxi(1, sample_rate)
+	stream.stereo = num_channels == 2
+	stream.data = pcm_data
 	return stream
 
 
