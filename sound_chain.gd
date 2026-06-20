@@ -397,6 +397,8 @@ func _start_segment(seg_name: String, at_beat: int) -> void:
 
 	var stream := load(path)
 	if stream == null:
+		stream = _load_wav_fallback(path)
+	if stream == null:
 		push_error("SoundChain: failed to load audio: " + path)
 		return
 
@@ -490,3 +492,52 @@ func _progress_distance(seg: Dictionary) -> float:
 			if d < best:
 				best = d
 	return best
+# ---------------------------------------------------------------------------
+# WAV fallback loader (for exported builds)
+# ---------------------------------------------------------------------------
+
+## Fallback loader for .wav files when ResourceLoader can't handle
+## absolute filesystem paths (e.g. exported builds).
+func _load_wav_fallback(path: String) -> AudioStream:
+	if not path.ends_with(".wav"):
+		return null
+	var file := FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		return null
+	var data := file.get_buffer(file.get_length())
+	file.close()
+
+	# WAV header is 44 bytes; PCM data starts at byte 44
+	if data.size() < 44:
+		return null
+
+	# Validate RIFF header
+	if data.get_string_from_ascii(0, 4) != "RIFF":
+		return null
+
+	# Parse format info from WAV header
+	var channels := _decode_u16(data, 22)
+	var sample_rate := _decode_u32(data, 24)
+	var bits_per_sample := _decode_u16(data, 34)
+	var data_size := _decode_u32(data, 40)
+
+	var header_size := 44
+	if data_size > data.size() - header_size:
+		data_size = data.size() - header_size
+
+	var pcm := data.slice(header_size, header_size + data_size)
+
+	var stream := AudioStreamWAV.new()
+	stream.format = AudioStreamWAV.FORMAT_16_BITS if bits_per_sample == 16 else AudioStreamWAV.FORMAT_8_BITS
+	stream.mix_rate = sample_rate
+	stream.stereo = channels == 2
+	stream.data = pcm
+	return stream
+
+
+static func _decode_u16(data: PackedByteArray, offset: int) -> int:
+	return data[offset] | (data[offset + 1] << 8)
+
+
+static func _decode_u32(data: PackedByteArray, offset: int) -> int:
+	return data[offset] | (data[offset + 1] << 8) | (data[offset + 2] << 16) | (data[offset + 3] << 24)
