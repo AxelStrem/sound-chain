@@ -52,6 +52,7 @@ var _active     := {}   ## AudioStreamPlayer → segment_name
 var _bus_name        := &"Master"       ## Audio bus for all players
 var _audio_base      := "res://segments"  ## Base directory for segment audio files
 var _playback_speed  := 1.0                ## Playback speed / pitch scale (1.0 = normal)
+var _history         : Array[String] = []  ## Segment names in order since last start()
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -176,6 +177,7 @@ func get_progress() -> float:  return _progress
 func get_bpm() -> float:       return _bpm
 func get_playback_speed() -> float: return _playback_speed
 func get_current_segment() -> String: return _cur_name
+func get_history() -> Array[String]: return _history.duplicate()
 
 # ---------------------------------------------------------------------------
 # Engine callbacks
@@ -418,6 +420,8 @@ func _start_segment(seg_name: String, at_beat: int) -> void:
 	_next_name = ""
 	_next_done = false
 
+	_history.append(seg_name)
+
 	print("SoundChain: beat %3d → start '%s'  (len=%d beats, path=%s)" %
 		[at_beat, seg_name, seg.get("length_beats", DEFAULT_LENGTH_BEATS), path])
 
@@ -440,6 +444,7 @@ func _stop_all() -> void:
 	_next_name = ""
 	_next_done = false
 	_beat      = 0
+	_history.clear()
 
 
 ## Return the first non-playing AudioStreamPlayer from the pool (or null).
