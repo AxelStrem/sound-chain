@@ -371,11 +371,29 @@ func _pick_any_valid() -> String:
 
 ## Resolve the audio file path for a segment.
 ## Priority: explicit "audio" field → {_audio_base}/{name}.wav → .ogg.
+##
+## The "audio" field accepts:
+##   - full path:  "res://some/fx.ogg"  (used as-is)
+##   - bare name:  "a0.wav"            (prefixed with _audio_base)
+##   - bare name without extension: "a0"  (tries .wav then .ogg)
 func _resolve_audio(seg: Dictionary, seg_name: String) -> String:
 	if seg.has("audio"):
 		var p: String = seg["audio"]
 		if p != "":
-			return p
+			if p.begins_with("res://") or p.begins_with("user://") or p.begins_with("/") or (p.length() >= 2 and p[1] == ":"):
+				# Absolute path — use as-is
+				return p
+			if p.ends_with(".wav") or p.ends_with(".ogg"):
+				# Bare filename with extension — prefix with _audio_base
+				var candidate := _audio_base + "/" + p
+				if FileAccess.file_exists(candidate):
+					return candidate
+			else:
+				# Bare name without extension — try both
+				for ext in [".wav", ".ogg"]:
+					var candidate := _audio_base + "/" + p + ext
+					if FileAccess.file_exists(candidate):
+						return candidate
 
 	for ext in [".wav", ".ogg"]:
 		var p : String = _audio_base + "/" + seg_name + ext
