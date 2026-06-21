@@ -391,7 +391,7 @@ func _resolve_audio(seg: Dictionary, seg_name: String) -> String:
 			else:
 				# Bare name without extension — try both
 				for ext in [".wav", ".ogg"]:
-					var candidate := _audio_base + "/" + p + ext
+					var candidate = _audio_base + "/" + p + ext
 					if FileAccess.file_exists(candidate):
 						return candidate
 
