@@ -8,7 +8,9 @@
   "segments": [
 	{
 	  "name": "114-piano-loop-1a",
-	  "audio": "114-piano-loop-1",
+	  "audio": [
+        "114-piano-loop-1"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -22,7 +24,9 @@
 	},
 	{
 	  "name": "114-piano-loop-1b",
-	  "audio": "114-piano-loop-1",
+	  "audio": [
+        "114-piano-loop-1"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -50,7 +54,9 @@
 	},
 	{
 	  "name": "114-piano-loop-2a",
-	  "audio": "114-piano-loop-2",
+	  "audio": [
+        "114-piano-loop-2"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -64,7 +70,9 @@
 	},
 	{
 	  "name": "114-piano-loop-2b",
-	  "audio": "114-piano-loop-2",
+	  "audio": [
+        "114-piano-loop-2"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -92,7 +100,9 @@
 	},
 	{
 	  "name": "114-piano-loop-3a",
-	  "audio": "114-piano-loop-3",
+	  "audio": [
+        "114-piano-loop-3"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -106,7 +116,9 @@
 	},
 	{
 	  "name": "114-piano-loop-3b",
-	  "audio": "114-piano-loop-3",
+	  "audio": [
+        "114-piano-loop-3"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -134,7 +146,9 @@
 	},
 	{
 	  "name": "114-piano-loop-4a",
-	  "audio": "114-piano-loop-4",
+	  "audio": [
+        "114-piano-loop-4"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -148,7 +162,9 @@
 	},
 	{
 	  "name": "114-piano-loop-4b",
-	  "audio": "114-piano-loop-4",
+	  "audio": [
+        "114-piano-loop-4"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -176,7 +192,9 @@
 	},
 	{
 	  "name": "114-piano-loop-5a",
-	  "audio": "114-piano-loop-5",
+	  "audio": [
+        "114-piano-loop-5"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -190,7 +208,9 @@
 	},
 	{
 	  "name": "114-piano-loop-5b",
-	  "audio": "114-piano-loop-5",
+	  "audio": [
+        "114-piano-loop-5"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -218,7 +238,9 @@
 	},
 	{
 	  "name": "114-piano-loop-6a",
-	  "audio": "114-piano-loop-6",
+	  "audio": [
+        "114-piano-loop-6"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -232,7 +254,9 @@
 	},
 	{
 	  "name": "114-piano-loop-6b",
-	  "audio": "114-piano-loop-6",
+	  "audio": [
+        "114-piano-loop-6"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -260,7 +284,9 @@
 	},
 	{
 	  "name": "114-piano-loop-7a",
-	  "audio": "114-piano-loop-7",
+	  "audio": [
+        "114-piano-loop-7"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -274,7 +300,9 @@
 	},
 	{
 	  "name": "114-piano-loop-7b",
-	  "audio": "114-piano-loop-7",
+	  "audio": [
+        "114-piano-loop-7"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -302,7 +330,9 @@
 	},
 	{
 	  "name": "114-piano-loop-8a",
-	  "audio": "114-piano-loop-8",
+	  "audio": [
+        "114-piano-loop-8"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -316,7 +346,9 @@
 	},
 	{
 	  "name": "114-piano-loop-8b",
-	  "audio": "114-piano-loop-8",
+	  "audio": [
+        "114-piano-loop-8"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -344,7 +376,9 @@
 	},
 	{
 	  "name": "114-piano-loop-9a",
-	  "audio": "114-piano-loop-9",
+	  "audio": [
+        "114-piano-loop-9"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -358,7 +392,9 @@
 	},
 	{
 	  "name": "114-piano-loop-9b",
-	  "audio": "114-piano-loop-9",
+	  "audio": [
+        "114-piano-loop-9"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -386,7 +422,9 @@
 	},
 	{
 	  "name": "114-piano-loop-10a",
-	  "audio": "114-piano-loop-10",
+	  "audio": [
+        "114-piano-loop-10"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -400,7 +438,9 @@
 	},
 	{
 	  "name": "114-piano-loop-10b",
-	  "audio": "114-piano-loop-10",
+	  "audio": [
+        "114-piano-loop-10"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -428,7 +468,9 @@
 	},
 	{
 	  "name": "114-piano-loop-11a",
-	  "audio": "114-piano-loop-11",
+	  "audio": [
+        "114-piano-loop-11"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -442,7 +484,9 @@
 	},
 	{
 	  "name": "114-piano-loop-11b",
-	  "audio": "114-piano-loop-11",
+	  "audio": [
+        "114-piano-loop-11"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -470,7 +514,9 @@
 	},
 	{
 	  "name": "114-piano-loop-12a",
-	  "audio": "114-piano-loop-12",
+	  "audio": [
+        "114-piano-loop-12"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -484,7 +530,9 @@
 	},
 	{
 	  "name": "114-piano-loop-12b",
-	  "audio": "114-piano-loop-12",
+	  "audio": [
+        "114-piano-loop-12"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -512,7 +560,9 @@
 	},
 	{
 	  "name": "114-piano-loop-13a",
-	  "audio": "114-piano-loop-13",
+	  "audio": [
+        "114-piano-loop-13"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -526,7 +576,9 @@
 	},
 	{
 	  "name": "114-piano-loop-13b",
-	  "audio": "114-piano-loop-13",
+	  "audio": [
+        "114-piano-loop-13"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -554,7 +606,9 @@
 	},
 	{
 	  "name": "114-piano-loop-14a",
-	  "audio": "114-piano-loop-14",
+	  "audio": [
+        "114-piano-loop-14"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -568,7 +622,9 @@
 	},
 	{
 	  "name": "114-piano-loop-14b",
-	  "audio": "114-piano-loop-14",
+	  "audio": [
+        "114-piano-loop-14"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -596,7 +652,9 @@
 	},
 	{
 	  "name": "114-piano-loop-15a",
-	  "audio": "114-piano-loop-15",
+	  "audio": [
+        "114-piano-loop-15"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -610,7 +668,9 @@
 	},
 	{
 	  "name": "114-piano-loop-15b",
-	  "audio": "114-piano-loop-15",
+	  "audio": [
+        "114-piano-loop-15"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -638,7 +698,9 @@
 	},
 	{
 	  "name": "114-noisestep-intro",
-	  "audio": "114-noisestep-intro",
+	  "audio": [
+        "114-noisestep-intro"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -652,7 +714,9 @@
 	},
 	{
 	  "name": "114-noisestep-inbeat",
-	  "audio": "114-noisestep-inbeat",
+	  "audio": [
+        "114-noisestep-inbeat"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -661,15 +725,17 @@
 	  ],
 	  "length_beats": 64,
 	  "next": {
-		"114-noisestep-beat-pre-1": 1.0,
-		"114-noisestep-beat-pre-2": 1.0,
-		"114-noisestep-beat-pre-3": 1.0,
-		"114-noisestep-beat-pre-4": 1.0
+		"114-noisestep-beat-pre": 1.0
 	  }
 	},
 	{
-	  "name": "114-noisestep-beat-pre-1",
-	  "audio": "114-noisestep-beat-pre-1",
+	  "name": "114-noisestep-beat-pre",
+	  "audio": [
+		"114-noisestep-beat-pre-1",
+		"114-noisestep-beat-pre-2",
+		"114-noisestep-beat-pre-3",
+        "114-noisestep-beat-pre-4"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -678,82 +744,17 @@
 	  ],
 	  "length_beats": 32,
 	  "next": {
-		"114-noisestep-beat-pre-2": 1.0,
-		"114-noisestep-beat-pre-3": 1.0,
-		"114-noisestep-beat-pre-4": 1.0,
+		"114-noisestep-beat-pre": 3.0,
 		"114-noisestep-drop": 1.0,
-		"114-noisestep-weird-1": 0.2,
-		"114-noisestep-weird-2": 0.2,
-		"114-noisestep-weird-3": 0.2,
-		"114-noisestep-weird-no-drums01": 0.15
-	  }
-	},
-	{
-	  "name": "114-noisestep-beat-pre-2",
-	  "audio": "114-noisestep-beat-pre-2",
-	  "progress": [
-		[
-		  0.0,
-		  1.0
-		]
-	  ],
-	  "length_beats": 32,
-	  "next": {
-		"114-noisestep-beat-pre-1": 1.0,
-		"114-noisestep-beat-pre-3": 1.0,
-		"114-noisestep-beat-pre-4": 1.0,
-		"114-noisestep-drop": 1.0,
-		"114-noisestep-weird-1": 0.2,
-		"114-noisestep-weird-2": 0.2,
-		"114-noisestep-weird-3": 0.2,
-		"114-noisestep-weird-no-drums01": 0.15
-	  }
-	},
-	{
-	  "name": "114-noisestep-beat-pre-3",
-	  "audio": "114-noisestep-beat-pre-3",
-	  "progress": [
-		[
-		  0.0,
-		  1.0
-		]
-	  ],
-	  "length_beats": 32,
-	  "next": {
-		"114-noisestep-beat-pre-1": 1.0,
-		"114-noisestep-beat-pre-2": 1.0,
-		"114-noisestep-beat-pre-4": 1.0,
-		"114-noisestep-drop": 1.0,
-		"114-noisestep-weird-1": 0.2,
-		"114-noisestep-weird-2": 0.2,
-		"114-noisestep-weird-3": 0.2,
-		"114-noisestep-weird-no-drums01": 0.15
-	  }
-	},
-	{
-	  "name": "114-noisestep-beat-pre-4",
-	  "audio": "114-noisestep-beat-pre-4",
-	  "progress": [
-		[
-		  0.0,
-		  1.0
-		]
-	  ],
-	  "length_beats": 32,
-	  "next": {
-		"114-noisestep-beat-pre-1": 1.0,
-		"114-noisestep-beat-pre-2": 1.0,
-		"114-noisestep-beat-pre-3": 1.0,
-		"114-noisestep-drop": 1.0,
-		"114-noisestep-weird-1": 0.2,
-		"114-noisestep-weird-2": 0.2,
-		"114-noisestep-weird-3": 0.2,
+		"114-noisestep-weird-build": 0.6,
 		"114-noisestep-weird-no-drums01": 0.15
 	  }
 	},
 	{
 	  "name": "114-noisestep-drop",
-	  "audio": "114-noisestep-drop",
+	  "audio": [
+        "114-noisestep-drop"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -762,13 +763,15 @@
 	  ],
 	  "length_beats": 32,
 	  "next": {
-		"114-noisestep-afterdrop-1": 1.0,
-		"114-noisestep-afterdrop-2": 1.0
+		"114-noisestep-afterdrop": 1.0
 	  }
 	},
 	{
-	  "name": "114-noisestep-afterdrop-1",
-	  "audio": "114-noisestep-afterdrop-1",
+	  "name": "114-noisestep-afterdrop",
+	  "audio": [
+		"114-noisestep-afterdrop-1",
+        "114-noisestep-afterdrop-2"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -777,18 +780,20 @@
 	  ],
 	  "length_beats": 32,
 	  "next": {
-		"114-noisestep-afterdrop-2": 1.0,
-		"114-noisestep-ending": 0.5,
-		"114-noisestep-weird-4": 0.35,
-		"114-noisestep-weird-5": 0.35,
-		"114-noisestep-weird-6": 0.35,
+		"114-noisestep-afterdrop": 1.0,
+		"114-noisestep-ending": 0.4,
+		"114-noisestep-weird-drop": 1.05,
 		"114-noisestep-weird-no-drums01": 0.25,
 		"114-noisestep-weird-atmo": 0.2
 	  }
 	},
 	{
-	  "name": "114-noisestep-afterdrop-2",
-	  "audio": "114-noisestep-afterdrop-2",
+	  "name": "114-noisestep-weird-build",
+	  "audio": [
+		"114-noisestep-weird-1",
+		"114-noisestep-weird-2",
+        "114-noisestep-weird-3"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -797,38 +802,18 @@
 	  ],
 	  "length_beats": 32,
 	  "next": {
-		"114-noisestep-afterdrop-1": 1.0,
-		"114-noisestep-ending": 0.5,
-		"114-noisestep-weird-4": 0.35,
-		"114-noisestep-weird-5": 0.35,
-		"114-noisestep-weird-6": 0.35,
-		"114-noisestep-weird-no-drums01": 0.25,
-		"114-noisestep-weird-atmo": 0.2
-	  }
-	},
-	{
-	  "name": "114-noisestep-weird-1",
-	  "audio": "114-noisestep-weird-1",
-	  "progress": [
-		[
-		  0.0,
-		  1.0
-		]
-	  ],
-	  "length_beats": 32,
-	  "next": {
-		"114-noisestep-beat-pre-1": 1.0,
-		"114-noisestep-beat-pre-2": 1.0,
-		"114-noisestep-beat-pre-3": 1.0,
-		"114-noisestep-beat-pre-4": 1.0,
+		"114-noisestep-beat-pre": 4.0,
 		"114-noisestep-drop": 0.5,
-		"114-noisestep-weird-2": 0.15,
-		"114-noisestep-weird-3": 0.15
+		"114-noisestep-weird-build": 0.3
 	  }
 	},
 	{
-	  "name": "114-noisestep-weird-2",
-	  "audio": "114-noisestep-weird-2",
+	  "name": "114-noisestep-weird-drop",
+	  "audio": [
+		"114-noisestep-weird-4",
+		"114-noisestep-weird-5",
+        "114-noisestep-weird-6"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -837,92 +822,16 @@
 	  ],
 	  "length_beats": 32,
 	  "next": {
-		"114-noisestep-beat-pre-1": 1.0,
-		"114-noisestep-beat-pre-2": 1.0,
-		"114-noisestep-beat-pre-3": 1.0,
-		"114-noisestep-beat-pre-4": 1.0,
-		"114-noisestep-drop": 0.5,
-		"114-noisestep-weird-1": 0.15,
-		"114-noisestep-weird-3": 0.15
-	  }
-	},
-	{
-	  "name": "114-noisestep-weird-3",
-	  "audio": "114-noisestep-weird-3",
-	  "progress": [
-		[
-		  0.0,
-		  1.0
-		]
-	  ],
-	  "length_beats": 32,
-	  "next": {
-		"114-noisestep-beat-pre-1": 1.0,
-		"114-noisestep-beat-pre-2": 1.0,
-		"114-noisestep-beat-pre-3": 1.0,
-		"114-noisestep-beat-pre-4": 1.0,
-		"114-noisestep-drop": 0.5,
-		"114-noisestep-weird-1": 0.15,
-		"114-noisestep-weird-2": 0.15
-	  }
-	},
-	{
-	  "name": "114-noisestep-weird-4",
-	  "audio": "114-noisestep-weird-4",
-	  "progress": [
-		[
-		  0.0,
-		  1.0
-		]
-	  ],
-	  "length_beats": 32,
-	  "next": {
-		"114-noisestep-afterdrop-1": 1.0,
-		"114-noisestep-afterdrop-2": 1.0,
+		"114-noisestep-afterdrop": 2.0,
 		"114-noisestep-ending": 0.5,
-		"114-noisestep-weird-5": 0.15,
-		"114-noisestep-weird-6": 0.15
-	  }
-	},
-	{
-	  "name": "114-noisestep-weird-5",
-	  "audio": "114-noisestep-weird-5",
-	  "progress": [
-		[
-		  0.0,
-		  1.0
-		]
-	  ],
-	  "length_beats": 32,
-	  "next": {
-		"114-noisestep-afterdrop-1": 1.0,
-		"114-noisestep-afterdrop-2": 1.0,
-		"114-noisestep-ending": 0.5,
-		"114-noisestep-weird-4": 0.15,
-		"114-noisestep-weird-6": 0.15
-	  }
-	},
-	{
-	  "name": "114-noisestep-weird-6",
-	  "audio": "114-noisestep-weird-6",
-	  "progress": [
-		[
-		  0.0,
-		  1.0
-		]
-	  ],
-	  "length_beats": 32,
-	  "next": {
-		"114-noisestep-afterdrop-1": 1.0,
-		"114-noisestep-afterdrop-2": 1.0,
-		"114-noisestep-ending": 0.5,
-		"114-noisestep-weird-4": 0.15,
-		"114-noisestep-weird-5": 0.15
+		"114-noisestep-weird-drop": 0.3
 	  }
 	},
 	{
 	  "name": "114-noisestep-weird-no-drums01",
-	  "audio": "114-noisestep-weird-no-drums01",
+	  "audio": [
+        "114-noisestep-weird-no-drums01"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -931,23 +840,17 @@
 	  ],
 	  "length_beats": 32,
 	  "next": {
-		"114-noisestep-beat-pre-1": 1.0,
-		"114-noisestep-beat-pre-2": 1.0,
-		"114-noisestep-beat-pre-3": 1.0,
-		"114-noisestep-beat-pre-4": 1.0,
-		"114-noisestep-afterdrop-1": 1.0,
-		"114-noisestep-afterdrop-2": 1.0,
-		"114-noisestep-weird-1": 0.1,
-		"114-noisestep-weird-2": 0.1,
-		"114-noisestep-weird-3": 0.1,
-		"114-noisestep-weird-4": 0.1,
-		"114-noisestep-weird-5": 0.1,
-		"114-noisestep-weird-6": 0.1
+		"114-noisestep-beat-pre": 4.0,
+		"114-noisestep-afterdrop": 2.0,
+		"114-noisestep-weird-build": 0.3,
+		"114-noisestep-weird-drop": 0.3
 	  }
 	},
 	{
 	  "name": "114-noisestep-weird-atmo",
-	  "audio": "114-noisestep-weird-atmo",
+	  "audio": [
+        "114-noisestep-weird-atmo"
+	  ],
 	  "progress": [
 		[
 		  0.0,
@@ -962,7 +865,9 @@
 	},
 	{
 	  "name": "114-noisestep-ending",
-	  "audio": "114-noisestep-ending",
+	  "audio": [
+        "114-noisestep-ending"
+	  ],
 	  "progress": [
 		[
 		  0.0,

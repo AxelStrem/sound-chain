@@ -35,7 +35,7 @@ Each entry in `segments`:
 | Field          | Meaning |
 |----------------|---------|
 | `name`         | Unique id. Referenced by `start_segments` and every `next` table. |
-| `audio`        | Audio file, **without extension**, resolved as `res://segments/<audio>.wav` (falls back to `.ogg`). May also be a bare filename with extension or a full `res://`/absolute path. |
+| `audio`        | **List** of interchangeable *variations* — one is picked at random every time the segment starts (they're musically equivalent, so it doesn't matter which). A single-entry list always plays that entry. Each entry is an audio file **without extension**, resolved as `res://segments/<entry>.wav` (falls back to `.ogg`); it may also be a bare filename with extension or a full `res://`/absolute path. |
 | `progress`     | List of `[lo, hi]` intervals in `[0, 1]`. The segment is only eligible when the current `progress` value (set via `set_progress()`) falls inside one of them. `[[0.0, 1.0]]` = always eligible. |
 | `length_beats` | Length in beats. Determines when the next segment fires. |
 | `next`         | `{ name: weight }` transition table. Weights are **relative** (the engine normalizes by their sum), so `1.0 / 0.5 / 0.2` just express ratios, not probabilities. |
@@ -91,52 +91,71 @@ A structured drop-based track (114 BPM) arranged as intro → build → drop →
 aftermath, with probabilistic "weirdness" detours. Segments are 32 beats except
 `intro`, `inbeat`, and `weird-atmo`, which are 64 beats (16 bars).
 
+The old numbered siblings that were just interchangeable takes of the same role
+are now collapsed into a single segment with an `audio` **variation list** (one
+take chosen at random each time the segment plays):
+
+- `beat-pre-1..4` → **`beat-pre`** (4 variations)
+- `weird-1/2/3` (build-zone) → **`weird-build`** (3 variations)
+- `weird-4/5/6` (drop-zone) → **`weird-drop`** (3 variations)
+- `afterdrop-1/2` → **`afterdrop`** (2 variations)
+
+Because the graph is memoryless anyway, cycling through the pool is now a
+**self-loop**: e.g. `beat-pre` transitions back to `beat-pre` (picking a fresh
+variation) instead of hopping between four separate nodes. The self-loop weight
+is set so the old ratios (and thus the average section lengths) are preserved
+exactly — the only behavioural change is that a variation may now repeat
+back-to-back (harmless, since the takes are equivalent).
+
 ### Flow
 
 ```
-intro ─▶ inbeat ─▶ beat-pre{1..4} ⇄ (other pre | drop | weird-1/2/3 | no-drums)
-drop  ─▶ afterdrop{1,2}
-afterdrop ⇄ (other afterdrop | ending | weird-4/5/6 | no-drums | atmo)
+intro ─▶ inbeat ─▶ beat-pre ⇄ (self | drop | weird-build | no-drums)
+drop  ─▶ afterdrop
+afterdrop ⇄ (self | ending | weird-drop | no-drums | atmo)
 ending ─▶ 114-piano-loop-1a            # hands back to the piano track
 ```
 
 ### Segments & transitions
 
-| Segment                     | Beats | `next` (weights) |
-|-----------------------------|-------|------------------|
-| `intro`                     | 64    | `inbeat` 1.0 |
-| `inbeat`                    | 64    | `beat-pre-1..4` 1.0 each |
-| `beat-pre-1..4`             | 32    | other 3 pres 1.0 · `drop` 1.0 · `weird-1/2/3` 0.2 · `no-drums` 0.15 |
-| `drop`                      | 32    | `afterdrop-1` 1.0 · `afterdrop-2` 1.0 |
-| `afterdrop-1/2`             | 32    | other afterdrop 1.0 · `ending` 0.5 · `weird-4/5/6` 0.35 · `no-drums` 0.25 · `atmo` 0.2 |
-| `ending`                    | 32    | `114-piano-loop-1a` 1.0 |
-| `weird-1/2/3` (build-zone)  | 32    | `beat-pre-1..4` 1.0 · `drop` 0.5 · other build-weirds 0.15 |
-| `weird-4/5/6` (drop-zone)   | 32    | `afterdrop-1/2` 1.0 · `ending` 0.5 · other drop-weirds 0.15 |
-| `weird-no-drums01`          | 32    | `beat-pre-1..4` 1.0 · `afterdrop-1/2` 1.0 · all weirds 0.1 |
-| `weird-atmo`                | 64    | `ending` 1.0 · `114-piano-loop-1a` 1.0 |
+| Segment                    | Beats | Variations | `next` (weights) |
+|----------------------------|-------|-----------|------------------|
+| `intro`                    | 64    | 1 | `inbeat` 1.0 |
+| `inbeat`                   | 64    | 1 | `beat-pre` 1.0 |
+| `beat-pre`                 | 32    | 4 | self 3.0 · `drop` 1.0 · `weird-build` 0.6 · `no-drums` 0.15 |
+| `drop`                     | 32    | 1 | `afterdrop` 1.0 |
+| `afterdrop`                | 32    | 2 | self 1.0 · `ending` 0.4 · `weird-drop` 1.05 · `no-drums` 0.25 · `atmo` 0.2 |
+| `ending`                   | 32    | 1 | `114-piano-loop-1a` 1.0 |
+| `weird-build`              | 32    | 3 | `beat-pre` 4.0 · `drop` 0.5 · self 0.3 |
+| `weird-drop`               | 32    | 3 | `afterdrop` 2.0 · `ending` 0.5 · self 0.3 |
+| `weird-no-drums01`         | 32    | 1 | `beat-pre` 4.0 · `afterdrop` 2.0 · `weird-build` 0.3 · `weird-drop` 0.3 |
+| `weird-atmo`               | 64    | 1 | `ending` 1.0 · `114-piano-loop-1a` 1.0 |
+
+(Segment names above are prefixed `114-noisestep-`. The self-loop / collapsed
+weights are the sums of the old per-sibling weights, so the probabilities are
+identical to the pre-refactor graph.)
 
 ### Design rules baked into the weights
 
 - **Must start `intro → inbeat`**, then build through the `beat-pre` pool before
   the drop.
-- **~4 beat-pre segments before dropping:** from any `beat-pre`, the 3 other
-  pres and `drop` are equally weighted (~21% each), so on average ~4 pre
-  segments play before the drop. (Memoryless — it *approximates* a random
-  permutation of the four; it can't guarantee no repeats.)
-- **`drop` always → an afterdrop**, which then ping-pongs / heads to `ending`.
-- **Weirdness is split by zone:** `weird-1/2/3` live in the build (return to
-  beat-pre / drop); `weird-4/5/6` live in the aftermath (return to afterdrop /
-  ending). `weird-no-drums01` is shared (returns to either zone). `weird-atmo`
-  is a 64-beat breakdown reachable **only from afterdrop**, exiting to `ending`
-  or the piano track.
+- **~4 beat-pre segments before dropping:** `beat-pre` self-loops with weight
+  3.0 vs `drop` 1.0 — i.e. staying in the pool is ~3× as likely as dropping, so
+  on average ~4 pre segments play before the drop (each picking a random of the
+  4 variations).
+- **`drop` always → `afterdrop`**, which then self-loops / heads to `ending`.
+- **Weirdness is split by zone:** `weird-build` lives in the build (returns to
+  `beat-pre` / `drop`); `weird-drop` lives in the aftermath (returns to
+  `afterdrop` / `ending`). `weird-no-drums01` is shared (returns to either
+  zone). `weird-atmo` is a 64-beat breakdown reachable **only from afterdrop**,
+  exiting to `ending` or the piano track.
 - **Weirdness by zone:** in the *build* zone weirdness stays subordinate — the
   aggregate probability of entering a weird segment is below that node's
   smallest "proper" transition (beat-pre 15.8% < 21.1%). In the *drop* zone it
   is deliberately dominant (afterdrop P(weird) ≈ 50%) and `ending` is weighted
-  low (16.7%) so the aftermath lingers instead of bailing out early — the
-  section now averages ~6 segments before the ending (was ~2.3). Scale the
-  afterdrop `0.35 / 0.25 / 0.2` weird weights up (or `ending` 0.5 down) to
-  stretch it further.
+  low so the aftermath lingers instead of bailing out early. Scale the afterdrop
+  `weird-drop 1.05 / no-drums 0.25 / atmo 0.2` weights up (or `ending` 0.4 down)
+  to stretch it further.
 
 ### Entering / leaving the track
 
