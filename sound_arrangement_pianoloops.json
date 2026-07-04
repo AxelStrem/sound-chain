@@ -1,0 +1,547 @@
+{
+  "start_segments": {
+	"114-piano-loop-1a": 1.0
+  },
+  "segments": [
+	{
+	  "name": "114-piano-loop-1a",
+	  "audio": [
+        "114-piano-loop-1"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-1b",
+	  "audio": [
+        "114-piano-loop-1"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-2a",
+	  "audio": [
+        "114-piano-loop-2"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-2b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-2b",
+	  "audio": [
+        "114-piano-loop-2"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-3a",
+	  "audio": [
+        "114-piano-loop-3"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-3b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-3b",
+	  "audio": [
+        "114-piano-loop-3"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-4a",
+	  "audio": [
+        "114-piano-loop-4"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-4b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-4b",
+	  "audio": [
+        "114-piano-loop-4"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-5a",
+	  "audio": [
+        "114-piano-loop-5"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-5b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-5b",
+	  "audio": [
+        "114-piano-loop-5"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-6a",
+	  "audio": [
+        "114-piano-loop-6"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-6b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-6b",
+	  "audio": [
+        "114-piano-loop-6"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-7a",
+	  "audio": [
+        "114-piano-loop-7"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-7b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-7b",
+	  "audio": [
+        "114-piano-loop-7"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-8a",
+	  "audio": [
+        "114-piano-loop-8"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-8b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-8b",
+	  "audio": [
+        "114-piano-loop-8"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-9a",
+	  "audio": [
+        "114-piano-loop-9"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-9b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-9b",
+	  "audio": [
+        "114-piano-loop-9"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-10a",
+	  "audio": [
+        "114-piano-loop-10"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-10b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-10b",
+	  "audio": [
+        "114-piano-loop-10"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-11a",
+	  "audio": [
+        "114-piano-loop-11"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-11b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-11b",
+	  "audio": [
+        "114-piano-loop-11"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-12a",
+	  "audio": [
+        "114-piano-loop-12"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-12b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-12b",
+	  "audio": [
+        "114-piano-loop-12"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-13a",
+	  "audio": [
+        "114-piano-loop-13"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-13b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-13b",
+	  "audio": [
+        "114-piano-loop-13"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-14a",
+	  "audio": [
+        "114-piano-loop-14"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-14b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-14b",
+	  "audio": [
+        "114-piano-loop-14"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-15a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	},
+	{
+	  "name": "114-piano-loop-15a",
+	  "audio": [
+        "114-piano-loop-15"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-15b": 1.0
+	  }
+	},
+	{
+	  "name": "114-piano-loop-15b",
+	  "audio": [
+        "114-piano-loop-15"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"114-piano-loop-1a": 1.0,
+		"114-piano-loop-2a": 1.0,
+		"114-piano-loop-3a": 1.0,
+		"114-piano-loop-4a": 1.0,
+		"114-piano-loop-5a": 1.0,
+		"114-piano-loop-6a": 1.0,
+		"114-piano-loop-7a": 1.0,
+		"114-piano-loop-8a": 1.0,
+		"114-piano-loop-9a": 1.0,
+		"114-piano-loop-10a": 1.0,
+		"114-piano-loop-11a": 1.0,
+		"114-piano-loop-12a": 1.0,
+		"114-piano-loop-13a": 1.0,
+		"114-piano-loop-14a": 1.0,
+		"END_TRACK": 0.5
+	  }
+	}
+  ]
+}

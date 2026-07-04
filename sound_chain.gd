@@ -5,6 +5,13 @@ extends Node
 ## Markov transition table.  Segment eligibility is filtered by a [0, 1]
 ## "progress" value so the soundtrack evolves with game state.
 ##
+## The arrangement is split across several files: a main metadata file that
+## lists the available "tracks" (each with a probability weight and an allowed
+## progress range), plus one "sound_arrangement_<name>.json" per track holding
+## that track's own start_segments + segments.  They are merged on load.  A
+## segment may use the reserved next-target [constant END_TRACK] to end its
+## track and let the engine pick a different eligible track to continue in.
+##
 ## Usage (from any script):
 ##   SoundChain.set_audio_base_dir("res://audio/level1")
 ##   SoundChain.set_bus(&"Music")
@@ -23,12 +30,19 @@ const DEFAULT_LENGTH_BEATS  := 16
 const DEFAULT_LOOKAHEAD     := 2
 const MAX_PLAYERS           := 4
 
+## Special "next" target.  When selected it ends the current track and lets the
+## engine jump to a different song (progress-filtered, weighted).  See
+## [method _select_new_track].
+const END_TRACK := "END_TRACK"
+
 # ---------------------------------------------------------------------------
 # Runtime state
 # ---------------------------------------------------------------------------
 
-var _metadata   := {}   ## Raw parsed JSON
-var _segments   := {}   ## name → segment Dictionary (fast lookup)
+var _metadata   := {}   ## Raw parsed JSON (main file)
+var _segments   := {}   ## name → segment Dictionary (fast lookup, all tracks merged)
+var _tracks     := {}   ## track name → { probability, progress, start_segments }
+var _seg_track  := {}   ## segment name → owning track name
 var _bpm        := 120.0
 var _beat_secs  := 0.5
 
@@ -40,6 +54,7 @@ var _paused     := false
 var _beat       := 0    ## Current beat number (monotonically increasing)
 var _cur_name   := ""   ## Currently-playing segment name
 var _cur_seg    := {}   ## Currently-playing segment data
+var _cur_track  := ""   ## Track owning the currently-playing segment
 var _cur_start  := 0    ## Beat on which current segment started
 
 var _next_name  := ""   ## Pre-selected next segment
@@ -81,20 +96,79 @@ func load_metadata(path: String) -> void:
 	_bpm      = float(_metadata.get("bpm", 120.0))
 	_beat_secs = 60.0 / _bpm
 
-	# Index segments by name for O(1) lookup
 	_segments.clear()
-	for seg in _metadata.get("segments", []):
-		var nm: String = seg.get("name", "")
-		if nm == "":
-			push_warning("SoundChain: segment entry missing 'name', skipped")
-			continue
-		_segments[nm] = seg
+	_tracks.clear()
+	_seg_track.clear()
+
+	var base_dir := path.get_base_dir()
+	var tracks_cfg: Dictionary = _metadata.get("tracks", {})
+
+	if tracks_cfg.is_empty():
+		# Legacy layout: the main file carries its own segments/start_segments.
+		_add_track("", _metadata.get("start_segments", {}), [[0.0, 1.0]],
+			_metadata.get("segments", []), 1.0)
+	else:
+		for track_name in tracks_cfg:
+			var cfg: Dictionary = tracks_cfg[track_name]
+			var arr := _load_arrangement(track_name, cfg, base_dir)
+			_add_track(track_name, arr.get("start_segments", {}),
+				cfg.get("progress", []), arr.get("segments", []),
+				float(cfg.get("probability", 1.0)))
 
 	# (Re)create timer and player pool
 	_setup_timer()
 	_setup_pool()
 
-	print("SoundChain: loaded %d segments, %d BPM (%.3f s/beat)" % [_segments.size(), int(_bpm), _beat_secs])
+	print("SoundChain: loaded %d tracks, %d segments, %d BPM (%.3f s/beat)" %
+		[_tracks.size(), _segments.size(), int(_bpm), _beat_secs])
+
+
+## Load one track's arrangement file, returning its parsed dict (with
+## "start_segments" + "segments"), or {} on failure.
+## Path defaults to "<base_dir>/sound_arrangement_<track_name>.json" but a
+## track's config may override it with an explicit "file" (absolute or
+## base-relative).
+func _load_arrangement(track_name: String, cfg: Dictionary, base_dir: String) -> Dictionary:
+	var file_name: String = cfg.get("file", "sound_arrangement_%s.json" % track_name)
+	var arr_path := file_name
+	if not (arr_path.begins_with("res://") or arr_path.begins_with("user://") or arr_path.begins_with("/")):
+		arr_path = base_dir + "/" + file_name
+
+	var f := FileAccess.open(arr_path, FileAccess.READ)
+	if f == null:
+		push_error("SoundChain: cannot open arrangement '%s' for track '%s'" % [arr_path, track_name])
+		return {}
+	var text := f.get_as_text()
+	f.close()
+
+	var json := JSON.new()
+	if json.parse(text) != OK:
+		push_error("SoundChain: JSON parse error in %s → %s" % [arr_path, json.get_error_message()])
+		return {}
+	var data = json.get_data()
+	if typeof(data) != TYPE_DICTIONARY:
+		push_error("SoundChain: arrangement '%s' is not a JSON object" % arr_path)
+		return {}
+	return data
+
+
+## Register a track: merge its segments into the global lookup and remember its
+## start table, allowed progress range and selection weight.
+func _add_track(track_name: String, start_segments: Dictionary, progress: Array,
+		segments: Array, probability: float) -> void:
+	for seg in segments:
+		var nm: String = seg.get("name", "")
+		if nm == "":
+			push_warning("SoundChain: segment entry missing 'name' in track '%s', skipped" % track_name)
+			continue
+		_segments[nm] = seg
+		_seg_track[nm] = track_name
+
+	_tracks[track_name] = {
+		"probability": probability,
+		"progress": progress,
+		"start_segments": start_segments,
+	}
 
 
 ## Start a new playthrough.  [param seed_value] seeds the RNG so the same
@@ -177,6 +251,7 @@ func get_progress() -> float:  return _progress
 func get_bpm() -> float:       return _bpm
 func get_playback_speed() -> float: return _playback_speed
 func get_current_segment() -> String: return _cur_name
+func get_current_track() -> String: return _cur_track
 func get_history() -> Array[String]: return _history.duplicate()
 
 # ---------------------------------------------------------------------------
@@ -264,32 +339,27 @@ func _on_beat() -> void:
 # Selection logic
 # ---------------------------------------------------------------------------
 
-## Weighted pick from start_segments (progress-filtered, with distance fallback).
+## Pick the first segment of a playthrough: choose an eligible track (weighted,
+## progress-filtered), then a start segment within it.
 func _select_start() -> String:
-	var starts: Dictionary = _metadata.get("start_segments", {})
-
-	if starts.is_empty():
+	if _tracks.is_empty():
 		return _pick_any_valid()
 
-	var pick := _weighted_pick(starts)
+	var track := _pick_track(false)
+	if track != "":
+		var s := _select_start_in_track(track)
+		if s != "":
+			return s
+
+	# Fallbacks: any eligible segment, else closest across ALL segments.
+	var pick := _pick_any_valid()
 	if pick != "":
 		return pick
-
-	# Fallback: closest by progress distance among start_segment keys
-	pick = _closest_by_distance(starts.keys())
-	if pick != "":
-		return pick
-
-	# Try any segment (progress-filtered)
-	pick = _pick_any_valid()
-	if pick != "":
-		return pick
-
-	# Absolute last resort: closest distance across ALL segments
 	return _closest_by_distance(_segments.keys())
 
 
 ## Pick the next segment from the current segment's "next" table.
+## A selected [constant END_TRACK] is resolved into the start of a new track.
 func _select_next() -> void:
 	_next_done = true
 	_next_name = ""
@@ -303,24 +373,96 @@ func _select_next() -> void:
 	if next_map.is_empty():
 		return  # dead end → playback will naturally stop
 
-	_next_name = _weighted_pick(next_map)
-
-	if _next_name == "":
+	var pick := _weighted_pick(next_map)
+	if pick == "":
 		# No candidate matched progress — use distance fallback
-		_next_name = _closest_by_distance(next_map.keys())
+		pick = _closest_by_distance(next_map.keys())
+
+	if pick == END_TRACK:
+		pick = _select_new_track()
+
+	_next_name = pick
+
+
+## Choose the start segment of a *different* eligible track to continue in when
+## the current track ends (via END_TRACK).  Falls back to the current track only
+## if it is the sole eligible one.
+func _select_new_track() -> String:
+	var track := _pick_track(true)
+	if track == "":
+		return ""
+	return _select_start_in_track(track)
+
+
+## Weighted, progress-filtered pick among a track's start_segments.
+func _select_start_in_track(track: String) -> String:
+	var starts: Dictionary = _tracks.get(track, {}).get("start_segments", {})
+	if starts.is_empty():
+		return ""
+	var pick := _weighted_pick(starts)
+	if pick == "":
+		pick = _closest_by_distance(starts.keys())
+	return pick
+
+
+## Weighted random pick among tracks eligible for the current progress.
+## When [param exclude_current] and more than one track is eligible, the
+## currently-playing track is dropped so END_TRACK moves to a different one.
+## Falls back to the progress-closest track when none are strictly eligible.
+func _pick_track(exclude_current: bool) -> String:
+	var eligible := {}
+	for name in _tracks:
+		if not _valid_for_progress(_tracks[name]):
+			continue
+		var w := maxf(0.0, float(_tracks[name].get("probability", 1.0)))
+		if w > 0.0:
+			eligible[name] = w
+
+	if exclude_current and _cur_track != "" and eligible.size() > 1 and eligible.has(_cur_track):
+		eligible.erase(_cur_track)
+
+	if eligible.is_empty():
+		return _closest_track_by_distance()
+
+	var total := 0.0
+	for k in eligible:
+		total += eligible[k]
+
+	var r := _rng.randf() * total
+	var cum := 0.0
+	for k in eligible:
+		cum += eligible[k]
+		if r <= cum:
+			return k
+	return eligible.keys()[-1]
+
+
+## Fallback: the track whose progress range is closest to _progress.
+func _closest_track_by_distance() -> String:
+	var best := ""
+	var best_dist := INF
+	for name in _tracks:
+		var d := _progress_distance(_tracks[name])
+		if d < best_dist:
+			best_dist = d
+			best = name
+	return best
 
 
 ## Weighted random selection from {name: weight} map, filtering by progress.
+## [constant END_TRACK] is always an eligible candidate (its progress handling
+## happens later, when the new track is chosen).
 ## Returns "" when no candidate is valid for the current progress.
 func _weighted_pick(weights: Dictionary) -> String:
 	var candidates: Array[Dictionary] = []
 	var total := 0.0
 
 	for n in weights:
-		if not _segments.has(n):
-			continue
-		if not _valid_for_progress(_segments[n]):
-			continue
+		if n != END_TRACK:
+			if not _segments.has(n):
+				continue
+			if not _valid_for_progress(_segments[n]):
+				continue
 		var w := maxf(0.0, float(weights[n]))
 		if w > 0.0:
 			candidates.append({"name": n, "weight": w})
@@ -439,6 +581,7 @@ func _start_segment(seg_name: String, at_beat: int) -> void:
 
 	_cur_name  = seg_name
 	_cur_seg   = seg
+	_cur_track = _seg_track.get(seg_name, _cur_track)
 	_cur_start = at_beat
 	_next_name = ""
 	_next_done = false
@@ -464,6 +607,7 @@ func _stop_all() -> void:
 
 	_cur_name  = ""
 	_cur_seg   = {}
+	_cur_track = ""
 	_next_name = ""
 	_next_done = false
 	_beat      = 0
