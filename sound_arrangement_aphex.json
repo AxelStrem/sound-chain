@@ -1,0 +1,34 @@
+{
+  "start_segments": {
+	"171-aphex-intro": 1.0
+  },
+  "segments": [
+	{
+	  "name": "171-aphex-intro",
+	  "audio": [
+		"171-aphex intro-01-48",
+		"171-aphex intro-02-48",
+        "171-aphex intro-03-48"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"171-aphex-pre": 1.0
+	  }
+	},
+	{
+	  "name": "171-aphex-pre",
+	  "audio": [
+		"171-aphex-pre-01-48",
+		"171-aphex-pre-02-48",
+        "171-aphex-pre-03-48"
+	  ],
+	  "progress": [ [0.0, 1.0] ],
+	  "length_beats": 32,
+	  "next": {
+		"171-aphex-pre": 1.0,
+		"END_TRACK": 0.5
+	  }
+	}
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "start_segments": {
+    "171-dnb-intro": 1.0
+  },
+  "segments": [
+    {
+      "name": "171-dnb-intro",
+      "audio": [
+        "171-dnb-intro-48"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 32,
+      "next": {
+        "171-dnb-pre": 1.0
+      }
+    },
+    {
+      "name": "171-dnb-pre",
+      "audio": [
+        "171-dnb-pre-48"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 32,
+      "next": {
+        "171-dnb-pre": 1.0,
+        "171-dnb-breakdown": 1.0
+      }
+    },
+    {
+      "name": "171-dnb-breakdown",
+      "audio": [
+        "171-dnb-breakdown-80"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 64,
+      "next": {
+        "171-dnb-fullon": 1.0
+      }
+    },
+    {
+      "name": "171-dnb-fullon",
+      "audio": [
+        "171-dnb fullon choir-48",
+        "171-dnb fullon-48"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 32,
+      "next": {
+        "END_TRACK": 1.0,
+        "171-dnb-breakdown": 0.5
+      }
+    }
+  ]
+}

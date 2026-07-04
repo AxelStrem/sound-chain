@@ -1,0 +1,66 @@
+{
+  "start_segments": {
+    "114-guitargods-intro": 1.0
+  },
+  "segments": [
+    {
+      "name": "114-guitargods-intro",
+      "audio": [
+        "114-guitar gods intro  7_8 -02-64",
+        "114-guitar gods intro 7_8 -01-64"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 84,
+      "next": {
+        "114-guitargods-loop-base": 1.0
+      }
+    },
+    {
+      "name": "114-guitargods-loop-base",
+      "audio": [
+        "114-guitar gods loop base 01-40",
+        "114-guitar gods loop base 02-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-guitargods-loop-base": 2.0,
+        "114-guitargods-breakdown": 1.0
+      }
+    },
+    {
+      "name": "114-guitargods-breakdown",
+      "audio": [
+        "114-guitar gods breakdown-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-guitargods-drop": 1.0
+      }
+    },
+    {
+      "name": "114-guitargods-drop",
+      "audio": [
+        "114-guitar gods drop-24"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 24,
+      "next": {
+        "114-guitargods-full-harmony": 1.0
+      }
+    },
+    {
+      "name": "114-guitargods-full-harmony",
+      "audio": [
+        "114-guitar gods full harmony-24"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 24,
+      "repeat": 2,
+      "next": {
+        "END_TRACK": 1.0
+      }
+    }
+  ]
+}

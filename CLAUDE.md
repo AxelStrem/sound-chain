@@ -13,10 +13,34 @@ beat-aligned.
     `tracks` table (which tracks exist, their weight and progress range).
   - `sound_arrangement_<track>.json` — one per **track**, holding that track's
     own `start_segments` + `segments` (the transition graph). Currently
-    `sound_arrangement_pianoloops.json` and `sound_arrangement_noisestep.json`.
-    **These are the files you edit to change an arrangement.**
-- **Audio:** `segments/*.wav` (+ Godot `.wav.import` sidecars). Global tempo is
-  **114 BPM** (~0.526 s/beat), so a 32-beat segment ≈ 16.8 s and 64 beats ≈ 33.7 s.
+    `pianoloops`, `noisestep`, `guitargods` (all natively 114 BPM), `aphex` and
+    `dnb` (natively 171 BPM). **These are the files you edit to change an
+    arrangement.**
+- **Audio:** `segments/*.wav` (+ Godot `.wav.import` sidecars). Files are named
+  `<native-bpm>-<track><section>-<variation?>-<total-length>`; the slice's
+  factual length is `total-length` beats **at its native BPM**, and its musical
+  length is `total-length − tail`, where the tail that rings out under the next
+  segment is **8 beats at 114 BPM** and **16 beats at 171 BPM**.
+
+### Internal clock is 171 BPM (the "×3/2 trick")
+
+The engine has one global beat clock, but tracks are authored at two tempos
+(114 and 171, and `171 = 114 × 3/2`). To keep every `length_beats` a whole
+number, the **internal `bpm` is 171** and each segment's `length_beats` is its
+musical length expressed in 171-beat units:
+
+```
+length_beats = (total_length − tail) × 171 / native_bpm      (tail: 8 @114, 16 @171)
+```
+
+- native **171** segments: `×1` → musical beats used directly (e.g. `48−16=32`).
+- native **114** segments: `×3/2` (all their musical lengths are even, so this
+  stays integer, e.g. `32→48`, `64→96`, `16→24`, `56→84`).
+
+The audio always plays at its own recorded speed (pitch unchanged); the internal
+BPM only sets *when* the next segment fires. So a 114 loop still sounds like 114
+— its `length_beats` is just counted on the faster 171 clock. See `roadmap.md`
+for the naming convention.
 
 Each track is its own connected graph and walks transitions forever. Tracks are
 joined by the reserved `END_TRACK` next-target: reaching it ends the current
@@ -31,8 +55,8 @@ dead-ends — every terminal path hits `END_TRACK` and continues elsewhere.
 
 | Field             | Meaning |
 |-------------------|---------|
-| `bpm`             | Global tempo. Drives the beat clock (`60 / bpm` seconds per beat). |
-| `lookahead_beats` | How many beats **before** a segment ends the engine pre-selects the next one (default 2). Gives the audio time to be loaded/queued so playback is seamless. |
+| `bpm`             | Internal beat-clock tempo (`60 / bpm` s/beat). **171** — see the "×3/2 trick" above; it is not each track's native tempo. |
+| `lookahead_beats` | How many beats **before** a segment ends the engine pre-selects the next one (currently 3). Gives the audio time to be loaded/queued so playback is seamless. |
 | `tracks`          | `{ name: { probability, progress } }` — the tracks the soundtrack can play. `probability` is the relative selection weight; `progress` is a list of `[lo, hi]` intervals (same format/semantics as a segment's, see below) gating when the track is eligible. Each track's graph is loaded from `sound_arrangement_<name>.json` next to this file (override with an optional `"file"` field). |
 
 ### Arrangement files (`sound_arrangement_<track>.json`)
@@ -49,7 +73,7 @@ Each entry in `segments`:
 | `name`         | Unique id (unique across **all** tracks — they share one merged lookup). Referenced by `start_segments` and every `next` table. |
 | `audio`        | **List** of interchangeable *variations* — one is picked at random every time the segment starts (they're musically equivalent, so it doesn't matter which). A single-entry list always plays that entry. Each entry is an audio file **without extension**, resolved as `res://segments/<entry>.wav` (falls back to `.ogg`); it may also be a bare filename with extension or a full `res://`/absolute path. |
 | `progress`     | List of `[lo, hi]` intervals in `[0, 1]`. The segment is only eligible when the current `progress` value (set via `set_progress()`) falls inside one of them. `[[0.0, 1.0]]` = always eligible. |
-| `length_beats` | Length in beats. Determines when the next segment fires. |
+| `length_beats` | Length in **internal (171 BPM) beats** — determines when the next segment fires. Derived as `(total_length − tail) × 171 / native_bpm` (tail 8 @114, 16 @171; see the ×3/2 trick above). |
 | `repeat`       | How many times the segment plays back-to-back before consulting `next`. Default `1`. Each pass re-triggers the audio (a fresh `audio` variation may be picked) but does **not** re-select from `next` until the last pass. |
 | `next`         | `{ name: weight }` transition table. Weights are **relative** (the engine normalizes by their sum), so `1.0 / 0.5 / 0.2` just express ratios, not probabilities. The reserved target **`END_TRACK`** may appear here like any other key — selecting it ends the current track (see below). |
 
@@ -81,30 +105,34 @@ Each entry in `segments`:
 
 ## Track: Piano loops (`sound_arrangement_pianoloops.json`)
 
-Fifteen piano loops, files `segments/114-piano-loop-1.wav` … `-15.wav`
-(114 BPM, each 32 beats). This is the "home" track and the default start.
+Three distinct piano sections (114 BPM, each 32 beats musical / 40-beat slices),
+each **one segment** with `repeat: 2` (plays twice before transitioning):
 
-Each loop `N` is **one segment** `114-piano-loop-N` with `repeat: 2`, so it plays
-twice before transitioning.
+| Segment                     | `audio` variations |
+|-----------------------------|--------------------|
+| `114-pianoloop-columbo`     | `columbo-01/02` (2) |
+| `114-pianoloop-jingle`      | `jingle-01/02` (2) |
+| `114-pianoloop-piano-intro` | `piano intro-01…11` (11) |
 
-**Behaviour (verified against the data):**
+**Behaviour:**
 
 ```
-loop-N  ──(repeat 2)──▶ (plays twice)
-loop-N  ──(1.0 each)──▶  loop-M   for every M ≠ N   # then jump to any OTHER loop
-loop-N  ──(0.5)──▶  END_TRACK                       # ~3.3% chance to leave for another track
+loop  ──(repeat 2)──▶ (plays twice; each pass may pick a different variation)
+loop  ──(1.0 each)──▶  the OTHER two loops       # equally likely, never repeats itself
+loop  ──(0.5)──▶  END_TRACK                      # leaves for another track
 ```
 
-So a loop plays through twice (via `repeat`), then jumps to a *different* loop
-chosen uniformly (never repeating itself back-to-back). Each loop also has a
-small (weight 0.5 ≈ 3.3%) chance to hit `END_TRACK` and hand off to another
-track (with two tracks that means noisestep).
+The three sections are kept **equally likely**: symmetric transitions (each →
+the other two at weight 1.0) and equal `start_segments` weights, so no section
+dominates despite `piano-intro` having more variations. This is the "home" track.
 
-> Previously each loop was split into two segments (`…-Na` → `…-Nb`) purely to
-> play it twice; the `repeat` field replaces that, halving the segment count.
+> Note: per loop, `P(END_TRACK) = 0.5 / (1 + 1 + 0.5) = 20%` — much higher than
+> the old ~3.3%, because there are now only 3 loops to bounce between instead of
+> 15. So the piano hands off to another track roughly every ~5 loops. Lower the
+> `END_TRACK` weight if it should linger longer before leaving.
 
-- **Start:** `114-piano-loop-1` (weight 1.0 in this track's `start_segments`).
-- All 15 segments use `progress [[0.0, 1.0]]` (always eligible).
+- **Start:** any of the three (weight 1.0 each in `start_segments`).
+- All 3 segments use `progress [[0.0, 1.0]]` (always eligible).
 
 ---
 
@@ -185,7 +213,64 @@ identical to the pre-refactor graph.)
 - **Enter:** the engine picks this track via the main `tracks` table (weighted
   by `probability`, progress-filtered) then its `start_segments`
   (`114-noisestep-intro`, weight 1.0). This happens on the initial `start()` or
-  whenever another track hits `END_TRACK` (e.g. a piano `b` pass — ~3.3%).
+  whenever another track hits `END_TRACK` and this one is chosen.
 - **Leave:** `ending` (100%) and `weird-atmo` route to `END_TRACK`, so the
-  engine hands back to track selection (a *different* eligible track — with two
-  tracks, the piano) and never truly stops.
+  engine hands back to track selection (a *different* eligible track, chosen
+  among the other four) and never truly stops.
+
+---
+
+## Track: Guitar gods (`sound_arrangement_guitargods.json`)
+
+Native 114 BPM (7/8-feel intro). Unfinished — a simple linear build:
+
+```
+intro (start) ─▶ loop-base ⇄ (self | breakdown)
+breakdown ─▶ drop ─▶ full-harmony ──(repeat 2)──▶ END_TRACK
+```
+
+| Segment        | Vars | len(171) | `next` |
+|----------------|------|----------|--------|
+| `intro`        | 2    | 84 | `loop-base` 1.0 |
+| `loop-base`    | 2    | 48 | self 2.0 · `breakdown` 1.0 |
+| `breakdown`    | 1    | 48 | `drop` 1.0 |
+| `drop`         | 1    | 24 | `full-harmony` 1.0 |
+| `full-harmony` | 1    | 24 | `END_TRACK` 1.0 (`repeat: 2`) |
+
+- Track-specific rule: **`breakdown` sits right before `drop`** (not a general
+  convention). **Only `full-harmony` ends the track** — it plays twice then
+  `END_TRACK`; nothing else leaves.
+
+## Track: Aphex (`sound_arrangement_aphex.json`)
+
+Native 171 BPM. Build-only (no drop/ending yet) — loops the `pre` then hands off:
+
+```
+intro (start) ─▶ pre ⇄ (self | END_TRACK 0.5)
+```
+
+| Segment | Vars | len(171) | `next` |
+|---------|------|----------|--------|
+| `intro` | 3    | 32 | `pre` 1.0 |
+| `pre`   | 3    | 32 | self 1.0 · `END_TRACK` 0.5 |
+
+## Track: DnB (`sound_arrangement_dnb.json`)
+
+Native 171 BPM. Unfinished:
+
+```
+intro (start) ─▶ pre ⇄ (self | breakdown)
+breakdown ─▶ fullon ──▶ (END_TRACK | breakdown 0.5)
+```
+
+| Segment     | Vars | len(171) | `next` |
+|-------------|------|----------|--------|
+| `intro`     | 1    | 32 | `pre` 1.0 |
+| `pre`       | 1    | 32 | self 1.0 · `breakdown` 1.0 |
+| `breakdown` | 1    | 64 | `fullon` 1.0 |
+| `fullon`    | 2    | 32 | `END_TRACK` 1.0 · `breakdown` 0.5 |
+
+- Track-specific rules: **`breakdown` sits right before `fullon`**, and the
+  track **only ends after a `fullon`** (`END_TRACK` is reachable only there).
+- `fullon` variations: `dnb fullon` and `dnb fullon choir` — both 48-beat slices
+  (musical 32), fully interchangeable.

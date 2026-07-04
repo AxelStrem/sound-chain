@@ -6,10 +6,10 @@
     {
       "name": "114-noisestep-intro",
       "audio": [
-        "114-noisestep-intro"
+        "114-Noisestep intro-72"
       ],
       "progress": [ [0.0, 1.0] ],
-      "length_beats": 64,
+      "length_beats": 96,
       "next": {
         "114-noisestep-inbeat": 1.0
       }
@@ -17,10 +17,10 @@
     {
       "name": "114-noisestep-inbeat",
       "audio": [
-        "114-noisestep-inbeat"
+        "114-Noisestep-inbeat-72"
       ],
       "progress": [ [0.0, 1.0] ],
-      "length_beats": 64,
+      "length_beats": 96,
       "next": {
         "114-noisestep-beat-pre": 1.0
       }
@@ -28,13 +28,13 @@
     {
       "name": "114-noisestep-beat-pre",
       "audio": [
-        "114-noisestep-beat-pre-1",
-        "114-noisestep-beat-pre-2",
-        "114-noisestep-beat-pre-3",
-        "114-noisestep-beat-pre-4"
+        "114-Noisestep-beats-pre-1-40",
+        "114-Noisestep-beats-pre-2-40",
+        "114-Noisestep-beats-pre-3-40",
+        "114-Noisestep-beats-pre-4-40"
       ],
       "progress": [ [0.0, 1.0] ],
-      "length_beats": 32,
+      "length_beats": 48,
       "next": {
         "114-noisestep-beat-pre": 3.0,
         "114-noisestep-drop": 1.0,
@@ -45,10 +45,10 @@
     {
       "name": "114-noisestep-drop",
       "audio": [
-        "114-noisestep-drop"
+        "114-Noisestep-drop-40"
       ],
       "progress": [ [0.0, 1.0] ],
-      "length_beats": 32,
+      "length_beats": 48,
       "next": {
         "114-noisestep-afterdrop": 1.0
       }
@@ -56,11 +56,11 @@
     {
       "name": "114-noisestep-afterdrop",
       "audio": [
-        "114-noisestep-afterdrop-1",
-        "114-noisestep-afterdrop-2"
+        "114-Noisestep-afterdrop-1-40",
+        "114-Noisestep-afterdrop-2-40"
       ],
       "progress": [ [0.0, 1.0] ],
-      "length_beats": 32,
+      "length_beats": 48,
       "next": {
         "114-noisestep-afterdrop": 1.0,
         "114-noisestep-ending": 0.4,
@@ -72,12 +72,12 @@
     {
       "name": "114-noisestep-weird-build",
       "audio": [
-        "114-noisestep-weird-1",
-        "114-noisestep-weird-2",
-        "114-noisestep-weird-3"
+        "114-Noisestep-weirdness-1-40",
+        "114-Noisestep-weirdness-2-40",
+        "114-Noisestep-weirdness-3-40"
       ],
       "progress": [ [0.0, 1.0] ],
-      "length_beats": 32,
+      "length_beats": 48,
       "next": {
         "114-noisestep-beat-pre": 4.0,
         "114-noisestep-drop": 0.5,
@@ -87,12 +87,12 @@
     {
       "name": "114-noisestep-weird-drop",
       "audio": [
-        "114-noisestep-weird-4",
-        "114-noisestep-weird-5",
-        "114-noisestep-weird-6"
+        "114-Noisestep-weirdness-4-40",
+        "114-Noisestep-weirdness-5-40",
+        "114-Noisestep-weirdness-6-40"
       ],
       "progress": [ [0.0, 1.0] ],
-      "length_beats": 32,
+      "length_beats": 48,
       "next": {
         "114-noisestep-afterdrop": 2.0,
         "114-noisestep-ending": 0.5,
@@ -102,10 +102,10 @@
     {
       "name": "114-noisestep-weird-no-drums01",
       "audio": [
-        "114-noisestep-weird-no-drums01"
+        "114-Noisestep-weirdness-no-drums-1-40"
       ],
       "progress": [ [0.0, 1.0] ],
-      "length_beats": 32,
+      "length_beats": 48,
       "next": {
         "114-noisestep-beat-pre": 4.0,
         "114-noisestep-afterdrop": 2.0,
@@ -116,10 +116,10 @@
     {
       "name": "114-noisestep-weird-atmo",
       "audio": [
-        "114-noisestep-weird-atmo"
+        "114-Noisestep-weirdness-atmo-72"
       ],
       "progress": [ [0.0, 1.0] ],
-      "length_beats": 64,
+      "length_beats": 96,
       "next": {
         "114-noisestep-ending": 1.0,
         "END_TRACK": 1.0
@@ -128,10 +128,10 @@
     {
       "name": "114-noisestep-ending",
       "audio": [
-        "114-noisestep-ending"
+        "114-Noisestep-ending-40"
       ],
       "progress": [ [0.0, 1.0] ],
-      "length_beats": 32,
+      "length_beats": 48,
       "next": {
         "END_TRACK": 1.0
       }
