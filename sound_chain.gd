@@ -55,7 +55,8 @@ var _beat       := 0    ## Current beat number (monotonically increasing)
 var _cur_name   := ""   ## Currently-playing segment name
 var _cur_seg    := {}   ## Currently-playing segment data
 var _cur_track  := ""   ## Track owning the currently-playing segment
-var _cur_start  := 0    ## Beat on which current segment started
+var _cur_start  := 0    ## Beat on which current segment (this pass) started
+var _reps_left  := 0    ## Remaining extra `repeat` passes of the current segment
 
 var _next_name  := ""   ## Pre-selected next segment
 var _next_done  := false ## Whether next selection has happened this cycle
@@ -323,13 +324,18 @@ func _on_beat() -> void:
 	var end_beat  : int = _cur_start + _cur_seg.get("length_beats", DEFAULT_LENGTH_BEATS)
 	var lookahead : int = _metadata.get("lookahead_beats", DEFAULT_LOOKAHEAD)
 
-	# --- Pre-select the next segment a few beats before current ends ---
-	if not _next_done and _beat >= end_beat - lookahead:
-		_select_next()
+	if _reps_left > 0:
+		# --- More `repeat` passes to go: replay the same segment on the boundary ---
+		if _beat >= end_beat:
+			_reps_left -= 1
+			_start_segment(_cur_name, _beat, false)
+	else:
+		# --- Final pass: pre-select then hand off to the next segment ---
+		if not _next_done and _beat >= end_beat - lookahead:
+			_select_next()
 
-	# --- Launch the next segment exactly on the beat boundary ---
-	if _next_done and _next_name != "" and _beat >= end_beat:
-		_start_segment(_next_name, _beat)
+		if _next_done and _next_name != "" and _beat >= end_beat:
+			_start_segment(_next_name, _beat)
 
 	# --- If nothing is playing and nothing is queued, wind down ---
 	if _active.is_empty() and _next_name == "":
@@ -551,11 +557,18 @@ func _resolve_audio(seg: Dictionary, seg_name: String) -> String:
 
 
 ## Start playing `seg_name` at the given beat position.
-func _start_segment(seg_name: String, at_beat: int) -> void:
+## [param fresh] true means this is a newly-selected segment, so its `repeat`
+## counter is (re)armed; false means this is a replay of the current segment for
+## another of its `repeat` passes (counter left as-is).
+func _start_segment(seg_name: String, at_beat: int, fresh: bool = true) -> void:
 	var seg = _segments.get(seg_name, {})
 	if seg.is_empty():
 		push_error("SoundChain: unknown segment '%s'" % seg_name)
 		return
+
+	if fresh:
+		# Arm the repeat counter: total passes minus this first one.
+		_reps_left = maxi(1, int(seg.get("repeat", 1))) - 1
 
 	var path := _resolve_audio(seg, seg_name)
 	if path == "":
@@ -588,8 +601,10 @@ func _start_segment(seg_name: String, at_beat: int) -> void:
 
 	_history.append(seg_name)
 
-	print("SoundChain: beat %3d → start '%s'  (len=%d beats, path=%s)" %
-		[at_beat, seg_name, seg.get("length_beats", DEFAULT_LENGTH_BEATS), path])
+	var total_reps := maxi(1, int(seg.get("repeat", 1)))
+	print("SoundChain: beat %3d → start '%s'  (len=%d beats, pass %d/%d, path=%s)" %
+		[at_beat, seg_name, seg.get("length_beats", DEFAULT_LENGTH_BEATS),
+		total_reps - _reps_left, total_reps, path])
 
 
 ## Stop everything and reset state.
@@ -608,6 +623,7 @@ func _stop_all() -> void:
 	_cur_name  = ""
 	_cur_seg   = {}
 	_cur_track = ""
+	_reps_left = 0
 	_next_name = ""
 	_next_done = false
 	_beat      = 0

@@ -50,6 +50,7 @@ Each entry in `segments`:
 | `audio`        | **List** of interchangeable *variations* — one is picked at random every time the segment starts (they're musically equivalent, so it doesn't matter which). A single-entry list always plays that entry. Each entry is an audio file **without extension**, resolved as `res://segments/<entry>.wav` (falls back to `.ogg`); it may also be a bare filename with extension or a full `res://`/absolute path. |
 | `progress`     | List of `[lo, hi]` intervals in `[0, 1]`. The segment is only eligible when the current `progress` value (set via `set_progress()`) falls inside one of them. `[[0.0, 1.0]]` = always eligible. |
 | `length_beats` | Length in beats. Determines when the next segment fires. |
+| `repeat`       | How many times the segment plays back-to-back before consulting `next`. Default `1`. Each pass re-triggers the audio (a fresh `audio` variation may be picked) but does **not** re-select from `next` until the last pass. |
 | `next`         | `{ name: weight }` transition table. Weights are **relative** (the engine normalizes by their sum), so `1.0 / 0.5 / 0.2` just express ratios, not probabilities. The reserved target **`END_TRACK`** may appear here like any other key — selecting it ends the current track (see below). |
 
 ### Selection rules (how the engine walks the graph)
@@ -83,26 +84,27 @@ Each entry in `segments`:
 Fifteen piano loops, files `segments/114-piano-loop-1.wav` … `-15.wav`
 (114 BPM, each 32 beats). This is the "home" track and the default start.
 
-Each loop `N` is represented by **two segments** sharing the same audio:
-
-- `114-piano-loop-Na` — first pass. Always transitions to `…-Nb`.
-- `114-piano-loop-Nb` — second pass. Transitions to **any other loop**.
+Each loop `N` is **one segment** `114-piano-loop-N` with `repeat: 2`, so it plays
+twice before transitioning.
 
 **Behaviour (verified against the data):**
 
 ```
-loop-Na  ──(1.0)──▶  loop-Nb                       # every loop plays exactly TWICE
-loop-Nb  ──(1.0 each)──▶  loop-Ma   for every M ≠ N   # then jump to any OTHER loop
-loop-Nb  ──(0.5)──▶  END_TRACK                     # ~3.3% chance to leave for another track
+loop-N  ──(repeat 2)──▶ (plays twice)
+loop-N  ──(1.0 each)──▶  loop-M   for every M ≠ N   # then jump to any OTHER loop
+loop-N  ──(0.5)──▶  END_TRACK                       # ~3.3% chance to leave for another track
 ```
 
-So a loop always plays through twice (`a` then `b`), then jumps to a *different*
-loop chosen uniformly (never repeating itself back-to-back). Each `b` pass also
-has a small (weight 0.5 ≈ 3.3%) chance to hit `END_TRACK` and hand off to another
+So a loop plays through twice (via `repeat`), then jumps to a *different* loop
+chosen uniformly (never repeating itself back-to-back). Each loop also has a
+small (weight 0.5 ≈ 3.3%) chance to hit `END_TRACK` and hand off to another
 track (with two tracks that means noisestep).
 
-- **Start:** `114-piano-loop-1a` (weight 1.0 in this track's `start_segments`).
-- All 30 segments use `progress [[0.0, 1.0]]` (always eligible).
+> Previously each loop was split into two segments (`…-Na` → `…-Nb`) purely to
+> play it twice; the `repeat` field replaces that, halving the segment count.
+
+- **Start:** `114-piano-loop-1` (weight 1.0 in this track's `start_segments`).
+- All 15 segments use `progress [[0.0, 1.0]]` (always eligible).
 
 ---
 
