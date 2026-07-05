@@ -36,6 +36,17 @@ const MAX_PLAYERS           := 4
 const END_TRACK := "END_TRACK"
 
 # ---------------------------------------------------------------------------
+# Signals (for UI / debug — the walk itself does not depend on them)
+# ---------------------------------------------------------------------------
+
+## Emitted whenever a segment starts playing (including each `repeat` pass).
+## [param segment_name]/[param track_name] are "" when playback stops.
+signal segment_changed(segment_name: String, track_name: String)
+
+## Emitted when playback starts, pauses/resumes, or stops.
+signal playback_changed(playing: bool, paused: bool)
+
+# ---------------------------------------------------------------------------
 # Runtime state
 # ---------------------------------------------------------------------------
 
@@ -172,26 +183,52 @@ func _add_track(track_name: String, start_segments: Dictionary, progress: Array,
 	}
 
 
-## Start a new playthrough.  [param seed_value] seeds the RNG so the same
-## seed + progress trajectory yields the same sequence.
-func start(seed_value: int = 0) -> void:
+## Start a new playthrough with a normal metadata-driven pick (weighted,
+## progress-filtered track + start segment).  [param seed_value] seeds the RNG so
+## the same seed + progress trajectory yields the same sequence; pass a negative
+## value (the default) to seed randomly.
+func start(seed_value: int = -1) -> void:
+	_begin(_select_start(), seed_value)
+
+
+## Start a playthrough at a weighted, progress-filtered start segment of the
+## given track.  Used by the UI to jump straight into a specific track.
+func start_track(track_name: String, seed_value: int = -1) -> void:
+	if not _tracks.has(track_name):
+		push_error("SoundChain: unknown track '%s'" % track_name)
+		return
+	_begin(_select_start_in_track(track_name), seed_value)
+
+
+## Start a playthrough at an exact segment, bypassing start-segment selection.
+## Used by the UI to jump straight into a specific segment.
+func start_segment_at(seg_name: String, seed_value: int = -1) -> void:
+	if not _segments.has(seg_name):
+		push_error("SoundChain: unknown segment '%s'" % seg_name)
+		return
+	_begin(seg_name, seed_value)
+
+
+## Shared playthrough kick-off: seed the RNG, arm state and play [param first].
+func _begin(first: String, seed_value: int) -> void:
 	stop()
 	if _segments.is_empty():
 		push_error("SoundChain: no metadata loaded — call load_metadata() first")
 		return
 
-	_rng.set_seed(seed_value)
+	_rng.set_seed(seed_value if seed_value >= 0 else randi())
 	_beat      = 0
 	_playing   = true
 	_paused    = false
 
-	var first := _select_start()
 	if first == "":
 		push_error("SoundChain: no start segment could be selected")
+		_playing = false
 		return
 
 	_start_segment(first, 0)
 	_timer.start()
+	playback_changed.emit(_playing, _paused)
 
 
 ## Toggle pause.  Audio players and the beat clock are paused together.
@@ -202,11 +239,25 @@ func pause() -> void:
 	_timer.paused = _paused
 	for player in _active:
 		player.stream_paused = _paused
+	playback_changed.emit(_playing, _paused)
 
 
 ## Stop playback immediately and release all players.
 func stop() -> void:
 	_stop_all()
+
+
+## Skip to the next segment right now, bypassing any remaining `repeat` passes.
+## Resolves the current segment's `next` table (including END_TRACK) exactly as the
+## automatic hand-off would.  No-op unless actively playing.
+func skip() -> void:
+	if not is_playing() or _cur_name == "":
+		return
+	_reps_left = 0
+	if not _next_done:
+		_select_next()
+	if _next_name != "":
+		_start_segment(_next_name, _beat)
 
 
 ## Update the progress value [0.0, 1.0].  If a next segment has already been
@@ -239,6 +290,23 @@ func set_audio_base_dir(path: String) -> void:
 	_audio_base = path
 
 
+## Set output volume on the active bus.  [param linear] is 0..1 (0 = silent,
+## 1 = 0 dB / unchanged).
+func set_volume(linear: float) -> void:
+	var idx := AudioServer.get_bus_index(_bus_name)
+	if idx < 0:
+		return
+	AudioServer.set_bus_volume_db(idx, linear_to_db(clampf(linear, 0.0, 1.0)))
+
+
+## Current output volume of the active bus as a 0..1 linear value.
+func get_volume() -> float:
+	var idx := AudioServer.get_bus_index(_bus_name)
+	if idx < 0:
+		return 1.0
+	return db_to_linear(AudioServer.get_bus_volume_db(idx))
+
+
 ## Set playback speed (1.0 = normal, 0.5 = half, 2.0 = double).
 ## Changes pitch as well — intended for temporary sound effects.
 ## Updates all currently-playing and idle players immediately.
@@ -254,6 +322,53 @@ func get_playback_speed() -> float: return _playback_speed
 func get_current_segment() -> String: return _cur_name
 func get_current_track() -> String: return _cur_track
 func get_history() -> Array[String]: return _history.duplicate()
+
+
+## Track/segment introspection for UIs.  All return copies so callers cannot
+## mutate engine state.
+
+## Track names in metadata (load) order.
+func get_track_names() -> Array[String]:
+	var names: Array[String] = []
+	for n in _tracks:
+		names.append(n)
+	return names
+
+
+## A track's config: { probability, progress, start_segments }.  {} if unknown.
+func get_track_config(track_name: String) -> Dictionary:
+	return _tracks.get(track_name, {}).duplicate(true)
+
+
+## Names of the segments owned by [param track_name], in arrangement-file order
+## (segments are merged into the global lookup contiguously and in order, so the
+## insertion order of _seg_track is preserved per track).
+func get_track_segments(track_name: String) -> Array[String]:
+	var names: Array[String] = []
+	for n in _seg_track:
+		if _seg_track[n] == track_name:
+			names.append(n)
+	return names
+
+
+## A segment's full config (name, audio, progress, length_beats, repeat, next).
+func get_segment(seg_name: String) -> Dictionary:
+	return _segments.get(seg_name, {}).duplicate(true)
+
+
+## The track that owns [param seg_name] ("" if unknown).
+func get_segment_track(seg_name: String) -> String:
+	return _seg_track.get(seg_name, "")
+
+
+## True when [param track_name] is eligible at the current progress.
+func is_track_eligible(track_name: String) -> bool:
+	return _valid_for_progress(_tracks.get(track_name, {}))
+
+
+## True when [param seg_name] is eligible at the current progress.
+func is_segment_eligible(seg_name: String) -> bool:
+	return _valid_for_progress(_segments.get(seg_name, {}))
 
 # ---------------------------------------------------------------------------
 # Engine callbacks
@@ -606,6 +721,8 @@ func _start_segment(seg_name: String, at_beat: int, fresh: bool = true) -> void:
 		[at_beat, seg_name, seg.get("length_beats", DEFAULT_LENGTH_BEATS),
 		total_reps - _reps_left, total_reps, path])
 
+	segment_changed.emit(_cur_name, _cur_track)
+
 
 ## Stop everything and reset state.
 func _stop_all() -> void:
@@ -628,6 +745,9 @@ func _stop_all() -> void:
 	_next_done = false
 	_beat      = 0
 	_history.clear()
+
+	segment_changed.emit("", "")
+	playback_changed.emit(false, false)
 
 
 ## Return the first non-playing AudioStreamPlayer from the pool (or null).

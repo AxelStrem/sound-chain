@@ -10,7 +10,7 @@ beat-aligned.
   `stop()`, etc.
 - **Data:** split across files (merged on load):
   - `sound_chain_metadata.json` — the **main** file: global settings + the
-    `tracks` table (which tracks exist, their weight and progress range).
+	`tracks` table (which tracks exist, their weight and progress range).
   - `sound_arrangement_<track>.json` — one per **track**, holding that track's
     own `start_segments` + `segments` (the transition graph). Currently
     `pianoloops`, `noisestep`, `guitargods` (all natively 114 BPM), `aphex` and
