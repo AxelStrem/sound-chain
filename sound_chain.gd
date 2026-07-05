@@ -256,8 +256,23 @@ func skip() -> void:
 	_reps_left = 0
 	if not _next_done:
 		_select_next()
-	if _next_name != "":
-		_start_segment(_next_name, _beat)
+	if _next_name == "":
+		return
+	# Unlike an automatic boundary transition (where the outgoing segment's tail
+	# is meant to ring out under the next), a manual skip happens mid-segment, so
+	# cut the current audio before starting the next.
+	_silence_active()
+	_start_segment(_next_name, _beat)
+
+
+## Stop and release every currently-sounding player without tearing down the
+## playthrough (state, timer and beat clock keep running).
+func _silence_active() -> void:
+	for player in _active.keys():
+		if is_instance_valid(player):
+			player.stop()
+			player.stream = null
+	_active.clear()
 
 
 ## Update the progress value [0.0, 1.0].  If a next segment has already been

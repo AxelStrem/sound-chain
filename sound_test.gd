@@ -11,7 +11,22 @@ extends Control
 const METADATA_PATH := "res://sound_chain_metadata.json"
 
 const COL_GREY       := Color(0.32, 0.32, 0.36)   # dim: "can't start here"
-const COL_CURRENT_BG := Color(0.18, 0.38, 0.22)
+const COL_CURRENT_BG := Color(0.18, 0.38, 0.22)   # now playing
+const COL_NEXT_BG    := Color(0.16, 0.24, 0.34)   # reachable from now playing
+
+## Playlist columns: name, flags (start / ending / repeat), progress range(s).
+const TREE_COLUMNS := 3
+const COL_NAME     := 0
+const COL_MARK     := 1
+const COL_RANGE    := 2
+
+## Flag emojis shown in COL_MARK, with the hover hint each carries.
+const MARK_START     := "🚩"
+const MARK_END       := "🏁"
+const MARK_REPEAT    := "🔁"
+const HINT_START     := "🚩 Start segment — a playthrough can begin here"
+const HINT_END       := "🏁 Ending segment — can hand off to another track (END_TRACK)"
+const HINT_REPEAT    := "🔁 Repeats %d× before advancing"
 
 var _tree              : Tree
 var _status            : Label
@@ -22,6 +37,7 @@ var _issues_by_target  : Dictionary = {}   ## target name → Array[String] mess
 var _track_items       : Dictionary = {}   ## track name → TreeItem
 var _seg_items         : Dictionary = {}   ## segment name → TreeItem
 var _current_item      : TreeItem = null
+var _next_items        : Array[TreeItem] = []   ## rows tinted as reachable-next
 
 var _playing := false
 var _paused  := false
@@ -136,6 +152,16 @@ func _build_ui() -> void:
 	_tree.select_mode = Tree.SELECT_ROW
 	_tree.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	_tree.add_theme_constant_override("h_separation", 14)   # gap: chevron ↔ text
+	_tree.columns = TREE_COLUMNS
+	_tree.column_titles_visible = true
+	_tree.set_column_title(COL_NAME, "Track / Segment")
+	_tree.set_column_title(COL_MARK, "Flags")
+	_tree.set_column_title(COL_RANGE, "Progress range")
+	_tree.set_column_expand(COL_NAME, true)          # name takes the slack
+	_tree.set_column_expand(COL_MARK, false)         # flags hug their width
+	_tree.set_column_custom_minimum_width(COL_MARK, 100)
+	_tree.set_column_expand(COL_RANGE, false)        # range hugs its own width
+	_tree.set_column_custom_minimum_width(COL_RANGE, 200)
 	_tree.item_selected.connect(_on_item_selected)
 	vbox.add_child(_tree)
 
@@ -173,20 +199,23 @@ func _populate_tree() -> void:
 		var eff_str := SoundChainValidator.format_ranges(eff)
 
 		var titem := _tree.create_item(root)
-		var label := "%s   [%s]" % [track, main_str]
+		var range_text := main_str
 		if eff_str != main_str:
-			label += " (eff %s)" % eff_str
-		_apply_issue_marker(titem, track, label)
-		titem.set_metadata(0, {"kind": "track", "name": track})
+			range_text += "   (eff %s)" % eff_str
+		_apply_issue_marker(titem, track, track)
+		titem.set_text(COL_RANGE, range_text)
+		titem.set_metadata(COL_NAME, {"kind": "track", "name": track})
 		_track_items[track] = titem
 
 		for seg_name in SoundChain.get_track_segments(track):
 			var seg := SoundChain.get_segment(seg_name)
 			var sitem := _tree.create_item(titem)
-			var slabel := "%s   [%s]" % [seg_name,
-				SoundChainValidator.format_ranges(seg.get("progress", []))]
-			_apply_issue_marker(sitem, seg_name, slabel)
-			sitem.set_metadata(0, {"kind": "segment", "name": seg_name})
+			_apply_issue_marker(sitem, seg_name, seg_name)
+			sitem.set_text(COL_RANGE, SoundChainValidator.format_ranges(seg.get("progress", [])))
+			_apply_role_markers(sitem, starts.has(seg_name),
+				(seg.get("next", {}) as Dictionary).has(SoundChain.END_TRACK),
+				int(seg.get("repeat", 1)))
+			sitem.set_metadata(COL_NAME, {"kind": "segment", "name": seg_name})
 			_seg_items[seg_name] = sitem
 
 	_map.set_lanes(lanes)
@@ -197,10 +226,28 @@ func _populate_tree() -> void:
 ## has validation issues.
 func _apply_issue_marker(item: TreeItem, target: String, label: String) -> void:
 	if _issues_by_target.has(target):
-		item.set_text(0, "⚠️ " + label)
-		item.set_tooltip_text(0, "\n".join(_issues_by_target[target]))
+		item.set_text(COL_NAME, "⚠️ " + label)
+		item.set_tooltip_text(COL_NAME, "\n".join(_issues_by_target[target]))
 	else:
-		item.set_text(0, label)
+		item.set_text(COL_NAME, label)
+
+
+## Put start/ending/repeat flag emojis in COL_MARK with an explanatory hover hint.
+func _apply_role_markers(item: TreeItem, is_start: bool, is_end: bool, repeat: int) -> void:
+	var marks := ""
+	var hints: Array[String] = []
+	if is_start:
+		marks += MARK_START
+		hints.append(HINT_START)
+	if is_end:
+		marks += MARK_END
+		hints.append(HINT_END)
+	if repeat != 1:
+		marks += MARK_REPEAT
+		hints.append(HINT_REPEAT % repeat)
+	item.set_text(COL_MARK, marks)
+	if not hints.is_empty():
+		item.set_tooltip_text(COL_MARK, "\n".join(hints))
 
 # ---------------------------------------------------------------------------
 # Eligibility (grey-out) — recomputed whenever progress changes
@@ -214,11 +261,12 @@ func _refresh_eligibility() -> void:
 
 
 func _apply_eligibility(item: TreeItem, eligible: bool) -> void:
-	item.set_selectable(0, eligible)
-	if eligible:
-		item.clear_custom_color(0)
-	else:
-		item.set_custom_color(0, COL_GREY)
+	for col in TREE_COLUMNS:
+		item.set_selectable(col, eligible)
+		if eligible:
+			item.clear_custom_color(col)
+		else:
+			item.set_custom_color(col, COL_GREY)
 
 # ---------------------------------------------------------------------------
 # Signal handlers — transport & tree
@@ -245,7 +293,7 @@ func _on_item_selected() -> void:
 	var item := _tree.get_selected()
 	if item == null:
 		return
-	var meta = item.get_metadata(0)
+	var meta = item.get_metadata(COL_NAME)
 	if typeof(meta) == TYPE_DICTIONARY:
 		_start_target(meta["kind"], meta["name"])
 
@@ -267,14 +315,36 @@ func _start_target(kind: String, target_name: String) -> void:
 # ---------------------------------------------------------------------------
 
 func _on_segment_changed(seg_name: String, _track: String) -> void:
-	# Move the "now playing" highlight to the current segment.
-	if _current_item != null and is_instance_valid(_current_item):
-		_current_item.clear_custom_bg_color(0)
+	# Clear the previous now-playing + reachable-next tints.
+	_clear_row_bg(_current_item)
+	for it in _next_items:
+		_clear_row_bg(it)
+	_next_items.clear()
 	_current_item = null
+
 	if seg_name != "" and _seg_items.has(seg_name):
+		# Tint everything reachable from the current segment (its `next` targets),
+		# then paint the current segment on top so it stays distinct.
+		var nxt: Dictionary = SoundChain.get_segment(seg_name).get("next", {})
+		for target in nxt:
+			if target != SoundChain.END_TRACK and _seg_items.has(target):
+				var it: TreeItem = _seg_items[target]
+				_set_row_bg(it, COL_NEXT_BG)
+				_next_items.append(it)
 		_current_item = _seg_items[seg_name]
-		_current_item.set_custom_bg_color(0, COL_CURRENT_BG)
+		_set_row_bg(_current_item, COL_CURRENT_BG)
 	_refresh_status()
+
+
+func _set_row_bg(item: TreeItem, color: Color) -> void:
+	for col in TREE_COLUMNS:
+		item.set_custom_bg_color(col, color)
+
+
+func _clear_row_bg(item: TreeItem) -> void:
+	if item != null and is_instance_valid(item):
+		for col in TREE_COLUMNS:
+			item.clear_custom_bg_color(col)
 
 
 func _on_playback_changed(playing: bool, paused: bool) -> void:
