@@ -152,10 +152,12 @@ func _build_ui() -> void:
 	_slider.value_changed.connect(_on_progress_changed)
 	prow.add_child(_slider)
 
-	# --- Track map (marker follows the slider; track names are click-to-start) ---
+	# --- Track map (marker follows the slider; names click-to-start; bars are
+	#     drag-editable and persist the track range) ---
 	_map = TrackMap.new()
 	_map.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_map.track_activated.connect(_on_map_track_activated)
+	_map.range_committed.connect(_on_map_range_committed)
 	vbox.add_child(_map)
 
 	# --- Playlist ---
@@ -197,25 +199,13 @@ func _populate_tree() -> void:
 		var main_range: Array = cfg.get("progress", [])
 		var starts: Dictionary = cfg.get("start_segments", {})
 
-		# Effective startable range = main ∩ (union of start-segment ranges).
-		# Only surfaced when it actually narrows the main range (i.e. the start
-		# segments don't cover all of it) — otherwise it's just noise.
-		var starts_union: Array = []
-		for sname in starts:
-			starts_union = SoundChainValidator.merge_ranges(
-				starts_union, SoundChain.get_segment(sname).get("progress", []))
-		var eff := SoundChainValidator.intersect_ranges(main_range, starts_union)
-		lanes.append({"name": track, "ranges": eff})
-		var main_str := SoundChainValidator.format_ranges(
-			SoundChainValidator.normalize_ranges(main_range))
-		var eff_str := SoundChainValidator.format_ranges(eff)
+		# The map edits the track's own (main) range, so that's what its bar shows.
+		lanes.append({"name": track,
+			"ranges": SoundChainValidator.normalize_ranges(main_range)})
 
 		var titem := _tree.create_item(root)
-		var range_text := main_str
-		if eff_str != main_str:
-			range_text += "   (eff %s)" % eff_str
 		_apply_issue_marker(titem, track, track)
-		titem.set_text(COL_RANGE, range_text)
+		titem.set_text(COL_RANGE, _track_range_text(track))
 		titem.set_metadata(COL_NAME, {"kind": "track", "name": track})
 		_track_items[track] = titem
 
@@ -312,6 +302,97 @@ func _on_item_selected() -> void:
 
 func _on_map_track_activated(track_name: String) -> void:
 	_start_target("track", track_name)
+
+
+## A bar edit landed: update the engine live, persist to the main metadata file,
+## and refresh the track's range column + grey-out state.
+func _on_map_range_committed(track_name: String, ranges: Array) -> void:
+	SoundChain.set_track_progress(track_name, ranges)
+	_save_track_range(track_name, ranges)
+	if _track_items.has(track_name):
+		_track_items[track_name].set_text(COL_RANGE, _track_range_text(track_name))
+	_refresh_eligibility()
+
+
+## The COL_RANGE text for a track: main range, plus "(eff …)" when the start
+## segments narrow it.
+func _track_range_text(track: String) -> String:
+	var cfg := SoundChain.get_track_config(track)
+	var main_range: Array = cfg.get("progress", [])
+	var starts_union: Array = []
+	for sname in cfg.get("start_segments", {}):
+		starts_union = SoundChainValidator.merge_ranges(
+			starts_union, SoundChain.get_segment(sname).get("progress", []))
+	var eff := SoundChainValidator.intersect_ranges(main_range, starts_union)
+	var main_str := SoundChainValidator.format_ranges(
+		SoundChainValidator.normalize_ranges(main_range))
+	var eff_str := SoundChainValidator.format_ranges(eff)
+	return main_str if eff_str == main_str else "%s   (eff %s)" % [main_str, eff_str]
+
+
+## Write a track's new progress into the main metadata file, preserving the
+## documented style (2-space indent, collapsed `progress` arrays).
+func _save_track_range(track_name: String, ranges: Array) -> void:
+	var f := FileAccess.open(METADATA_PATH, FileAccess.READ)
+	if f == null:
+		push_error("SoundChain UI: cannot read " + METADATA_PATH)
+		return
+	var json := JSON.new()
+	var err := json.parse(f.get_as_text())
+	f.close()
+	if err != OK:
+		push_error("SoundChain UI: metadata parse error, not saving")
+		return
+	var data = json.get_data()
+	if not (data is Dictionary and (data.get("tracks", {}) as Dictionary).has(track_name)):
+		push_error("SoundChain UI: track '%s' not found in metadata" % track_name)
+		return
+	data["tracks"][track_name]["progress"] = ranges
+	var w := FileAccess.open(METADATA_PATH, FileAccess.WRITE)
+	if w == null:
+		push_error("SoundChain UI: cannot write " + METADATA_PATH)
+		return
+	w.store_string(_to_json(data, 0) + "\n")
+	w.close()
+
+
+## Minimal JSON serializer matching the metadata style: 2-space indent, numeric
+## arrays inline ([0.0, 0.3]), arrays-of-arrays spaced ([ [0.0, 0.3] ]), whole
+## `bpm`/`lookahead_beats` kept as ints, other numbers as decimals.
+func _to_json(v: Variant, indent: int, key: String = "") -> String:
+	match typeof(v):
+		TYPE_DICTIONARY:
+			if (v as Dictionary).is_empty():
+				return "{}"
+			var pad := "  ".repeat(indent + 1)
+			var parts: Array[String] = []
+			for k in v:
+				parts.append('%s"%s": %s' % [pad, k, _to_json(v[k], indent + 1, k)])
+			return "{\n" + ",\n".join(parts) + "\n" + "  ".repeat(indent) + "}"
+		TYPE_ARRAY:
+			var all_num := true
+			for e in v:
+				var t := typeof(e)
+				if t != TYPE_INT and t != TYPE_FLOAT:
+					all_num = false
+					break
+			var items: Array[String] = []
+			for e in v:
+				items.append(_to_json(e, indent))
+			return ("[" + ", ".join(items) + "]") if all_num else ("[ " + ", ".join(items) + " ]")
+		TYPE_STRING:
+			return '"%s"' % v
+		TYPE_BOOL:
+			return "true" if v else "false"
+		TYPE_INT:
+			return str(v)
+		TYPE_FLOAT:
+			if key == "bpm" or key == "lookahead_beats":
+				return str(int(round(v)))
+			var s := str(snappedf(v, 0.0001))
+			return s if s.contains(".") else s + ".0"
+		_:
+			return "null"
 
 
 ## Single entry point shared by the playlist tree and the track map: start a

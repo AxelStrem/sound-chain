@@ -394,6 +394,15 @@ func is_track_eligible(track_name: String) -> bool:
 func is_segment_eligible(seg_name: String) -> bool:
 	return _valid_for_progress(_segments.get(seg_name, {}))
 
+
+## Replace a track's allowed progress range at runtime (used by the map editor).
+## Updates the live selection table without reloading/interrupting playback.
+func set_track_progress(track_name: String, progress: Array) -> void:
+	if _tracks.has(track_name):
+		_tracks[track_name]["progress"] = progress.duplicate(true)
+	if _metadata.has("tracks") and _metadata["tracks"].has(track_name):
+		_metadata["tracks"][track_name]["progress"] = progress.duplicate(true)
+
 # ---------------------------------------------------------------------------
 # Engine callbacks
 # ---------------------------------------------------------------------------
