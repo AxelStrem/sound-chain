@@ -14,6 +14,13 @@ const COL_GREY       := Color(0.32, 0.32, 0.36)   # dim: "can't start here"
 const COL_CURRENT_BG := Color(0.18, 0.38, 0.22)   # now playing
 const COL_NEXT_BG    := Color(0.16, 0.24, 0.34)   # reachable from now playing
 
+## Concentric border drawn over the current row when it can loop back to itself:
+## outer green → blue → inner green.  (TreeItem can't do multi-ring borders, so
+## it's painted in an overlay; see [method _draw_loop_overlay].)
+const COL_LOOP_GREEN := Color(0.35, 0.80, 0.45)
+const COL_LOOP_BLUE  := Color(0.35, 0.60, 1.00)
+const LOOP_BORDER_W  := 2.0
+
 ## Playlist columns: name, flags (start / ending / repeat), progress range(s).
 const TREE_COLUMNS := 3
 const COL_NAME     := 0
@@ -29,7 +36,7 @@ const HINT_END       := "🏁 Ending segment — can hand off to another track (
 const HINT_REPEAT    := "🔁 Repeats %d× before advancing"
 
 var _tree              : Tree
-var _status            : Label
+var _status            : RichTextLabel
 var _slider            : HSlider
 var _map               : TrackMap
 
@@ -57,6 +64,7 @@ func _ready() -> void:
 
 	SoundChain.segment_changed.connect(_on_segment_changed)
 	SoundChain.playback_changed.connect(_on_playback_changed)
+	SoundChain.beat_advanced.connect(_on_beat_advanced)
 	_refresh_status()
 
 	SoundChain.start()   # autostart a normal metadata-driven playthrough
@@ -119,7 +127,11 @@ func _build_ui() -> void:
 	status_margin.add_theme_constant_override("margin_top", 12)
 	status_margin.add_theme_constant_override("margin_bottom", 12)
 	vbox.add_child(status_margin)
-	_status = Label.new()
+	_status = RichTextLabel.new()
+	_status.bbcode_enabled = true          # so the variation can be tinted blue
+	_status.fit_content = true
+	_status.scroll_active = false
+	_status.autowrap_mode = TextServer.AUTOWRAP_OFF
 	status_margin.add_child(_status)
 
 	# --- Progress row (label width matches the map's name column, so the slider
@@ -353,12 +365,22 @@ func _on_playback_changed(playing: bool, paused: bool) -> void:
 	_refresh_status()
 
 
+func _on_beat_advanced(_beat: int) -> void:
+	_refresh_status()
+
+
 func _refresh_status() -> void:
 	var seg := SoundChain.get_current_segment()
 	var track := SoundChain.get_current_track()
 	if not _playing or seg == "":
 		_status.text = "⏹ stopped"
-	elif _paused:
-		_status.text = "⏸ paused — %s / %s" % [track, seg]
-	else:
-		_status.text = "▶ %s / %s" % [track, seg]
+		return
+	var head := "⏸ paused" if _paused else "▶"
+	var variation := SoundChain.get_current_variation()
+	var var_txt := ""
+	if variation != "":
+		var_txt = "  [color=#5aa6ff]— %s[/color]" % variation
+	_status.text = "%s  [beat %d]  %s / %s%s  -  %d beats, pass %d/%d" % [
+		head, SoundChain.get_current_beat(), track, seg, var_txt,
+		SoundChain.get_current_length_beats(),
+		SoundChain.get_current_pass(), SoundChain.get_current_total_passes()]

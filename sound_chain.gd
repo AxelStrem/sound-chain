@@ -46,6 +46,9 @@ signal segment_changed(segment_name: String, track_name: String)
 ## Emitted when playback starts, pauses/resumes, or stops.
 signal playback_changed(playing: bool, paused: bool)
 
+## Emitted once per beat while playing (carries the current absolute beat).
+signal beat_advanced(beat: int)
+
 # ---------------------------------------------------------------------------
 # Runtime state
 # ---------------------------------------------------------------------------
@@ -66,6 +69,7 @@ var _beat       := 0    ## Current beat number (monotonically increasing)
 var _cur_name   := ""   ## Currently-playing segment name
 var _cur_seg    := {}   ## Currently-playing segment data
 var _cur_track  := ""   ## Track owning the currently-playing segment
+var _cur_variation := "" ## The `audio` variation chosen for the current pass
 var _cur_start  := 0    ## Beat on which current segment (this pass) started
 var _reps_left  := 0    ## Remaining extra `repeat` passes of the current segment
 
@@ -336,6 +340,11 @@ func get_bpm() -> float:       return _bpm
 func get_playback_speed() -> float: return _playback_speed
 func get_current_segment() -> String: return _cur_name
 func get_current_track() -> String: return _cur_track
+func get_current_variation() -> String: return _cur_variation
+func get_current_beat() -> int: return _beat
+func get_current_length_beats() -> int: return int(_cur_seg.get("length_beats", DEFAULT_LENGTH_BEATS))
+func get_current_total_passes() -> int: return maxi(1, int(_cur_seg.get("repeat", 1)))
+func get_current_pass() -> int: return get_current_total_passes() - _reps_left
 func get_history() -> Array[String]: return _history.duplicate()
 
 
@@ -450,6 +459,8 @@ func _on_beat() -> void:
 	# Safety: nothing to schedule against
 	if _cur_name == "":
 		return
+
+	beat_advanced.emit(_beat)
 
 	var end_beat  : int = _cur_start + _cur_seg.get("length_beats", DEFAULT_LENGTH_BEATS)
 	var lookahead : int = _metadata.get("lookahead_beats", DEFAULT_LOOKAHEAD)
@@ -660,9 +671,11 @@ func _pick_any_valid() -> String:
 ##   - bare name:  "a0.wav"            (prefixed with _audio_base)
 ##   - bare name without extension: "a0"  (tries .wav then .ogg)
 func _resolve_audio(seg: Dictionary, seg_name: String) -> String:
+	_cur_variation = ""
 	var variations: Array = seg.get("audio", [])
 	if not variations.is_empty():
 		var p := str(variations[_rng.randi() % variations.size()])
+		_cur_variation = p
 		if p.begins_with("res://") or p.begins_with("user://") or p.begins_with("/") or (p.length() >= 2 and p[1] == ":"):
 			# Absolute path — use as-is
 			return p
@@ -755,6 +768,7 @@ func _stop_all() -> void:
 	_cur_name  = ""
 	_cur_seg   = {}
 	_cur_track = ""
+	_cur_variation = ""
 	_reps_left = 0
 	_next_name = ""
 	_next_done = false

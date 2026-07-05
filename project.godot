@@ -21,7 +21,7 @@ SoundChain="*res://sound_chain.gd"
 
 [display]
 
-window/size/viewport_width=1500
+window/size/viewport_width=1800
 window/size/viewport_height=2000
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
