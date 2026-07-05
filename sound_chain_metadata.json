@@ -2,25 +2,25 @@
   "bpm": 171,
   "lookahead_beats": 3,
   "tracks": {
-	"pianoloops": {
-	  "probability": 1.0,
-	  "progress": [ [0.0, 0.3] ]
-	},
-	"noisestep": {
-	  "probability": 1.0,
-	  "progress": [ [0.0, 1.0] ]
-	},
-	"guitargods": {
-	  "probability": 1.0,
-	  "progress": [ [0.3, 0.8] ]
-	},
-	"aphex": {
-	  "probability": 1.0,
-	  "progress": [ [0.3, 0.7] ]
-	},
-	"dnb": {
-	  "probability": 1.0,
-	  "progress": [ [0.4, 1.0] ]
-	}
+    "pianoloops": {
+      "probability": 1.0,
+      "progress": [ [0.0, 0.15], [0.3, 0.5]  ]
+    },
+    "noisestep": {
+      "probability": 1.0,
+      "progress": [ [0.0, 0.6] ]
+    },
+    "guitargods": {
+      "probability": 1.0,
+      "progress": [ [0.3, 0.8] ]
+    },
+    "aphex": {
+      "probability": 1.0,
+      "progress": [ [0.3, 0.7] ]
+    },
+    "dnb": {
+      "probability": 1.0,
+      "progress": [ [0.4, 1.0] ]
+    }
   }
 }
