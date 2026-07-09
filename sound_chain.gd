@@ -731,6 +731,8 @@ func _start_segment(seg_name: String, at_beat: int, fresh: bool = true) -> void:
 	if stream == null:
 		stream = _load_wav_fallback(path)
 	if stream == null:
+		stream = _load_ogg_fallback(path)
+	if stream == null:
 		push_error("SoundChain: failed to load audio: " + path)
 		return
 
@@ -901,6 +903,17 @@ func _load_wav_fallback(path: String) -> AudioStream:
 	stream.stereo = num_channels == 2
 	stream.data = pcm_data
 	return stream
+
+
+## Fallback loader for .ogg files when ResourceLoader can't handle
+## absolute filesystem paths (e.g. exported builds without TOOLS_ENABLED).
+## Uses AudioStreamOggVorbis.load_from_file() which is always available.
+func _load_ogg_fallback(path: String) -> AudioStream:
+	if not path.ends_with(".ogg"):
+		return null
+	if not FileAccess.file_exists(path):
+		return null
+	return AudioStreamOggVorbis.load_from_file(path)
 
 
 static func _decode_u16(data: PackedByteArray, offset: int) -> int:
