@@ -567,12 +567,12 @@ func _select_start_in_track(track: String) -> String:
 ## Falls back to the progress-closest track when none are strictly eligible.
 func _pick_track(exclude_current: bool) -> String:
 	var eligible := {}
-	for name in _tracks:
-		if not _valid_for_progress(_tracks[name]):
+	for xname in _tracks:
+		if not _valid_for_progress(_tracks[xname]):
 			continue
-		var w := maxf(0.0, float(_tracks[name].get("probability", 1.0)))
+		var w := maxf(0.0, float(_tracks[xname].get("probability", 1.0)))
 		if w > 0.0:
-			eligible[name] = w
+			eligible[xname] = w
 
 	if exclude_current and _cur_track != "" and eligible.size() > 1 and eligible.has(_cur_track):
 		eligible.erase(_cur_track)
@@ -597,11 +597,11 @@ func _pick_track(exclude_current: bool) -> String:
 func _closest_track_by_distance() -> String:
 	var best := ""
 	var best_dist := INF
-	for name in _tracks:
-		var d := _progress_distance(_tracks[name])
+	for xname in _tracks:
+		var d := _progress_distance(_tracks[xname])
 		if d < best_dist:
 			best_dist = d
-			best = name
+			best = xname
 	return best
 
 
