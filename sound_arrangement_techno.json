@@ -1,0 +1,96 @@
+{
+  "start_segments": {
+    "114-techno-intro": 1.0
+  },
+  "segments": [
+    {
+      "name": "114-techno-intro",
+      "audio": [
+        "114-Techno intro-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-techno-inbeat": 1.0
+      }
+    },
+    {
+      "name": "114-techno-inbeat",
+      "audio": [
+        "114-Techno inbeat 1-40",
+        "114-techno inbeat 2-40",
+        "114-techno inbeat 3-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-techno-inbeat": 1.0,
+        "114-techno-loop": 1.0
+      }
+    },
+    {
+      "name": "114-techno-loop",
+      "audio": [
+        "114-Techno loop 1-40",
+        "114-techno loop 2-40",
+        "114-techno loop 3-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-techno-loop": 2.0,
+        "114-techno-buildup": 1.0
+      }
+    },
+    {
+      "name": "114-techno-buildup",
+      "audio": [
+        "114-techno buildup 1-40",
+        "114-techno buildup 2-40",
+        "114-techno buildup 3-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-techno-buildup": 1.0,
+        "114-techno-buildup-final": 1.0
+      }
+    },
+    {
+      "name": "114-techno-buildup-final",
+      "audio": [
+        "114-techno buildup final 1-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-techno-breakdown": 1.0
+      }
+    },
+    {
+      "name": "114-techno-breakdown",
+      "audio": [
+        "114-techno breakdown-72"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 96,
+      "next": {
+        "114-techno-drop": 1.0
+      }
+    },
+    {
+      "name": "114-techno-drop",
+      "audio": [
+        "114-techno drop 1-40",
+        "114-techno drop 2-40",
+        "114-techno drop 3-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-techno-drop": 3.0,
+        "END_TRACK": 1.0
+      }
+    }
+  ]
+}

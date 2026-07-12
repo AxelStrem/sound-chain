@@ -4,7 +4,7 @@
   "tracks": {
     "pianoloops": {
       "probability": 1.0,
-      "progress": [ [0.0, 0.15], [0.3, 0.5]  ]
+      "progress": [ [0.0, 0.15], [0.3, 0.5] ]
     },
     "noisestep": {
       "probability": 1.0,
@@ -21,6 +21,10 @@
     "dnb": {
       "probability": 1.0,
       "progress": [ [0.4, 1.0] ]
+    },
+    "techno": {
+      "probability": 1.0,
+      "progress": [ [0.06, 0.7] ]
     }
   }
 }
