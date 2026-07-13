@@ -146,6 +146,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="130506">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="130507">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="1">
 								<Send>
 									<LomId Value="0" />
@@ -344,11 +361,11 @@
 						<ClipTimeable>
 							<ArrangerAutomation>
 								<Events>
-									<MidiClip Id="0" Time="848">
+									<MidiClip Id="0" Time="776">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="848" />
-										<CurrentEnd Value="880" />
+										<CurrentStart Value="776" />
+										<CurrentEnd Value="808" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -464,11 +481,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="1" Time="888">
+									<MidiClip Id="1" Time="816">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="888" />
-										<CurrentEnd Value="920" />
+										<CurrentStart Value="816" />
+										<CurrentEnd Value="848" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -586,11 +603,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="15" Time="928">
+									<MidiClip Id="15" Time="856">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="928" />
-										<CurrentEnd Value="960" />
+										<CurrentStart Value="856" />
+										<CurrentEnd Value="888" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -708,11 +725,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="2" Time="968">
+									<MidiClip Id="2" Time="896">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="968" />
-										<CurrentEnd Value="1000" />
+										<CurrentStart Value="896" />
+										<CurrentEnd Value="928" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -828,11 +845,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="4" Time="1008">
+									<MidiClip Id="4" Time="936">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1008" />
-										<CurrentEnd Value="1040" />
+										<CurrentStart Value="936" />
+										<CurrentEnd Value="968" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -948,11 +965,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="3" Time="1088">
+									<MidiClip Id="3" Time="1016">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1088" />
-										<CurrentEnd Value="1120" />
+										<CurrentStart Value="1016" />
+										<CurrentEnd Value="1048" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -1068,11 +1085,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="5" Time="1128">
+									<MidiClip Id="5" Time="1056">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1128" />
-										<CurrentEnd Value="1160" />
+										<CurrentStart Value="1056" />
+										<CurrentEnd Value="1088" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -1188,11 +1205,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="7" Time="1288">
+									<MidiClip Id="7" Time="1216">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1288" />
-										<CurrentEnd Value="1320" />
+										<CurrentStart Value="1216" />
+										<CurrentEnd Value="1248" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -1308,11 +1325,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="8" Time="1328">
+									<MidiClip Id="8" Time="1256">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1328" />
-										<CurrentEnd Value="1360" />
+										<CurrentStart Value="1256" />
+										<CurrentEnd Value="1288" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -1435,11 +1452,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="10" Time="1368">
+									<MidiClip Id="10" Time="1296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1368" />
-										<CurrentEnd Value="1400" />
+										<CurrentStart Value="1296" />
+										<CurrentEnd Value="1328" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -1572,11 +1589,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="16" Time="1408">
+									<MidiClip Id="16" Time="1336">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1408" />
-										<CurrentEnd Value="1440" />
+										<CurrentStart Value="1336" />
+										<CurrentEnd Value="1368" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -4362,7 +4379,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="37">
+																						<FileRef Id="57">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 268 SH Ride soft - Deep Fry.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 268 SH Ride soft - Deep Fry.wav" />
@@ -5559,7 +5576,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="37">
+																						<FileRef Id="57">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 262 SH Ride mid - Deep Fry.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 262 SH Ride mid - Deep Fry.wav" />
@@ -6757,7 +6774,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="39">
+																						<FileRef Id="59">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 256 SH Ride hard - Deep Fry.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 256 SH Ride hard - Deep Fry.wav" />

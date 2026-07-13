@@ -23,7 +23,7 @@
 				<ClipSlotsListWrapper LomId="0" />
 				<ArrangementClipsListWrapper LomId="0" />
 				<TakeLanesListWrapper LomId="0" />
-				<ViewData Value="{&quot;push-instrument-selected-notes&quot;: [36], &quot;push-note-repeat-rate&quot;: 0.5, &quot;push-note-repeat-enabled&quot;: false}" />
+				<ViewData Value="{&quot;push-instrument-selected-notes&quot;: [36], &quot;push-note-repeat-rate&quot;: 0.5, &quot;push-note-repeat-enabled&quot;: false, &quot;alternative_mode_locked&quot;: false}" />
 				<TakeLanes>
 					<TakeLanes />
 					<AreTakeLanesFolded Value="true" />
@@ -60,7 +60,7 @@
 					<AutomationLanes>
 						<AutomationLanes>
 							<AutomationLane Id="0">
-								<SelectedDevice Value="0" />
+								<SelectedDevice Value="1" />
 								<SelectedEnvelope Value="0" />
 								<IsContentSelectedInDocument Value="false" />
 								<LaneHeight Value="51" />
@@ -169,6 +169,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="130482">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="130483">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="1">
 								<Send>
 									<LomId Value="0" />
@@ -243,8 +260,8 @@
 							</ModulationTarget>
 						</SplitStereoPanR>
 						<Volume>
-							<LomId Value="0" />
-							<Manual Value="1" />
+							<LomId Value="542" />
+							<Manual Value="1.54881632" />
 							<MidiControllerRange>
 								<Min Value="0.0003162277571" />
 								<Max Value="1.99526238" />

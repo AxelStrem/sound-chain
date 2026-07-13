@@ -146,6 +146,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="130622">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="130623">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="1">
 								<Send>
 									<LomId Value="0" />
@@ -344,11 +361,11 @@
 						<Sample>
 							<ArrangerAutomation>
 								<Events>
-									<AudioClip Id="70" Time="888.625">
+									<AudioClip Id="70" Time="816.625">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="888.625" />
-										<CurrentEnd Value="891.375" />
+										<CurrentStart Value="816.625" />
+										<CurrentEnd Value="819.375" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -436,7 +453,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -534,11 +551,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="69" Time="892.75">
+									<AudioClip Id="69" Time="820.75">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="892.75" />
-										<CurrentEnd Value="895" />
+										<CurrentStart Value="820.75" />
+										<CurrentEnd Value="823" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -626,7 +643,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -687,11 +704,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="6" Time="896">
+									<AudioClip Id="6" Time="824">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="896" />
-										<CurrentEnd Value="899.5" />
+										<CurrentStart Value="824" />
+										<CurrentEnd Value="827.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -779,7 +796,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -840,11 +857,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="7" Time="900">
+									<AudioClip Id="7" Time="828">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="900" />
-										<CurrentEnd Value="902.5" />
+										<CurrentStart Value="828" />
+										<CurrentEnd Value="830.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -932,7 +949,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -993,11 +1010,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="15" Time="904.625">
+									<AudioClip Id="15" Time="832.625">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="904.625" />
-										<CurrentEnd Value="907.375" />
+										<CurrentStart Value="832.625" />
+										<CurrentEnd Value="835.375" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -1085,7 +1102,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -1183,11 +1200,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="14" Time="908.75">
+									<AudioClip Id="14" Time="836.75">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="908.75" />
-										<CurrentEnd Value="911" />
+										<CurrentStart Value="836.75" />
+										<CurrentEnd Value="839" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -1275,7 +1292,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -1336,11 +1353,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="13" Time="912.25">
+									<AudioClip Id="13" Time="840.25">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="912.25" />
-										<CurrentEnd Value="915.5" />
+										<CurrentStart Value="840.25" />
+										<CurrentEnd Value="843.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -1428,7 +1445,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -1489,11 +1506,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="12" Time="916">
+									<AudioClip Id="12" Time="844">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="916" />
-										<CurrentEnd Value="918.5" />
+										<CurrentStart Value="844" />
+										<CurrentEnd Value="846.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -1581,7 +1598,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -1642,11 +1659,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="11" Time="918.5">
+									<AudioClip Id="11" Time="846.5">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="918.5" />
-										<CurrentEnd Value="919" />
+										<CurrentStart Value="846.5" />
+										<CurrentEnd Value="847" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -1734,7 +1751,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -1795,11 +1812,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="10" Time="919">
+									<AudioClip Id="10" Time="847">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="919" />
-										<CurrentEnd Value="919.5" />
+										<CurrentStart Value="847" />
+										<CurrentEnd Value="847.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -1887,7 +1904,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -1948,11 +1965,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="80" Time="928.625">
+									<AudioClip Id="80" Time="856.625">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="928.625" />
-										<CurrentEnd Value="931.375" />
+										<CurrentStart Value="856.625" />
+										<CurrentEnd Value="859.375" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -2040,7 +2057,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -2138,11 +2155,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="79" Time="932.75">
+									<AudioClip Id="79" Time="860.75">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="932.75" />
-										<CurrentEnd Value="935" />
+										<CurrentStart Value="860.75" />
+										<CurrentEnd Value="863" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -2230,7 +2247,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -2291,11 +2308,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="78" Time="936">
+									<AudioClip Id="78" Time="864">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="936" />
-										<CurrentEnd Value="939.5" />
+										<CurrentStart Value="864" />
+										<CurrentEnd Value="867.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -2383,7 +2400,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -2444,11 +2461,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="77" Time="940">
+									<AudioClip Id="77" Time="868">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="940" />
-										<CurrentEnd Value="942.5" />
+										<CurrentStart Value="868" />
+										<CurrentEnd Value="870.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -2536,7 +2553,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -2597,11 +2614,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="76" Time="944.625">
+									<AudioClip Id="76" Time="872.625">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="944.625" />
-										<CurrentEnd Value="947.375" />
+										<CurrentStart Value="872.625" />
+										<CurrentEnd Value="875.375" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -2689,7 +2706,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -2787,11 +2804,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="75" Time="948.75">
+									<AudioClip Id="75" Time="876.75">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="948.75" />
-										<CurrentEnd Value="951" />
+										<CurrentStart Value="876.75" />
+										<CurrentEnd Value="879" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -2879,7 +2896,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -2940,11 +2957,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="74" Time="952.25">
+									<AudioClip Id="74" Time="880.25">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="952.25" />
-										<CurrentEnd Value="955.5" />
+										<CurrentStart Value="880.25" />
+										<CurrentEnd Value="883.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -3032,7 +3049,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -3093,11 +3110,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="73" Time="956">
+									<AudioClip Id="73" Time="884">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="956" />
-										<CurrentEnd Value="958.5" />
+										<CurrentStart Value="884" />
+										<CurrentEnd Value="886.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -3185,7 +3202,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -3246,11 +3263,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="72" Time="958.5">
+									<AudioClip Id="72" Time="886.5">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="958.5" />
-										<CurrentEnd Value="959" />
+										<CurrentStart Value="886.5" />
+										<CurrentEnd Value="887" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -3338,7 +3355,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -3399,11 +3416,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="71" Time="959">
+									<AudioClip Id="71" Time="887">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="959" />
-										<CurrentEnd Value="959.5" />
+										<CurrentStart Value="887" />
+										<CurrentEnd Value="887.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -3491,7 +3508,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />

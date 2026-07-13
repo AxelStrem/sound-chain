@@ -60,8 +60,8 @@
 					<AutomationLanes>
 						<AutomationLanes>
 							<AutomationLane Id="0">
-								<SelectedDevice Value="0" />
-								<SelectedEnvelope Value="0" />
+								<SelectedDevice Value="1" />
+								<SelectedEnvelope Value="2" />
 								<IsContentSelectedInDocument Value="false" />
 								<LaneHeight Value="51" />
 							</AutomationLane>
@@ -136,7 +136,7 @@
 						<ModulationSourceCount Value="0" />
 						<ParametersListWrapper LomId="0" />
 						<Pointee Id="98403" />
-						<LastSelectedTimeableIndex Value="0" />
+						<LastSelectedTimeableIndex Value="2" />
 						<LastSelectedClipEnvelopeIndex Value="0" />
 						<LastPresetRef>
 							<Value />
@@ -169,6 +169,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="130580">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="130581">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="1">
 								<Send>
 									<LomId Value="0" />
@@ -188,7 +205,7 @@
 							</TrackSendHolder>
 						</Sends>
 						<Speaker>
-							<LomId Value="0" />
+							<LomId Value="680" />
 							<Manual Value="true" />
 							<AutomationTarget Id="98408">
 								<LockEnvelope Value="0" />
@@ -243,8 +260,8 @@
 							</ModulationTarget>
 						</SplitStereoPanR>
 						<Volume>
-							<LomId Value="0" />
-							<Manual Value="1" />
+							<LomId Value="726" />
+							<Manual Value="0.6237348318" />
 							<MidiControllerRange>
 								<Min Value="0.0003162277571" />
 								<Max Value="1.99526238" />

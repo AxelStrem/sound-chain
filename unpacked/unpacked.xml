@@ -1,6 +1,6 @@
 <Ableton MajorVersion="5" MinorVersion="12.0_12402" SchemaChangeCount="2" Creator="Ableton Live 12.4.2" Revision="a687113d716f39a6a38af4d25e05391da53174c6">
 	<LiveSet>
-		<NextPointeeId Value="124923" />
+		<NextPointeeId Value="137209" />
 		<OverwriteProtectionNumber Value="3076" />
 		<LomId Value="4" />
 		<LomIdView Value="2" />
@@ -33,11 +33,25 @@
 				</MidiTrack>
 			<MidiTrack Id="97" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
+			<GroupTrack Id="137" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
+				</GroupTrack>
 			<AudioTrack Id="47" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
 				</AudioTrack>
+			<AudioTrack Id="136" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
+				</AudioTrack>
+			<MidiTrack Id="139" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
+			<MidiTrack Id="140" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
+			<MidiTrack Id="138" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
 			<MidiTrack Id="95" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
 			<MidiTrack Id="54" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
+			<MidiTrack Id="135" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
+			<MidiTrack Id="146" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
 			<GroupTrack Id="61" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
 				</GroupTrack>
@@ -91,21 +105,29 @@
 				</GroupTrack>
 			<MidiTrack Id="68" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
+			<MidiTrack Id="142" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
 			<MidiTrack Id="39" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
 			<GroupTrack Id="83" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
 				</GroupTrack>
 			<MidiTrack Id="57" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
+			<MidiTrack Id="145" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
 			<MidiTrack Id="43" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
 			<MidiTrack Id="70" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
+			<GroupTrack Id="144" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
+				</GroupTrack>
+			<MidiTrack Id="58" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
+			<MidiTrack Id="143" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
 			<GroupTrack Id="63" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
 				</GroupTrack>
 			<MidiTrack Id="36" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
-				</MidiTrack>
-			<MidiTrack Id="58" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
 			<MidiTrack Id="115" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
@@ -143,15 +165,11 @@
 				</AudioTrack>
 			<AudioTrack Id="105" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
 				</AudioTrack>
-			<GroupTrack Id="110" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
-				</GroupTrack>
-			<AudioTrack Id="109" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
-				</AudioTrack>
-			<MidiTrack Id="108" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
-				</MidiTrack>
 			<AudioTrack Id="111" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
 				</AudioTrack>
 			<ReturnTrack Id="2" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
+				</ReturnTrack>
+			<ReturnTrack Id="141" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
 				</ReturnTrack>
 			<ReturnTrack Id="3" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
 				</ReturnTrack>
@@ -181,16 +199,10 @@
 						<Automation>
 							<Events>
 								<EnumEvent Id="1193" Time="-63072000" Value="201" />
-								<EnumEvent Id="1191" Time="2160" Value="303" />
-								<EnumEvent Id="1190" Time="2216" Value="201" />
-								<EnumEvent Id="1189" Time="2224" Value="303" />
-								<EnumEvent Id="1188" Time="2280" Value="201" />
-								<EnumEvent Id="1187" Time="2538" Value="201" />
-								<EnumEvent Id="1186" Time="2588" Value="201" />
-								<EnumEvent Id="1185" Time="2634" Value="201" />
-								<EnumEvent Id="1184" Time="2684" Value="201" />
-								<EnumEvent Id="1183" Time="2778" Value="201" />
-								<EnumEvent Id="1182" Time="2828" Value="201" />
+								<EnumEvent Id="1203" Time="2088" Value="303" />
+								<EnumEvent Id="1202" Time="2144" Value="201" />
+								<EnumEvent Id="1201" Time="2152" Value="303" />
+								<EnumEvent Id="1200" Time="2208" Value="201" />
 							</Events>
 							<AutomationTransformViewState>
 								<IsTransformPending Value="false" />
@@ -205,9 +217,9 @@
 						<Automation>
 							<Events>
 								<FloatEvent Id="5266" Time="-63072000" Value="114" />
-								<FloatEvent Id="5620" Time="2440" Value="114" />
-								<FloatEvent Id="5619" Time="2456" Value="114" />
-								<FloatEvent Id="5618" Time="2456" Value="171" />
+								<FloatEvent Id="5623" Time="2368" Value="114" />
+								<FloatEvent Id="5622" Time="2384" Value="114" />
+								<FloatEvent Id="5621" Time="2384" Value="171" />
 							</Events>
 							<AutomationTransformViewState>
 								<IsTransformPending Value="false" />
@@ -388,7 +400,7 @@
 					</SplitStereoPanR>
 					<Volume>
 						<LomId Value="68" />
-						<Manual Value="0.3349654078" />
+						<Manual Value="1" />
 						<MidiControllerRange>
 							<Min Value="0.0003162277571" />
 							<Max Value="1.99526238" />
@@ -651,13 +663,13 @@
 							<ViewData Value="{}" />
 							<PluginDesc>
 								<Vst3PluginInfo Id="0">
-									<WinPosX Value="506" />
-									<WinPosY Value="875" />
+									<WinPosX Value="2625" />
+									<WinPosY Value="1349" />
 									<NumAudioInputs Value="1" />
 									<NumAudioOutputs Value="1" />
 									<IsPlaceholderDevice Value="false" />
 									<Preset>
-										<Vst3Preset Id="97">
+										<Vst3Preset Id="117">
 											<OverwriteProtectionNumber Value="3076" />
 											<MpeEnabled Value="0" />
 											<MpeSettings>
@@ -4841,6 +4853,7 @@
 		</PreHearTrack>
 		<SendsPre>
 			<SendPreBool Id="0" Value="false" />
+			<SendPreBool Id="2" Value="false" />
 			<SendPreBool Id="1" Value="false" />
 		</SendsPre>
 		<Scenes>
@@ -5032,17 +5045,17 @@
 		<Transport>
 			<PhaseNudgeTempo Value="10" />
 			<LoopOn Value="true" />
-			<LoopStart Value="816" />
-			<LoopLength Value="64" />
+			<LoopStart Value="3168" />
+			<LoopLength Value="32" />
 			<LoopIsSongStart Value="false" />
-			<CurrentTime Value="0" />
+			<CurrentTime Value="3017.1835999999998" />
 			<PunchIn Value="false" />
 			<PunchOut Value="false" />
 			<MetronomeTickDuration Value="0" />
 			<DrawMode Value="false" />
 		</Transport>
 		<SessionScrollPos X="-2953" Y="0" />
-		<SelectedBreakpointValue Value="0" />
+		<SelectedBreakpointValue Value="0.5440000296" />
 		<SignalModulations />
 		<GlobalQuantisation Value="4" />
 		<AutoQuantisation Value="0" />
@@ -5055,21 +5068,21 @@
 			<Fixed Value="false" />
 		</Grid>
 		<ScaleInformation>
-			<Root Value="0" />
+			<Root Value="3" />
 			<Name Value="0" />
 		</ScaleInformation>
 		<InKey Value="true" />
 		<SmpteFormat Value="0" />
 		<TimeSelection>
-			<AnchorTime Value="0" />
-			<OtherTime Value="0" />
+			<AnchorTime Value="3000" />
+			<OtherTime Value="3000" />
 		</TimeSelection>
 		<SequencerNavigator>
 			<BeatTimeHelper>
-				<CurrentZoom Value="0.824934217782113621" />
+				<CurrentZoom Value="3.0056083121624635" />
 			</BeatTimeHelper>
-			<ScrollerPos X="0" Y="-1577" />
-			<ClientSize X="1181" Y="737" />
+			<ScrollerPos X="0" Y="-2408" />
+			<ClientSize X="1181" Y="732" />
 		</SequencerNavigator>
 		<IsContentSplitterOpen Value="true" />
 		<IsExpressionSplitterOpen Value="true" />
@@ -5127,364 +5140,364 @@
 			<Locators>
 				<Locator Id="6">
 					<LomId Value="0" />
-					<Time Value="2600" />
+					<Time Value="2528" />
 					<Name Value="171-aphex-pre-01" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="7">
 					<LomId Value="0" />
-					<Time Value="2744" />
+					<Time Value="2672" />
 					<Name Value="171-dnb-intro" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="8">
 					<LomId Value="0" />
-					<Time Value="2920" />
+					<Time Value="3072" />
 					<Name Value="171-dnb fullon" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="9">
 					<LomId Value="0" />
-					<Time Value="1560" />
+					<Time Value="1488" />
 					<Name Value="114-pianoloop-columbo-01" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="13">
 					<LomId Value="0" />
-					<Time Value="1960" />
+					<Time Value="1888" />
 					<Name Value="114-pianoloop-piano intro-07" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="14">
 					<LomId Value="0" />
-					<Time Value="1920" />
+					<Time Value="1848" />
 					<Name Value="114-pianoloop-piano intro-06" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="15">
 					<LomId Value="0" />
-					<Time Value="1880" />
+					<Time Value="1808" />
 					<Name Value="114-pianoloop-piano intro-05" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="16">
 					<LomId Value="0" />
-					<Time Value="1840" />
+					<Time Value="1768" />
 					<Name Value="114-pianoloop-piano intro-04" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="17">
 					<LomId Value="0" />
-					<Time Value="1800" />
+					<Time Value="1728" />
 					<Name Value="114-pianoloop-piano intro-03" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="18">
 					<LomId Value="0" />
-					<Time Value="1760" />
+					<Time Value="1688" />
 					<Name Value="114-pianoloop-piano intro-02" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="19">
 					<LomId Value="0" />
-					<Time Value="1720" />
+					<Time Value="1648" />
 					<Name Value="114-pianoloop-piano intro-01" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="20">
 					<LomId Value="0" />
-					<Time Value="2040" />
+					<Time Value="1968" />
 					<Name Value="114-pianoloop-piano intro-09" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="21">
 					<LomId Value="0" />
-					<Time Value="1680" />
+					<Time Value="1608" />
 					<Name Value="114-pianoloop-jingle-02" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="22">
 					<LomId Value="0" />
-					<Time Value="1640" />
+					<Time Value="1568" />
 					<Name Value="114-pianoloop-jingle-01" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="23">
 					<LomId Value="0" />
-					<Time Value="1600" />
+					<Time Value="1528" />
 					<Name Value="114-pianoloop-columbo-02" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="24">
 					<LomId Value="0" />
-					<Time Value="2080" />
+					<Time Value="2008" />
 					<Name Value="114-pianoloop-piano intro-10" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="25">
 					<LomId Value="0" />
-					<Time Value="2120" />
+					<Time Value="2048" />
 					<Name Value="114-pianoloop-piano intro-11" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="26">
 					<LomId Value="0" />
-					<Time Value="2456" />
+					<Time Value="2384" />
 					<Name Value="171-aphex intro-01" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="27">
 					<LomId Value="0" />
-					<Time Value="2000" />
+					<Time Value="1928" />
 					<Name Value="114-pianoloop-piano intro-08" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="28">
 					<LomId Value="0" />
-					<Time Value="2160" />
+					<Time Value="2088" />
 					<Name Value="114-guitar gods intro 7/8 -01" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="29">
 					<LomId Value="0" />
-					<Time Value="744" />
+					<Time Value="672" />
 					<Name Value="114-Noisestep intro" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="30">
 					<LomId Value="0" />
-					<Time Value="816" />
+					<Time Value="744" />
 					<Name Value="114-Noisestep-inbeat" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="31">
 					<LomId Value="0" />
-					<Time Value="888" />
+					<Time Value="816" />
 					<Name Value="114-Noisestep-beats-pre-1" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="32">
 					<LomId Value="0" />
-					<Time Value="928" />
+					<Time Value="856" />
 					<Name Value="114-Noisestep-beats-pre-2" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="33">
 					<LomId Value="0" />
-					<Time Value="968" />
+					<Time Value="896" />
 					<Name Value="114-Noisestep-beats-pre-3" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="34">
 					<LomId Value="0" />
-					<Time Value="1008" />
+					<Time Value="936" />
 					<Name Value="114-Noisestep-beats-pre-4" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="35">
 					<LomId Value="0" />
-					<Time Value="1048" />
+					<Time Value="976" />
 					<Name Value="114-Noisestep-drop" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="36">
 					<LomId Value="0" />
-					<Time Value="1128" />
+					<Time Value="1056" />
 					<Name Value="114-Noisestep-afterdrop-2" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="37">
 					<LomId Value="0" />
-					<Time Value="1088" />
+					<Time Value="1016" />
 					<Name Value="114-Noisestep-afterdrop-1" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="38">
 					<LomId Value="0" />
-					<Time Value="1168" />
+					<Time Value="1096" />
 					<Name Value="114-Noisestep-ending" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="39">
 					<LomId Value="0" />
-					<Time Value="1208" />
+					<Time Value="1136" />
 					<Name Value="114-Noisestep-weirdness-no-drums-1" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="40">
 					<LomId Value="0" />
-					<Time Value="1248" />
+					<Time Value="1176" />
 					<Name Value="114-Noisestep-weirdness-1" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="41">
 					<LomId Value="0" />
-					<Time Value="1288" />
+					<Time Value="1216" />
 					<Name Value="114-Noisestep-weirdness-2" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="42">
 					<LomId Value="0" />
-					<Time Value="1328" />
+					<Time Value="1256" />
 					<Name Value="114-Noisestep-weirdness-3" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="43">
 					<LomId Value="0" />
-					<Time Value="1368" />
+					<Time Value="1296" />
 					<Name Value="114-Noisestep-weirdness-4" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="44">
 					<LomId Value="0" />
-					<Time Value="1408" />
+					<Time Value="1336" />
 					<Name Value="114-Noisestep-weirdness-5" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="45">
 					<LomId Value="0" />
-					<Time Value="1448" />
+					<Time Value="1376" />
 					<Name Value="114-Noisestep-weirdness-6" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="46">
 					<LomId Value="0" />
-					<Time Value="1488" />
+					<Time Value="1416" />
 					<Name Value="114-Noisestep-weirdness-atmo" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="47">
 					<LomId Value="0" />
-					<Time Value="2288" />
+					<Time Value="2216" />
 					<Name Value="114-guitar gods loop base 01" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="48">
 					<LomId Value="0" />
-					<Time Value="3016" />
+					<Time Value="3264" />
 					<Name Value="END" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="49">
 					<LomId Value="0" />
-					<Time Value="2328" />
+					<Time Value="2256" />
 					<Name Value="114-guitar gods loop base 02" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="50">
 					<LomId Value="0" />
-					<Time Value="2368" />
+					<Time Value="2296" />
 					<Name Value="114-guitar gods breakdown" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="51">
 					<LomId Value="0" />
-					<Time Value="2408" />
+					<Time Value="2336" />
 					<Name Value="114-guitar gods drop" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="52">
 					<LomId Value="0" />
-					<Time Value="2432" />
+					<Time Value="2360" />
 					<Name Value="114-guitar gods full harmony" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="53">
 					<LomId Value="0" />
-					<Time Value="2224" />
+					<Time Value="2152" />
 					<Name Value="114-guitar gods intro  7/8 -02" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="54">
 					<LomId Value="0" />
-					<Time Value="2504" />
+					<Time Value="2432" />
 					<Name Value="171-aphex intro-02" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="55">
 					<LomId Value="0" />
-					<Time Value="2552" />
+					<Time Value="2480" />
 					<Name Value="171-aphex intro-03" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="56">
 					<LomId Value="0" />
-					<Time Value="2648" />
+					<Time Value="2576" />
 					<Name Value="171-aphex-pre-02" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="57">
 					<LomId Value="0" />
-					<Time Value="2696" />
+					<Time Value="2624" />
 					<Name Value="171-aphex-pre-03" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="58">
 					<LomId Value="0" />
-					<Time Value="2792" />
-					<Name Value="171-dnb-pre" />
+					<Time Value="2752" />
+					<Name Value="171-dnb-pre 1" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="59">
 					<LomId Value="0" />
-					<Time Value="2840" />
+					<Time Value="2992" />
 					<Name Value="171-dnb-breakdown" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="60">
 					<LomId Value="0" />
-					<Time Value="2968" />
+					<Time Value="3120" />
 					<Name Value="171-dnb fullon choir" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
@@ -5493,13 +5506,6 @@
 					<LomId Value="0" />
 					<Time Value="632" />
 					<Name Value="114-Aphexmorj intro" />
-					<Annotation Value="" />
-					<IsSongStart Value="false" />
-				</Locator>
-				<Locator Id="62">
-					<LomId Value="0" />
-					<Time Value="672" />
-					<Name Value="114-Aphexmorj loop" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
@@ -5608,6 +5614,48 @@
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
+				<Locator Id="80">
+					<LomId Value="0" />
+					<Time Value="2800" />
+					<Name Value="171-dnb-beat 1" />
+					<Annotation Value="" />
+					<IsSongStart Value="false" />
+				</Locator>
+				<Locator Id="81">
+					<LomId Value="0" />
+					<Time Value="2896" />
+					<Name Value="171-dnb-beat 2 jingle" />
+					<Annotation Value="" />
+					<IsSongStart Value="false" />
+				</Locator>
+				<Locator Id="82">
+					<LomId Value="0" />
+					<Time Value="2848" />
+					<Name Value="171-dnb-beat 2" />
+					<Annotation Value="" />
+					<IsSongStart Value="false" />
+				</Locator>
+				<Locator Id="83">
+					<LomId Value="0" />
+					<Time Value="2944" />
+					<Name Value="171-dnb-beat 3 jingle" />
+					<Annotation Value="" />
+					<IsSongStart Value="false" />
+				</Locator>
+				<Locator Id="84">
+					<LomId Value="0" />
+					<Time Value="3168" />
+					<Name Value="171-dnb winddown" />
+					<Annotation Value="" />
+					<IsSongStart Value="false" />
+				</Locator>
+				<Locator Id="85">
+					<LomId Value="0" />
+					<Time Value="3216" />
+					<Name Value="171-dnb outro 1 jingle" />
+					<Annotation Value="" />
+					<IsSongStart Value="false" />
+				</Locator>
 			</Locators>
 		</Locators>
 		<DetailClipKeyMidis />
@@ -5622,7 +5670,7 @@
 		<SoloInPlace Value="true" />
 		<CrossfadeCurve Value="2" />
 		<LatencyCompensation Value="2" />
-		<HighlightedTrackIndex Value="24" />
+		<HighlightedTrackIndex Value="51" />
 		<GroovePool>
 			<LomId Value="0" />
 			<Grooves />
@@ -5637,7 +5685,7 @@
 			<NextColorIndex Value="6" />
 		</AutoColorPickerForPlayerAndGroupTracks>
 		<AutoColorPickerForReturnAndMainTracks>
-			<NextColorIndex Value="0" />
+			<NextColorIndex Value="16" />
 		</AutoColorPickerForReturnAndMainTracks>
 		<ViewData Value="{}" />
 		<ResetNonautomatedMidiControllersOnClipStarts Value="true" />
@@ -5693,18 +5741,18 @@
 			<PitchFilterAlgorithm Id="0">
 				<NamedKeyMidiRemoteables />
 				<PitchClasses>
-					<RemoteableBool Id="287280" Value="false" />
-					<RemoteableBool Id="287281" Value="false" />
-					<RemoteableBool Id="287282" Value="false" />
-					<RemoteableBool Id="287283" Value="false" />
-					<RemoteableBool Id="287284" Value="false" />
-					<RemoteableBool Id="287285" Value="false" />
-					<RemoteableBool Id="287286" Value="false" />
-					<RemoteableBool Id="287287" Value="false" />
-					<RemoteableBool Id="287288" Value="false" />
-					<RemoteableBool Id="287289" Value="false" />
-					<RemoteableBool Id="287290" Value="false" />
-					<RemoteableBool Id="287291" Value="false" />
+					<RemoteableBool Id="385392" Value="false" />
+					<RemoteableBool Id="385393" Value="false" />
+					<RemoteableBool Id="385394" Value="false" />
+					<RemoteableBool Id="385395" Value="false" />
+					<RemoteableBool Id="385396" Value="false" />
+					<RemoteableBool Id="385397" Value="false" />
+					<RemoteableBool Id="385398" Value="false" />
+					<RemoteableBool Id="385399" Value="false" />
+					<RemoteableBool Id="385400" Value="false" />
+					<RemoteableBool Id="385401" Value="false" />
+					<RemoteableBool Id="385402" Value="false" />
+					<RemoteableBool Id="385403" Value="false" />
 				</PitchClasses>
 				<DrumPad Value="128" />
 				<Invert Value="false" />
@@ -5718,11 +5766,11 @@
 			</TimeFilterAlgorithm>
 			<ArpeggiateAlgorithm Id="2">
 				<NamedKeyMidiRemoteables>
-					<NamedRemoteableKeyMidi Id="60" Name="Rate" />
-					<NamedRemoteableKeyMidi Id="61" Name="Steps" />
-					<NamedRemoteableKeyMidi Id="62" Name="Distance" />
-					<NamedRemoteableKeyMidi Id="63" Name="Gate" />
-					<NamedRemoteableKeyMidi Id="64" Name="Style" />
+					<NamedRemoteableKeyMidi Id="65" Name="Rate" />
+					<NamedRemoteableKeyMidi Id="66" Name="Steps" />
+					<NamedRemoteableKeyMidi Id="67" Name="Distance" />
+					<NamedRemoteableKeyMidi Id="68" Name="Gate" />
+					<NamedRemoteableKeyMidi Id="69" Name="Style" />
 				</NamedKeyMidiRemoteables>
 				<Rate Value="10" />
 				<Steps Value="2" />
@@ -5732,20 +5780,20 @@
 			</ArpeggiateAlgorithm>
 			<RhythmAlgorithm Id="3">
 				<NamedKeyMidiRemoteables>
-					<NamedRemoteableKeyMidi Id="168" Name="Density" />
-					<NamedRemoteableKeyMidi Id="169" Name="Repetitions" />
-					<NamedRemoteableKeyMidi Id="170" Name="Pattern" />
-					<NamedRemoteableKeyMidi Id="171" Name="Steps" />
-					<NamedRemoteableKeyMidi Id="172" Name="Pitch" />
-					<NamedRemoteableKeyMidi Id="173" Name="Velocity" />
-					<NamedRemoteableKeyMidi Id="174" Name="Accent" />
-					<NamedRemoteableKeyMidi Id="175" Name="Period" />
-					<NamedRemoteableKeyMidi Id="176" Name="Offset" />
-					<NamedRemoteableKeyMidi Id="177" Name="Shift" />
-					<NamedRemoteableKeyMidi Id="178" Name="StepDuration" />
-					<NamedRemoteableKeyMidi Id="179" Name="Split" />
-					<NamedRemoteableKeyMidi Id="180" Name="VelocityOffsetIncrement" />
-					<NamedRemoteableKeyMidi Id="181" Name="VelocityOffsetDecrement" />
+					<NamedRemoteableKeyMidi Id="182" Name="Density" />
+					<NamedRemoteableKeyMidi Id="183" Name="Repetitions" />
+					<NamedRemoteableKeyMidi Id="184" Name="Pattern" />
+					<NamedRemoteableKeyMidi Id="185" Name="Steps" />
+					<NamedRemoteableKeyMidi Id="186" Name="Pitch" />
+					<NamedRemoteableKeyMidi Id="187" Name="Velocity" />
+					<NamedRemoteableKeyMidi Id="188" Name="Accent" />
+					<NamedRemoteableKeyMidi Id="189" Name="Period" />
+					<NamedRemoteableKeyMidi Id="190" Name="Offset" />
+					<NamedRemoteableKeyMidi Id="191" Name="Shift" />
+					<NamedRemoteableKeyMidi Id="192" Name="StepDuration" />
+					<NamedRemoteableKeyMidi Id="193" Name="Split" />
+					<NamedRemoteableKeyMidi Id="194" Name="VelocityOffsetIncrement" />
+					<NamedRemoteableKeyMidi Id="195" Name="VelocityOffsetDecrement" />
 				</NamedKeyMidiRemoteables>
 				<Density Value="4" />
 				<Repetitions Value="1" />
@@ -5762,11 +5810,11 @@
 			</RhythmAlgorithm>
 			<QuantizeAlgorithm Id="4">
 				<NamedKeyMidiRemoteables>
-					<NamedRemoteableKeyMidi Id="55" Name="TripletReference" />
-					<NamedRemoteableKeyMidi Id="56" Name="QuantizeReference" />
-					<NamedRemoteableKeyMidi Id="57" Name="Amount" />
-					<NamedRemoteableKeyMidi Id="58" Name="QuantizeNoteStarts" />
-					<NamedRemoteableKeyMidi Id="59" Name="QuantizeNoteEnds" />
+					<NamedRemoteableKeyMidi Id="60" Name="TripletReference" />
+					<NamedRemoteableKeyMidi Id="61" Name="QuantizeReference" />
+					<NamedRemoteableKeyMidi Id="62" Name="Amount" />
+					<NamedRemoteableKeyMidi Id="63" Name="QuantizeNoteStarts" />
+					<NamedRemoteableKeyMidi Id="64" Name="QuantizeNoteEnds" />
 				</NamedKeyMidiRemoteables>
 				<Reference Value="5" />
 				<TripletReference Value="false" />

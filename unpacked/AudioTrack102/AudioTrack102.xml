@@ -8,7 +8,7 @@
 					<IsValueSampleBased Value="false" />
 				</TrackDelay>
 				<Name>
-					<EffectiveName Value="60-01_031015_0001_TR07" />
+					<EffectiveName Value="71-01_031015_0001_TR07" />
 					<UserName Value="" />
 					<Annotation Value="" />
 					<MemorizedFirstClipName Value="01_031015_0001_TR07" />
@@ -114,7 +114,7 @@
 						<ParametersListWrapper LomId="0" />
 						<Pointee Id="108373" />
 						<LastSelectedTimeableIndex Value="1" />
-						<LastSelectedClipEnvelopeIndex Value="1" />
+						<LastSelectedClipEnvelopeIndex Value="2" />
 						<LastPresetRef>
 							<Value />
 						</LastPresetRef>
@@ -141,6 +141,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="108375">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="130610">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="130611">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>
@@ -344,11 +361,11 @@
 						<Sample>
 							<ArrangerAutomation>
 								<Events>
-									<AudioClip Id="1" Time="744">
+									<AudioClip Id="1" Time="672">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="744" />
-										<CurrentEnd Value="805.75" />
+										<CurrentStart Value="672" />
+										<CurrentEnd Value="733.75" />
 										<Loop>
 											<LoopStart Value="267.00400901177636" />
 											<LoopEnd Value="299.50400901173276" />
@@ -471,19 +488,19 @@
 										<PitchFine Value="0" />
 										<SampleVolume Value="3.54907966" />
 										<WarpMarkers>
-											<WarpMarker Id="3138" SecTime="267.00400901177636" BeatTime="0" />
-											<WarpMarker Id="3139" SecTime="1168.0566405904246" BeatTime="1712" />
-											<WarpMarker Id="3140" SecTime="1168.0676055027054" BeatTime="1712.03125" />
+											<WarpMarker Id="3189" SecTime="267.00400901177636" BeatTime="0" />
+											<WarpMarker Id="3190" SecTime="1168.0566405904246" BeatTime="1712" />
+											<WarpMarker Id="3191" SecTime="1168.0676055027054" BeatTime="1712.03125" />
 										</WarpMarkers>
 										<SavedWarpMarkersForStretched />
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="0" Time="968">
+									<AudioClip Id="0" Time="896">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="968" />
-										<CurrentEnd Value="1000" />
+										<CurrentStart Value="896" />
+										<CurrentEnd Value="928" />
 										<Loop>
 											<LoopStart Value="325.95137743292071" />
 											<LoopEnd Value="342.79348269605242" />
@@ -606,9 +623,9 @@
 										<PitchFine Value="0" />
 										<SampleVolume Value="3.54907966" />
 										<WarpMarkers>
-											<WarpMarker Id="1747" SecTime="325.95137743292071" BeatTime="0" />
-											<WarpMarker Id="1748" SecTime="1109.1092721690657" BeatTime="1488" />
-											<WarpMarker Id="1749" SecTime="1109.1202370813464" BeatTime="1488.03125" />
+											<WarpMarker Id="1795" SecTime="325.95137743292071" BeatTime="0" />
+											<WarpMarker Id="1796" SecTime="1109.1092721690657" BeatTime="1488" />
+											<WarpMarker Id="1797" SecTime="1109.1202370813464" BeatTime="1488.03125" />
 										</WarpMarkers>
 										<SavedWarpMarkersForStretched />
 										<MarkersGenerated Value="true" />

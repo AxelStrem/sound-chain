@@ -146,6 +146,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="130480">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="130481">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="1">
 								<Send>
 									<LomId Value="0" />
@@ -344,11 +361,11 @@
 						<ClipTimeable>
 							<ArrangerAutomation>
 								<Events>
-									<MidiClip Id="0" Time="744">
+									<MidiClip Id="0" Time="672">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="744" />
-										<CurrentEnd Value="808" />
+										<CurrentStart Value="672" />
+										<CurrentEnd Value="736" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="64" />
@@ -454,11 +471,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="1" Time="816">
+									<MidiClip Id="1" Time="744">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="816" />
-										<CurrentEnd Value="880" />
+										<CurrentStart Value="744" />
+										<CurrentEnd Value="808" />
 										<Loop>
 											<LoopStart Value="64" />
 											<LoopEnd Value="128" />
@@ -564,11 +581,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="2" Time="888">
+									<MidiClip Id="2" Time="816">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="888" />
-										<CurrentEnd Value="920" />
+										<CurrentStart Value="816" />
+										<CurrentEnd Value="848" />
 										<Loop>
 											<LoopStart Value="136" />
 											<LoopEnd Value="168" />
@@ -674,11 +691,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="3" Time="928">
+									<MidiClip Id="3" Time="856">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="928" />
-										<CurrentEnd Value="960" />
+										<CurrentStart Value="856" />
+										<CurrentEnd Value="888" />
 										<Loop>
 											<LoopStart Value="176" />
 											<LoopEnd Value="208" />
@@ -784,11 +801,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="4" Time="968">
+									<MidiClip Id="4" Time="896">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="968" />
-										<CurrentEnd Value="1000" />
+										<CurrentStart Value="896" />
+										<CurrentEnd Value="928" />
 										<Loop>
 											<LoopStart Value="216" />
 											<LoopEnd Value="248" />
@@ -894,11 +911,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="5" Time="1008">
+									<MidiClip Id="5" Time="936">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1008" />
-										<CurrentEnd Value="1040" />
+										<CurrentStart Value="936" />
+										<CurrentEnd Value="968" />
 										<Loop>
 											<LoopStart Value="256" />
 											<LoopEnd Value="288" />
@@ -1004,11 +1021,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="6" Time="1048">
+									<MidiClip Id="6" Time="976">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1048" />
-										<CurrentEnd Value="1080" />
+										<CurrentStart Value="976" />
+										<CurrentEnd Value="1008" />
 										<Loop>
 											<LoopStart Value="296" />
 											<LoopEnd Value="328" />
@@ -1114,11 +1131,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="7" Time="1088">
+									<MidiClip Id="7" Time="1016">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1088" />
-										<CurrentEnd Value="1120" />
+										<CurrentStart Value="1016" />
+										<CurrentEnd Value="1048" />
 										<Loop>
 											<LoopStart Value="336" />
 											<LoopEnd Value="368" />
@@ -1224,11 +1241,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="8" Time="1128">
+									<MidiClip Id="8" Time="1056">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1128" />
-										<CurrentEnd Value="1160" />
+										<CurrentStart Value="1056" />
+										<CurrentEnd Value="1088" />
 										<Loop>
 											<LoopStart Value="376" />
 											<LoopEnd Value="408" />
@@ -1334,11 +1351,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="9" Time="1168">
+									<MidiClip Id="9" Time="1096">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1168" />
-										<CurrentEnd Value="1200" />
+										<CurrentStart Value="1096" />
+										<CurrentEnd Value="1128" />
 										<Loop>
 											<LoopStart Value="416" />
 											<LoopEnd Value="448" />
@@ -1444,11 +1461,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="10" Time="1208">
+									<MidiClip Id="10" Time="1136">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1208" />
-										<CurrentEnd Value="1240" />
+										<CurrentStart Value="1136" />
+										<CurrentEnd Value="1168" />
 										<Loop>
 											<LoopStart Value="456" />
 											<LoopEnd Value="488" />
@@ -1554,11 +1571,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="11" Time="1248">
+									<MidiClip Id="11" Time="1176">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1248" />
-										<CurrentEnd Value="1280" />
+										<CurrentStart Value="1176" />
+										<CurrentEnd Value="1208" />
 										<Loop>
 											<LoopStart Value="496" />
 											<LoopEnd Value="528" />
@@ -1664,11 +1681,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="12" Time="1288">
+									<MidiClip Id="12" Time="1216">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1288" />
-										<CurrentEnd Value="1320" />
+										<CurrentStart Value="1216" />
+										<CurrentEnd Value="1248" />
 										<Loop>
 											<LoopStart Value="536" />
 											<LoopEnd Value="568" />
@@ -1774,11 +1791,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="13" Time="1328">
+									<MidiClip Id="13" Time="1256">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1328" />
-										<CurrentEnd Value="1360" />
+										<CurrentStart Value="1256" />
+										<CurrentEnd Value="1288" />
 										<Loop>
 											<LoopStart Value="576" />
 											<LoopEnd Value="608" />
@@ -1884,11 +1901,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="14" Time="1368">
+									<MidiClip Id="14" Time="1296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1368" />
-										<CurrentEnd Value="1400" />
+										<CurrentStart Value="1296" />
+										<CurrentEnd Value="1328" />
 										<Loop>
 											<LoopStart Value="616" />
 											<LoopEnd Value="648" />
@@ -1994,11 +2011,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="15" Time="1408">
+									<MidiClip Id="15" Time="1336">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1408" />
-										<CurrentEnd Value="1440" />
+										<CurrentStart Value="1336" />
+										<CurrentEnd Value="1368" />
 										<Loop>
 											<LoopStart Value="656" />
 											<LoopEnd Value="688" />
@@ -2104,11 +2121,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="16" Time="1448">
+									<MidiClip Id="16" Time="1376">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1448" />
-										<CurrentEnd Value="1480" />
+										<CurrentStart Value="1376" />
+										<CurrentEnd Value="1408" />
 										<Loop>
 											<LoopStart Value="696" />
 											<LoopEnd Value="728" />
@@ -2214,11 +2231,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="17" Time="1488">
+									<MidiClip Id="17" Time="1416">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1488" />
-										<CurrentEnd Value="1552" />
+										<CurrentStart Value="1416" />
+										<CurrentEnd Value="1480" />
 										<Loop>
 											<LoopStart Value="736" />
 											<LoopEnd Value="800" />
@@ -2324,11 +2341,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="18" Time="1560">
+									<MidiClip Id="18" Time="1488">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1560" />
-										<CurrentEnd Value="1592" />
+										<CurrentStart Value="1488" />
+										<CurrentEnd Value="1520" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -2434,11 +2451,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="19" Time="1600">
+									<MidiClip Id="19" Time="1528">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1600" />
-										<CurrentEnd Value="1632" />
+										<CurrentStart Value="1528" />
+										<CurrentEnd Value="1560" />
 										<Loop>
 											<LoopStart Value="40" />
 											<LoopEnd Value="72" />
@@ -2544,11 +2561,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="20" Time="1640">
+									<MidiClip Id="20" Time="1568">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1640" />
-										<CurrentEnd Value="1672" />
+										<CurrentStart Value="1568" />
+										<CurrentEnd Value="1600" />
 										<Loop>
 											<LoopStart Value="80" />
 											<LoopEnd Value="112" />
@@ -2654,11 +2671,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="21" Time="1680">
+									<MidiClip Id="21" Time="1608">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1680" />
-										<CurrentEnd Value="1712" />
+										<CurrentStart Value="1608" />
+										<CurrentEnd Value="1640" />
 										<Loop>
 											<LoopStart Value="120" />
 											<LoopEnd Value="152" />
@@ -2764,11 +2781,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="22" Time="1720">
+									<MidiClip Id="22" Time="1648">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1720" />
-										<CurrentEnd Value="1752" />
+										<CurrentStart Value="1648" />
+										<CurrentEnd Value="1680" />
 										<Loop>
 											<LoopStart Value="160" />
 											<LoopEnd Value="192" />
@@ -2874,11 +2891,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="23" Time="1760">
+									<MidiClip Id="23" Time="1688">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1760" />
-										<CurrentEnd Value="1792" />
+										<CurrentStart Value="1688" />
+										<CurrentEnd Value="1720" />
 										<Loop>
 											<LoopStart Value="200" />
 											<LoopEnd Value="232" />
@@ -2984,11 +3001,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="24" Time="1800">
+									<MidiClip Id="24" Time="1728">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1800" />
-										<CurrentEnd Value="1832" />
+										<CurrentStart Value="1728" />
+										<CurrentEnd Value="1760" />
 										<Loop>
 											<LoopStart Value="240" />
 											<LoopEnd Value="272" />
@@ -3094,11 +3111,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="25" Time="1840">
+									<MidiClip Id="25" Time="1768">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1840" />
-										<CurrentEnd Value="1872" />
+										<CurrentStart Value="1768" />
+										<CurrentEnd Value="1800" />
 										<Loop>
 											<LoopStart Value="280" />
 											<LoopEnd Value="312" />
@@ -3204,11 +3221,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="26" Time="1880">
+									<MidiClip Id="26" Time="1808">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1880" />
-										<CurrentEnd Value="1912" />
+										<CurrentStart Value="1808" />
+										<CurrentEnd Value="1840" />
 										<Loop>
 											<LoopStart Value="320" />
 											<LoopEnd Value="352" />
@@ -3314,11 +3331,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="27" Time="1920">
+									<MidiClip Id="27" Time="1848">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1920" />
-										<CurrentEnd Value="1952" />
+										<CurrentStart Value="1848" />
+										<CurrentEnd Value="1880" />
 										<Loop>
 											<LoopStart Value="360" />
 											<LoopEnd Value="392" />
@@ -3424,11 +3441,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="28" Time="1960">
+									<MidiClip Id="28" Time="1888">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1960" />
-										<CurrentEnd Value="1992" />
+										<CurrentStart Value="1888" />
+										<CurrentEnd Value="1920" />
 										<Loop>
 											<LoopStart Value="400" />
 											<LoopEnd Value="432" />
@@ -3534,11 +3551,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="29" Time="2000">
+									<MidiClip Id="29" Time="1928">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2000" />
-										<CurrentEnd Value="2032" />
+										<CurrentStart Value="1928" />
+										<CurrentEnd Value="1960" />
 										<Loop>
 											<LoopStart Value="440" />
 											<LoopEnd Value="472" />
@@ -3644,11 +3661,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="30" Time="2040">
+									<MidiClip Id="30" Time="1968">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2040" />
-										<CurrentEnd Value="2072" />
+										<CurrentStart Value="1968" />
+										<CurrentEnd Value="2000" />
 										<Loop>
 											<LoopStart Value="480" />
 											<LoopEnd Value="512" />
@@ -3754,11 +3771,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="31" Time="2080">
+									<MidiClip Id="31" Time="2008">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2080" />
-										<CurrentEnd Value="2112" />
+										<CurrentStart Value="2008" />
+										<CurrentEnd Value="2040" />
 										<Loop>
 											<LoopStart Value="520" />
 											<LoopEnd Value="552" />
@@ -3864,11 +3881,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="32" Time="2120">
+									<MidiClip Id="32" Time="2048">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2120" />
-										<CurrentEnd Value="2152" />
+										<CurrentStart Value="2048" />
+										<CurrentEnd Value="2080" />
 										<Loop>
 											<LoopStart Value="560" />
 											<LoopEnd Value="592" />
@@ -3974,11 +3991,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="33" Time="2160">
+									<MidiClip Id="33" Time="2088">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2160" />
-										<CurrentEnd Value="2216" />
+										<CurrentStart Value="2088" />
+										<CurrentEnd Value="2144" />
 										<Loop>
 											<LoopStart Value="28" />
 											<LoopEnd Value="84" />
@@ -4084,11 +4101,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="34" Time="2224">
+									<MidiClip Id="34" Time="2152">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2224" />
-										<CurrentEnd Value="2280" />
+										<CurrentStart Value="2152" />
+										<CurrentEnd Value="2208" />
 										<Loop>
 											<LoopStart Value="91" />
 											<LoopEnd Value="147" />
@@ -4194,11 +4211,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="35" Time="2288">
+									<MidiClip Id="35" Time="2216">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2288" />
-										<CurrentEnd Value="2320" />
+										<CurrentStart Value="2216" />
+										<CurrentEnd Value="2248" />
 										<Loop>
 											<LoopStart Value="155" />
 											<LoopEnd Value="187" />
@@ -4304,11 +4321,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="36" Time="2328">
+									<MidiClip Id="36" Time="2256">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2328" />
-										<CurrentEnd Value="2360" />
+										<CurrentStart Value="2256" />
+										<CurrentEnd Value="2288" />
 										<Loop>
 											<LoopStart Value="195" />
 											<LoopEnd Value="227" />
@@ -4414,11 +4431,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="37" Time="2368">
+									<MidiClip Id="37" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2400" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2328" />
 										<Loop>
 											<LoopStart Value="235" />
 											<LoopEnd Value="267" />
@@ -4524,11 +4541,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="38" Time="2408">
+									<MidiClip Id="38" Time="2336">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2408" />
-										<CurrentEnd Value="2424" />
+										<CurrentStart Value="2336" />
+										<CurrentEnd Value="2352" />
 										<Loop>
 											<LoopStart Value="275" />
 											<LoopEnd Value="291" />
@@ -4634,11 +4651,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="39" Time="2432">
+									<MidiClip Id="39" Time="2360">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2432" />
-										<CurrentEnd Value="2448" />
+										<CurrentStart Value="2360" />
+										<CurrentEnd Value="2376" />
 										<Loop>
 											<LoopStart Value="299" />
 											<LoopEnd Value="315" />
@@ -4744,11 +4761,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="40" Time="2456">
+									<MidiClip Id="40" Time="2384">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2456" />
-										<CurrentEnd Value="2488" />
+										<CurrentStart Value="2384" />
+										<CurrentEnd Value="2416" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -4854,11 +4871,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="41" Time="2504">
+									<MidiClip Id="41" Time="2432">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2504" />
-										<CurrentEnd Value="2536" />
+										<CurrentStart Value="2432" />
+										<CurrentEnd Value="2464" />
 										<Loop>
 											<LoopStart Value="40" />
 											<LoopEnd Value="72" />
@@ -4964,11 +4981,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="42" Time="2552">
+									<MidiClip Id="42" Time="2480">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2552" />
-										<CurrentEnd Value="2584" />
+										<CurrentStart Value="2480" />
+										<CurrentEnd Value="2512" />
 										<Loop>
 											<LoopStart Value="80" />
 											<LoopEnd Value="112" />
@@ -5074,11 +5091,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="43" Time="2600">
+									<MidiClip Id="43" Time="2528">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2600" />
-										<CurrentEnd Value="2632" />
+										<CurrentStart Value="2528" />
+										<CurrentEnd Value="2560" />
 										<Loop>
 											<LoopStart Value="120" />
 											<LoopEnd Value="152" />
@@ -5184,11 +5201,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="44" Time="2648">
+									<MidiClip Id="44" Time="2576">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2648" />
-										<CurrentEnd Value="2680" />
+										<CurrentStart Value="2576" />
+										<CurrentEnd Value="2608" />
 										<Loop>
 											<LoopStart Value="160" />
 											<LoopEnd Value="192" />
@@ -5294,11 +5311,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="45" Time="2696">
+									<MidiClip Id="45" Time="2624">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2696" />
-										<CurrentEnd Value="2728" />
+										<CurrentStart Value="2624" />
+										<CurrentEnd Value="2656" />
 										<Loop>
 											<LoopStart Value="200" />
 											<LoopEnd Value="232" />
@@ -5404,11 +5421,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="46" Time="2744">
+									<MidiClip Id="46" Time="2672">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2744" />
-										<CurrentEnd Value="2776" />
+										<CurrentStart Value="2672" />
+										<CurrentEnd Value="2704" />
 										<Loop>
 											<LoopStart Value="-96" />
 											<LoopEnd Value="-64" />
@@ -5514,11 +5531,121 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="47" Time="2792">
+									<MidiClip Id="51" Time="2704">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2792" />
-										<CurrentEnd Value="2824" />
+										<CurrentStart Value="2704" />
+										<CurrentEnd Value="2736" />
+										<Loop>
+											<LoopStart Value="-96" />
+											<LoopEnd Value="-64" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="272" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="272" />
+										</Loop>
+										<Name Value="171-dnb" />
+										<Annotation Value="" />
+										<Color Value="4" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="-96" />
+											<RightTime Value="136" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="false" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="true" />
+										<TakeId Value="3" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<Notes>
+											<KeyTracks />
+											<PerNoteEventStore>
+												<EventLists />
+											</PerNoteEventStore>
+											<NoteProbabilityGroups />
+											<ProbabilityGroupIdGenerator>
+												<NextId Value="1" />
+											</ProbabilityGroupIdGenerator>
+											<NoteIdGenerator>
+												<NextId Value="1" />
+											</NoteIdGenerator>
+										</Notes>
+										<BankSelectCoarse Value="-1" />
+										<BankSelectFine Value="-1" />
+										<ProgramChange Value="-1" />
+										<NoteEditorFoldInZoom Value="-1" />
+										<NoteEditorFoldInScroll Value="0" />
+										<NoteEditorFoldOutZoom Value="247" />
+										<NoteEditorFoldOutScroll Value="-106" />
+										<NoteEditorFoldScaleZoom Value="-1" />
+										<NoteEditorFoldScaleScroll Value="0" />
+										<NoteSpellingPreference Value="0" />
+										<AccidentalSpellingPreference Value="3" />
+										<PreferFlatRootNote Value="false" />
+										<ExpressionGrid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="false" />
+											<Fixed Value="false" />
+										</ExpressionGrid>
+									</MidiClip>
+									<MidiClip Id="47" Time="2752">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="2752" />
+										<CurrentEnd Value="2784" />
 										<Loop>
 											<LoopStart Value="-64" />
 											<LoopEnd Value="-32" />
@@ -5624,11 +5751,451 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="48" Time="2840">
+									<MidiClip Id="52" Time="2800">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2840" />
-										<CurrentEnd Value="2904" />
+										<CurrentStart Value="2800" />
+										<CurrentEnd Value="2832" />
+										<Loop>
+											<LoopStart Value="-64" />
+											<LoopEnd Value="-32" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="272" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="272" />
+										</Loop>
+										<Name Value="171-dnb" />
+										<Annotation Value="" />
+										<Color Value="4" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="-96" />
+											<RightTime Value="272" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="false" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="true" />
+										<TakeId Value="3" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<Notes>
+											<KeyTracks />
+											<PerNoteEventStore>
+												<EventLists />
+											</PerNoteEventStore>
+											<NoteProbabilityGroups />
+											<ProbabilityGroupIdGenerator>
+												<NextId Value="1" />
+											</ProbabilityGroupIdGenerator>
+											<NoteIdGenerator>
+												<NextId Value="1" />
+											</NoteIdGenerator>
+										</Notes>
+										<BankSelectCoarse Value="-1" />
+										<BankSelectFine Value="-1" />
+										<ProgramChange Value="-1" />
+										<NoteEditorFoldInZoom Value="-1" />
+										<NoteEditorFoldInScroll Value="0" />
+										<NoteEditorFoldOutZoom Value="247" />
+										<NoteEditorFoldOutScroll Value="-106" />
+										<NoteEditorFoldScaleZoom Value="-1" />
+										<NoteEditorFoldScaleScroll Value="0" />
+										<NoteSpellingPreference Value="0" />
+										<AccidentalSpellingPreference Value="3" />
+										<PreferFlatRootNote Value="false" />
+										<ExpressionGrid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="false" />
+											<Fixed Value="false" />
+										</ExpressionGrid>
+									</MidiClip>
+									<MidiClip Id="54" Time="2848">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="2848" />
+										<CurrentEnd Value="2880" />
+										<Loop>
+											<LoopStart Value="-64" />
+											<LoopEnd Value="-32" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="272" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="272" />
+										</Loop>
+										<Name Value="171-dnb" />
+										<Annotation Value="" />
+										<Color Value="4" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="-96" />
+											<RightTime Value="272" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="false" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="true" />
+										<TakeId Value="3" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<Notes>
+											<KeyTracks />
+											<PerNoteEventStore>
+												<EventLists />
+											</PerNoteEventStore>
+											<NoteProbabilityGroups />
+											<ProbabilityGroupIdGenerator>
+												<NextId Value="1" />
+											</ProbabilityGroupIdGenerator>
+											<NoteIdGenerator>
+												<NextId Value="1" />
+											</NoteIdGenerator>
+										</Notes>
+										<BankSelectCoarse Value="-1" />
+										<BankSelectFine Value="-1" />
+										<ProgramChange Value="-1" />
+										<NoteEditorFoldInZoom Value="-1" />
+										<NoteEditorFoldInScroll Value="0" />
+										<NoteEditorFoldOutZoom Value="247" />
+										<NoteEditorFoldOutScroll Value="-106" />
+										<NoteEditorFoldScaleZoom Value="-1" />
+										<NoteEditorFoldScaleScroll Value="0" />
+										<NoteSpellingPreference Value="0" />
+										<AccidentalSpellingPreference Value="3" />
+										<PreferFlatRootNote Value="false" />
+										<ExpressionGrid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="false" />
+											<Fixed Value="false" />
+										</ExpressionGrid>
+									</MidiClip>
+									<MidiClip Id="53" Time="2896">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="2896" />
+										<CurrentEnd Value="2928" />
+										<Loop>
+											<LoopStart Value="-64" />
+											<LoopEnd Value="-32" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="272" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="272" />
+										</Loop>
+										<Name Value="171-dnb" />
+										<Annotation Value="" />
+										<Color Value="4" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="-96" />
+											<RightTime Value="272" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="false" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="true" />
+										<TakeId Value="3" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<Notes>
+											<KeyTracks />
+											<PerNoteEventStore>
+												<EventLists />
+											</PerNoteEventStore>
+											<NoteProbabilityGroups />
+											<ProbabilityGroupIdGenerator>
+												<NextId Value="1" />
+											</ProbabilityGroupIdGenerator>
+											<NoteIdGenerator>
+												<NextId Value="1" />
+											</NoteIdGenerator>
+										</Notes>
+										<BankSelectCoarse Value="-1" />
+										<BankSelectFine Value="-1" />
+										<ProgramChange Value="-1" />
+										<NoteEditorFoldInZoom Value="-1" />
+										<NoteEditorFoldInScroll Value="0" />
+										<NoteEditorFoldOutZoom Value="247" />
+										<NoteEditorFoldOutScroll Value="-106" />
+										<NoteEditorFoldScaleZoom Value="-1" />
+										<NoteEditorFoldScaleScroll Value="0" />
+										<NoteSpellingPreference Value="0" />
+										<AccidentalSpellingPreference Value="3" />
+										<PreferFlatRootNote Value="false" />
+										<ExpressionGrid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="false" />
+											<Fixed Value="false" />
+										</ExpressionGrid>
+									</MidiClip>
+									<MidiClip Id="55" Time="2944">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="2944" />
+										<CurrentEnd Value="2976" />
+										<Loop>
+											<LoopStart Value="-64" />
+											<LoopEnd Value="-32" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="272" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="272" />
+										</Loop>
+										<Name Value="171-dnb" />
+										<Annotation Value="" />
+										<Color Value="4" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="-96" />
+											<RightTime Value="272" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="false" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="true" />
+										<TakeId Value="3" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<Notes>
+											<KeyTracks />
+											<PerNoteEventStore>
+												<EventLists />
+											</PerNoteEventStore>
+											<NoteProbabilityGroups />
+											<ProbabilityGroupIdGenerator>
+												<NextId Value="1" />
+											</ProbabilityGroupIdGenerator>
+											<NoteIdGenerator>
+												<NextId Value="1" />
+											</NoteIdGenerator>
+										</Notes>
+										<BankSelectCoarse Value="-1" />
+										<BankSelectFine Value="-1" />
+										<ProgramChange Value="-1" />
+										<NoteEditorFoldInZoom Value="-1" />
+										<NoteEditorFoldInScroll Value="0" />
+										<NoteEditorFoldOutZoom Value="247" />
+										<NoteEditorFoldOutScroll Value="-106" />
+										<NoteEditorFoldScaleZoom Value="-1" />
+										<NoteEditorFoldScaleScroll Value="0" />
+										<NoteSpellingPreference Value="0" />
+										<AccidentalSpellingPreference Value="3" />
+										<PreferFlatRootNote Value="false" />
+										<ExpressionGrid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="false" />
+											<Fixed Value="false" />
+										</ExpressionGrid>
+									</MidiClip>
+									<MidiClip Id="48" Time="2992">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="2992" />
+										<CurrentEnd Value="3056" />
 										<Loop>
 											<LoopStart Value="-32" />
 											<LoopEnd Value="32" />
@@ -5734,11 +6301,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="49" Time="2920">
+									<MidiClip Id="49" Time="3072">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2920" />
-										<CurrentEnd Value="2952" />
+										<CurrentStart Value="3072" />
+										<CurrentEnd Value="3104" />
 										<Loop>
 											<LoopStart Value="32" />
 											<LoopEnd Value="64" />
@@ -5844,11 +6411,231 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="50" Time="2968">
+									<MidiClip Id="50" Time="3120">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2968" />
-										<CurrentEnd Value="3000" />
+										<CurrentStart Value="3120" />
+										<CurrentEnd Value="3152" />
+										<Loop>
+											<LoopStart Value="64" />
+											<LoopEnd Value="96" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="272" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="272" />
+										</Loop>
+										<Name Value="171-dnb" />
+										<Annotation Value="" />
+										<Color Value="4" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="-96" />
+											<RightTime Value="272" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="false" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="true" />
+										<TakeId Value="3" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<Notes>
+											<KeyTracks />
+											<PerNoteEventStore>
+												<EventLists />
+											</PerNoteEventStore>
+											<NoteProbabilityGroups />
+											<ProbabilityGroupIdGenerator>
+												<NextId Value="1" />
+											</ProbabilityGroupIdGenerator>
+											<NoteIdGenerator>
+												<NextId Value="1" />
+											</NoteIdGenerator>
+										</Notes>
+										<BankSelectCoarse Value="-1" />
+										<BankSelectFine Value="-1" />
+										<ProgramChange Value="-1" />
+										<NoteEditorFoldInZoom Value="-1" />
+										<NoteEditorFoldInScroll Value="0" />
+										<NoteEditorFoldOutZoom Value="247" />
+										<NoteEditorFoldOutScroll Value="-106" />
+										<NoteEditorFoldScaleZoom Value="-1" />
+										<NoteEditorFoldScaleScroll Value="0" />
+										<NoteSpellingPreference Value="0" />
+										<AccidentalSpellingPreference Value="3" />
+										<PreferFlatRootNote Value="false" />
+										<ExpressionGrid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="false" />
+											<Fixed Value="false" />
+										</ExpressionGrid>
+									</MidiClip>
+									<MidiClip Id="56" Time="3168">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="3168" />
+										<CurrentEnd Value="3200" />
+										<Loop>
+											<LoopStart Value="64" />
+											<LoopEnd Value="96" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="272" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="272" />
+										</Loop>
+										<Name Value="171-dnb" />
+										<Annotation Value="" />
+										<Color Value="4" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="-96" />
+											<RightTime Value="272" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="false" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="true" />
+										<TakeId Value="3" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<Notes>
+											<KeyTracks />
+											<PerNoteEventStore>
+												<EventLists />
+											</PerNoteEventStore>
+											<NoteProbabilityGroups />
+											<ProbabilityGroupIdGenerator>
+												<NextId Value="1" />
+											</ProbabilityGroupIdGenerator>
+											<NoteIdGenerator>
+												<NextId Value="1" />
+											</NoteIdGenerator>
+										</Notes>
+										<BankSelectCoarse Value="-1" />
+										<BankSelectFine Value="-1" />
+										<ProgramChange Value="-1" />
+										<NoteEditorFoldInZoom Value="-1" />
+										<NoteEditorFoldInScroll Value="0" />
+										<NoteEditorFoldOutZoom Value="247" />
+										<NoteEditorFoldOutScroll Value="-106" />
+										<NoteEditorFoldScaleZoom Value="-1" />
+										<NoteEditorFoldScaleScroll Value="0" />
+										<NoteSpellingPreference Value="0" />
+										<AccidentalSpellingPreference Value="3" />
+										<PreferFlatRootNote Value="false" />
+										<ExpressionGrid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="false" />
+											<Fixed Value="false" />
+										</ExpressionGrid>
+									</MidiClip>
+									<MidiClip Id="57" Time="3216">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="3216" />
+										<CurrentEnd Value="3248" />
 										<Loop>
 											<LoopStart Value="64" />
 											<LoopEnd Value="96" />

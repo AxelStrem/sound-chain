@@ -146,6 +146,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="130624">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="130625">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="1">
 								<Send>
 									<LomId Value="0" />
@@ -344,11 +361,11 @@
 						<Sample>
 							<ArrangerAutomation>
 								<Events>
-									<AudioClip Id="12" Time="968">
+									<AudioClip Id="12" Time="896">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="968" />
-										<CurrentEnd Value="973.5" />
+										<CurrentStart Value="896" />
+										<CurrentEnd Value="901.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -436,7 +453,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -497,11 +514,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="13" Time="975">
+									<AudioClip Id="13" Time="903">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="975" />
-										<CurrentEnd Value="976" />
+										<CurrentStart Value="903" />
+										<CurrentEnd Value="904" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -589,7 +606,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -650,11 +667,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="14" Time="976">
+									<AudioClip Id="14" Time="904">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="976" />
-										<CurrentEnd Value="982" />
+										<CurrentStart Value="904" />
+										<CurrentEnd Value="910" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -742,7 +759,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -803,11 +820,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="15" Time="983">
+									<AudioClip Id="15" Time="911">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="983" />
-										<CurrentEnd Value="984" />
+										<CurrentStart Value="911" />
+										<CurrentEnd Value="912" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -895,7 +912,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -956,11 +973,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="91" Time="984">
+									<AudioClip Id="91" Time="912">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="984" />
-										<CurrentEnd Value="989.5" />
+										<CurrentStart Value="912" />
+										<CurrentEnd Value="917.5" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -1048,7 +1065,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -1109,11 +1126,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="17" Time="991">
+									<AudioClip Id="17" Time="919">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="991" />
-										<CurrentEnd Value="992" />
+										<CurrentStart Value="919" />
+										<CurrentEnd Value="920" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -1201,7 +1218,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -1262,11 +1279,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="18" Time="992">
+									<AudioClip Id="18" Time="920">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="992" />
-										<CurrentEnd Value="998" />
+										<CurrentStart Value="920" />
+										<CurrentEnd Value="926" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -1354,7 +1371,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -1415,11 +1432,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="19" Time="999">
+									<AudioClip Id="19" Time="927">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="999" />
-										<CurrentEnd Value="1000" />
+										<CurrentStart Value="927" />
+										<CurrentEnd Value="928" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -1507,7 +1524,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -1568,11 +1585,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="63" Time="1088">
+									<AudioClip Id="63" Time="1016">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1088" />
-										<CurrentEnd Value="1089" />
+										<CurrentStart Value="1016" />
+										<CurrentEnd Value="1017" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -1660,7 +1677,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -1721,11 +1738,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="72" Time="1090">
+									<AudioClip Id="72" Time="1018">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1090" />
-										<CurrentEnd Value="1093" />
+										<CurrentStart Value="1018" />
+										<CurrentEnd Value="1021" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -1813,7 +1830,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -1874,11 +1891,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="54" Time="1094">
+									<AudioClip Id="54" Time="1022">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1094" />
-										<CurrentEnd Value="1095" />
+										<CurrentStart Value="1022" />
+										<CurrentEnd Value="1023" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -1966,7 +1983,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -2027,11 +2044,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="62" Time="1095">
+									<AudioClip Id="62" Time="1023">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1095" />
-										<CurrentEnd Value="1096" />
+										<CurrentStart Value="1023" />
+										<CurrentEnd Value="1024" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -2119,7 +2136,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -2180,11 +2197,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="76" Time="1096">
+									<AudioClip Id="76" Time="1024">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1096" />
-										<CurrentEnd Value="1097" />
+										<CurrentStart Value="1024" />
+										<CurrentEnd Value="1025" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -2272,7 +2289,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -2333,11 +2350,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="75" Time="1098">
+									<AudioClip Id="75" Time="1026">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1098" />
-										<CurrentEnd Value="1101" />
+										<CurrentStart Value="1026" />
+										<CurrentEnd Value="1029" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -2425,7 +2442,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -2486,11 +2503,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="74" Time="1102">
+									<AudioClip Id="74" Time="1030">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1102" />
-										<CurrentEnd Value="1103" />
+										<CurrentStart Value="1030" />
+										<CurrentEnd Value="1031" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -2578,7 +2595,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -2639,11 +2656,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="73" Time="1103">
+									<AudioClip Id="73" Time="1031">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1103" />
-										<CurrentEnd Value="1104" />
+										<CurrentStart Value="1031" />
+										<CurrentEnd Value="1032" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -2731,7 +2748,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -2792,11 +2809,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="80" Time="1104">
+									<AudioClip Id="80" Time="1032">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1104" />
-										<CurrentEnd Value="1105" />
+										<CurrentStart Value="1032" />
+										<CurrentEnd Value="1033" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -2884,7 +2901,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -2945,11 +2962,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="79" Time="1106">
+									<AudioClip Id="79" Time="1034">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1106" />
-										<CurrentEnd Value="1109" />
+										<CurrentStart Value="1034" />
+										<CurrentEnd Value="1037" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -3037,7 +3054,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -3098,11 +3115,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="78" Time="1110">
+									<AudioClip Id="78" Time="1038">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1110" />
-										<CurrentEnd Value="1111" />
+										<CurrentStart Value="1038" />
+										<CurrentEnd Value="1039" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -3190,7 +3207,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -3251,11 +3268,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="77" Time="1111">
+									<AudioClip Id="77" Time="1039">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1111" />
-										<CurrentEnd Value="1112" />
+										<CurrentStart Value="1039" />
+										<CurrentEnd Value="1040" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -3343,7 +3360,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -3404,11 +3421,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="84" Time="1112">
+									<AudioClip Id="84" Time="1040">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1112" />
-										<CurrentEnd Value="1113" />
+										<CurrentStart Value="1040" />
+										<CurrentEnd Value="1041" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -3496,7 +3513,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -3557,11 +3574,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="83" Time="1114">
+									<AudioClip Id="83" Time="1042">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1114" />
-										<CurrentEnd Value="1117" />
+										<CurrentStart Value="1042" />
+										<CurrentEnd Value="1045" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -3649,7 +3666,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
@@ -3710,11 +3727,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="82" Time="1118">
+									<AudioClip Id="82" Time="1046">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1118" />
-										<CurrentEnd Value="1119" />
+										<CurrentStart Value="1046" />
+										<CurrentEnd Value="1047" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -3802,7 +3819,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 07 Abgeeffed 112 BPM - Shifted.wav" />
@@ -3863,11 +3880,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="81" Time="1119">
+									<AudioClip Id="81" Time="1047">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1119" />
-										<CurrentEnd Value="1120" />
+										<CurrentStart Value="1047" />
+										<CurrentEnd Value="1048" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -3955,7 +3972,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="47">
+														<FileRef Id="67">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 28 Carnival 120 BPM - Deep Fry.wav" />

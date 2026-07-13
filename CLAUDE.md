@@ -256,21 +256,30 @@ intro (start) ─▶ pre ⇄ (self | END_TRACK 0.5)
 
 ## Track: DnB (`sound_arrangement_dnb.json`)
 
-Native 171 BPM. Unfinished:
+Native 171 BPM. Full arrangement: intro → build → beat → drop → tail-out.
 
 ```
-intro (start) ─▶ pre ⇄ (self | breakdown)
-breakdown ─▶ fullon ──▶ (END_TRACK | breakdown 0.5)
+intro (start) ─▶ pre ⇄ (self | beat)
+beat ⇄ (self | breakdown)
+breakdown ─▶ fullon ⇄ (self | breakdown | winddown)
+winddown ─▶ outro ─▶ END_TRACK
 ```
 
 | Segment     | Vars | len(171) | `next` |
 |-------------|------|----------|--------|
-| `intro`     | 1    | 32 | `pre` 1.0 |
-| `pre`       | 1    | 32 | self 1.0 · `breakdown` 1.0 |
+| `intro`     | 1    | 64 | `pre` 1.0 |
+| `pre`       | 1    | 32 | self 1.0 · `beat` 1.0 |
+| `beat`      | 4    | 32 | self 2.0 · `breakdown` 1.0 |
 | `breakdown` | 1    | 64 | `fullon` 1.0 |
-| `fullon`    | 2    | 32 | `END_TRACK` 1.0 · `breakdown` 0.5 |
+| `fullon`    | 2    | 32 | self 1.0 · `breakdown` 0.5 · `winddown` 0.5 |
+| `winddown`  | 1    | 32 | `outro` 1.0 |
+| `outro`     | 1    | 32 | `END_TRACK` 1.0 |
 
-- Track-specific rules: **`breakdown` sits right before `fullon`**, and the
-  track **only ends after a `fullon`** (`END_TRACK` is reachable only there).
-- `fullon` variations: `dnb fullon` and `dnb fullon choir` — both 48-beat slices
-  (musical 32), fully interchangeable.
+- Track-specific rules: **`breakdown` sits right before `fullon`**; the drop can
+  re-trigger (`fullon → breakdown`) for another go before it exits. The track
+  **only ends through the tail-out** — `fullon → winddown → outro → END_TRACK`;
+  `END_TRACK` is reachable only from `outro`.
+- `beat` cycles four interchangeable takes as a self-loop (`beat 1`, `beat 2`,
+  `beat 2 jingle`, `beat 3 jingle`); the ~2:1 self-vs-`breakdown` weight keeps it
+  grooving ~3 bars before the drop. `fullon` variations: `dnb fullon` and
+  `dnb fullon choir` — both 48-beat slices (musical 32), fully interchangeable.

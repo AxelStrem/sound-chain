@@ -32,11 +32,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="15" Time="2344">
+									<AudioClip Id="15" Time="2272">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2344" />
-										<CurrentEnd Value="2346.0545332271895" />
+										<CurrentStart Value="2272" />
+										<CurrentEnd Value="2274.0545332271895" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="2.0545332271894772" />
@@ -166,11 +166,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="14" Time="2352">
+									<AudioClip Id="14" Time="2280">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2352" />
-										<CurrentEnd Value="2360" />
+										<CurrentStart Value="2280" />
+										<CurrentEnd Value="2288" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -300,11 +300,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="13" Time="2368">
+									<AudioClip Id="13" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -434,11 +434,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="12" Time="2419.5890500124874">
+									<AudioClip Id="12" Time="2347.5890500124874">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2419.5890500124874" />
-										<CurrentEnd Value="2424" />
+										<CurrentStart Value="2347.5890500124874" />
+										<CurrentEnd Value="2352" />
 										<Loop>
 											<LoopStart Value="3.5890500124875127" />
 											<LoopEnd Value="8" />
@@ -568,11 +568,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="11" Time="2432">
+									<AudioClip Id="11" Time="2360">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2432" />
-										<CurrentEnd Value="2434.0545332271895" />
+										<CurrentStart Value="2360" />
+										<CurrentEnd Value="2362.0545332271895" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="2.0545332271894772" />
@@ -702,11 +702,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="10" Time="2440">
+									<AudioClip Id="10" Time="2368">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2440" />
-										<CurrentEnd Value="2448" />
+										<CurrentStart Value="2368" />
+										<CurrentEnd Value="2376" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="8" />
@@ -853,11 +853,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="5" Time="2288">
+									<AudioClip Id="5" Time="2216">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2288" />
-										<CurrentEnd Value="2320" />
+										<CurrentStart Value="2216" />
+										<CurrentEnd Value="2248" />
 										<Loop>
 											<LoopStart Value="8" />
 											<LoopEnd Value="40" />
@@ -987,11 +987,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="8" Time="2328">
+									<AudioClip Id="8" Time="2256">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2328" />
-										<CurrentEnd Value="2360" />
+										<CurrentStart Value="2256" />
+										<CurrentEnd Value="2288" />
 										<Loop>
 											<LoopStart Value="40" />
 											<LoopEnd Value="72" />
@@ -1121,11 +1121,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="4" Time="2368">
+									<AudioClip Id="4" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2400" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2328" />
 										<Loop>
 											<LoopStart Value="8" />
 											<LoopEnd Value="40" />
@@ -1255,11 +1255,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="6" Time="2408">
+									<AudioClip Id="6" Time="2336">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2408" />
-										<CurrentEnd Value="2424" />
+										<CurrentStart Value="2336" />
+										<CurrentEnd Value="2352" />
 										<Loop>
 											<LoopStart Value="40" />
 											<LoopEnd Value="56" />
@@ -1389,11 +1389,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="7" Time="2432">
+									<AudioClip Id="7" Time="2360">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2432" />
-										<CurrentEnd Value="2448" />
+										<CurrentStart Value="2360" />
+										<CurrentEnd Value="2376" />
 										<Loop>
 											<LoopStart Value="56" />
 											<LoopEnd Value="72" />
@@ -1540,11 +1540,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="5" Time="2288">
+									<AudioClip Id="5" Time="2216">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2288" />
-										<CurrentEnd Value="2320" />
+										<CurrentStart Value="2216" />
+										<CurrentEnd Value="2248" />
 										<Loop>
 											<LoopStart Value="72" />
 											<LoopEnd Value="104" />
@@ -1674,11 +1674,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="8" Time="2328">
+									<AudioClip Id="8" Time="2256">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2328" />
-										<CurrentEnd Value="2345.1718021561774" />
+										<CurrentStart Value="2256" />
+										<CurrentEnd Value="2273.1718021561774" />
 										<Loop>
 											<LoopStart Value="104" />
 											<LoopEnd Value="121.17180215617715" />
@@ -1808,11 +1808,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="4" Time="2368">
+									<AudioClip Id="4" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2400" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2328" />
 										<Loop>
 											<LoopStart Value="72" />
 											<LoopEnd Value="104" />
@@ -1942,11 +1942,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="6" Time="2408">
+									<AudioClip Id="6" Time="2336">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2408" />
-										<CurrentEnd Value="2424" />
+										<CurrentStart Value="2336" />
+										<CurrentEnd Value="2352" />
 										<Loop>
 											<LoopStart Value="104" />
 											<LoopEnd Value="120" />
@@ -2076,11 +2076,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="7" Time="2432">
+									<AudioClip Id="7" Time="2360">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2432" />
-										<CurrentEnd Value="2433.1718021561774" />
+										<CurrentStart Value="2360" />
+										<CurrentEnd Value="2361.1718021561774" />
 										<Loop>
 											<LoopStart Value="120" />
 											<LoopEnd Value="121.17180215617715" />
@@ -2227,11 +2227,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="3" Time="2368">
+									<AudioClip Id="3" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="16" />
 											<LoopEnd Value="32" />
@@ -2361,11 +2361,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="2" Time="2408">
+									<AudioClip Id="2" Time="2336">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2408" />
-										<CurrentEnd Value="2424" />
+										<CurrentStart Value="2336" />
+										<CurrentEnd Value="2352" />
 										<Loop>
 											<LoopStart Value="8" />
 											<LoopEnd Value="24" />
@@ -2512,11 +2512,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="3" Time="2368">
+									<AudioClip Id="3" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="32" />
 											<LoopEnd Value="48" />
@@ -2646,11 +2646,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="2" Time="2408">
+									<AudioClip Id="2" Time="2336">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2408" />
-										<CurrentEnd Value="2424" />
+										<CurrentStart Value="2336" />
+										<CurrentEnd Value="2352" />
 										<Loop>
 											<LoopStart Value="24" />
 											<LoopEnd Value="40" />
@@ -2797,11 +2797,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="3" Time="2368">
+									<AudioClip Id="3" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="48" />
 											<LoopEnd Value="64" />
@@ -2931,11 +2931,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="2" Time="2408">
+									<AudioClip Id="2" Time="2336">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2408" />
-										<CurrentEnd Value="2424" />
+										<CurrentStart Value="2336" />
+										<CurrentEnd Value="2352" />
 										<Loop>
 											<LoopStart Value="40" />
 											<LoopEnd Value="56" />
@@ -3082,11 +3082,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="3" Time="2368">
+									<AudioClip Id="3" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2377.547658331252" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2305.547658331252" />
 										<Loop>
 											<LoopStart Value="64" />
 											<LoopEnd Value="73.54765833125208" />
@@ -3216,11 +3216,11 @@
 										<MarkersGenerated Value="false" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="2" Time="2408">
+									<AudioClip Id="2" Time="2336">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2408" />
-										<CurrentEnd Value="2408.9891082875456" />
+										<CurrentStart Value="2336" />
+										<CurrentEnd Value="2336.9891082875456" />
 										<Loop>
 											<LoopStart Value="56" />
 											<LoopEnd Value="56.98910828754579" />
@@ -3367,11 +3367,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2372.5194667311853" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2300.5194667311853" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="4.5194667311854815" />
@@ -3518,11 +3518,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -3669,11 +3669,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2370.2425145167331" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2298.2425145167331" />
 										<Loop>
 											<LoopStart Value="16" />
 											<LoopEnd Value="18.242514516733266" />
@@ -3820,11 +3820,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -3971,11 +3971,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="16" />
 											<LoopEnd Value="32" />
@@ -4122,11 +4122,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="32" />
 											<LoopEnd Value="48" />
@@ -4273,11 +4273,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="48" />
 											<LoopEnd Value="64" />
@@ -4424,11 +4424,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2372.432858287546" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2300.432858287546" />
 										<Loop>
 											<LoopStart Value="64" />
 											<LoopEnd Value="68.432858287545784" />
@@ -4575,11 +4575,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -4726,11 +4726,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="16" />
 											<LoopEnd Value="32" />
@@ -4877,11 +4877,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="32" />
 											<LoopEnd Value="48" />
@@ -5028,11 +5028,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2379.6954103188477" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2307.6954103188477" />
 										<Loop>
 											<LoopStart Value="48" />
 											<LoopEnd Value="59.69541031884782" />
@@ -5179,11 +5179,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="16" />
@@ -5330,11 +5330,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="16" />
 											<LoopEnd Value="32" />
@@ -5481,11 +5481,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="32" />
 											<LoopEnd Value="48" />
@@ -5632,11 +5632,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="48" />
 											<LoopEnd Value="64" />
@@ -5783,11 +5783,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="64" />
 											<LoopEnd Value="80" />
@@ -5934,11 +5934,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="80" />
 											<LoopEnd Value="96" />
@@ -6085,11 +6085,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2384" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2312" />
 										<Loop>
 											<LoopStart Value="96" />
 											<LoopEnd Value="112" />
@@ -6236,11 +6236,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<AudioClip Id="1" Time="2368">
+									<AudioClip Id="1" Time="2296">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2368" />
-										<CurrentEnd Value="2379.6569355124043" />
+										<CurrentStart Value="2296" />
+										<CurrentEnd Value="2307.6569355124043" />
 										<Loop>
 											<LoopStart Value="112" />
 											<LoopEnd Value="123.65693551240426" />
@@ -6393,8 +6393,8 @@
 					<AutomationLanes>
 						<AutomationLanes>
 							<AutomationLane Id="0">
-								<SelectedDevice Value="4" />
-								<SelectedEnvelope Value="0" />
+								<SelectedDevice Value="6" />
+								<SelectedEnvelope Value="1" />
 								<IsContentSelectedInDocument Value="false" />
 								<LaneHeight Value="68" />
 							</AutomationLane>
@@ -6402,9 +6402,9 @@
 						<AreAdditionalAutomationLanesFolded Value="false" />
 					</AutomationLanes>
 					<ClipEnvelopeChooserViewState>
-						<SelectedDevice Value="0" />
-						<SelectedEnvelope Value="0" />
-						<PreferModulationVisible Value="false" />
+						<SelectedDevice Value="6" />
+						<SelectedEnvelope Value="1" />
+						<PreferModulationVisible Value="true" />
 					</ClipEnvelopeChooserViewState>
 					<AudioInputRouting>
 						<Target Value="AudioIn/External/M0" />
@@ -6469,8 +6469,8 @@
 						<ModulationSourceCount Value="0" />
 						<ParametersListWrapper LomId="0" />
 						<Pointee Id="95483" />
-						<LastSelectedTimeableIndex Value="2" />
-						<LastSelectedClipEnvelopeIndex Value="2" />
+						<LastSelectedTimeableIndex Value="1" />
+						<LastSelectedClipEnvelopeIndex Value="0" />
 						<LastPresetRef>
 							<Value />
 						</LastPresetRef>
@@ -6497,6 +6497,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="95485">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="130600">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="130601">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>
@@ -6535,7 +6552,7 @@
 						<PanMode Value="0" />
 						<Pan>
 							<LomId Value="218" />
-							<Manual Value="0.349999994" />
+							<Manual Value="0.4199999869" />
 							<MidiControllerRange>
 								<Min Value="-1" />
 								<Max Value="1" />
@@ -6577,7 +6594,7 @@
 						</SplitStereoPanR>
 						<Volume>
 							<LomId Value="192" />
-							<Manual Value="0.2213094682" />
+							<Manual Value="0.1364583224" />
 							<MidiControllerRange>
 								<Min Value="0.0003162277571" />
 								<Max Value="1.99526238" />
@@ -6700,11 +6717,11 @@
 						<Sample>
 							<ArrangerAutomation>
 								<Events>
-									<AudioClip Id="177" Time="2432">
+									<AudioClip Id="177" Time="2360">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="2432" />
-										<CurrentEnd Value="2448" />
+										<CurrentStart Value="2360" />
+										<CurrentEnd Value="2376" />
 										<Loop>
 											<LoopStart Value="40" />
 											<LoopEnd Value="56" />
@@ -6732,8 +6749,8 @@
 											<Envelopes />
 										</Envelopes>
 										<ScrollerTimePreserver>
-											<LeftTime Value="0" />
-											<RightTime Value="0.25" />
+											<LeftTime Value="16" />
+											<RightTime Value="32" />
 										</ScrollerTimePreserver>
 										<TimeSelection>
 											<AnchorTime Value="3.5890500124875127" />
@@ -7317,7 +7334,7 @@
 										<NumAudioOutputs Value="1" />
 										<IsPlaceholderDevice Value="false" />
 										<Preset>
-											<Vst3Preset Id="63">
+											<Vst3Preset Id="83">
 												<OverwriteProtectionNumber Value="3076" />
 												<MpeEnabled Value="0" />
 												<MpeSettings>

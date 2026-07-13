@@ -1,15 +1,16 @@
 {
   "start_segments": {
-    "171-dnb-intro": 1.0
+    "171-dnb-intro": 1.0,
+    "171-dnb-pre": 1.0
   },
   "segments": [
     {
       "name": "171-dnb-intro",
       "audio": [
-        "171-dnb-intro-48"
+        "171-dnb-intro-80"
       ],
       "progress": [ [0.0, 1.0] ],
-      "length_beats": 32,
+      "length_beats": 64,
       "next": {
         "171-dnb-pre": 1.0
       }
@@ -17,12 +18,27 @@
     {
       "name": "171-dnb-pre",
       "audio": [
-        "171-dnb-pre-48"
+        "171-dnb-pre 1-48"
       ],
       "progress": [ [0.0, 1.0] ],
       "length_beats": 32,
       "next": {
         "171-dnb-pre": 1.0,
+        "171-dnb-beat": 1.0
+      }
+    },
+    {
+      "name": "171-dnb-beat",
+      "audio": [
+        "171-dnb-beat 1-48",
+        "171-dnb-beat 2-48",
+        "171-dnb-beat 2 jingle-48",
+        "171-dnb-beat 3 jingle-48"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 32,
+      "next": {
+        "171-dnb-beat": 2.0,
         "171-dnb-breakdown": 1.0
       }
     },
@@ -46,8 +62,30 @@
       "progress": [ [0.0, 1.0] ],
       "length_beats": 32,
       "next": {
-        "END_TRACK": 1.0,
-        "171-dnb-breakdown": 0.5
+        "171-dnb-fullon": 0.8,
+        "171-dnb-winddown": 0.5
+      }
+    },
+    {
+      "name": "171-dnb-winddown",
+      "audio": [
+        "171-dnb winddown-48"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 32,
+      "next": {
+        "171-dnb-outro": 1.0
+      }
+    },
+    {
+      "name": "171-dnb-outro",
+      "audio": [
+        "171-dnb outro 1 jingle-48"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 32,
+      "next": {
+        "END_TRACK": 1.0
       }
     }
   ]

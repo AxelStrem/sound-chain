@@ -8,7 +8,7 @@
 					<IsValueSampleBased Value="false" />
 				</TrackDelay>
 				<Name>
-					<EffectiveName Value="37-Audio" />
+					<EffectiveName Value="44-Audio" />
 					<UserName Value="" />
 					<Annotation Value="" />
 					<MemorizedFirstClipName Value="Audio 6" />
@@ -136,7 +136,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -270,7 +270,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -404,7 +404,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -538,7 +538,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -672,7 +672,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -806,7 +806,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -940,7 +940,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -1074,7 +1074,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -1208,7 +1208,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -1342,7 +1342,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -1476,7 +1476,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -1610,7 +1610,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -1744,7 +1744,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -1878,7 +1878,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -2012,7 +2012,7 @@
 												<OriginalCrc Value="47675" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783867736" />
+											<LastModDate Value="1783868251" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="469248" />
@@ -2163,7 +2163,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -2297,7 +2297,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -2431,7 +2431,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -2565,7 +2565,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -2699,7 +2699,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -2833,7 +2833,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -2967,7 +2967,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -3101,7 +3101,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -3235,7 +3235,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -3369,7 +3369,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -3503,7 +3503,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -3637,7 +3637,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -3771,7 +3771,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -3905,7 +3905,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -4039,7 +4039,7 @@
 												<OriginalCrc Value="2950" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868241" />
+											<LastModDate Value="1783868370" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="3047040" />
@@ -4190,7 +4190,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -4324,7 +4324,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -4458,7 +4458,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -4592,7 +4592,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -4726,7 +4726,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -4860,7 +4860,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -4994,7 +4994,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -5128,7 +5128,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -5262,7 +5262,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -5396,7 +5396,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -5530,7 +5530,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -5664,7 +5664,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -5798,7 +5798,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -5932,7 +5932,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -6066,7 +6066,7 @@
 												<OriginalCrc Value="34587" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868307" />
+											<LastModDate Value="1783868385" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="701344" />
@@ -6217,7 +6217,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -6351,7 +6351,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -6485,7 +6485,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -6619,7 +6619,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -6753,7 +6753,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -6887,7 +6887,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -7021,7 +7021,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -7155,7 +7155,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -7289,7 +7289,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -7423,7 +7423,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -7557,7 +7557,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -7691,7 +7691,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -7825,7 +7825,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -7959,7 +7959,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -8093,7 +8093,7 @@
 												<OriginalCrc Value="54772" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868370" />
+											<LastModDate Value="1783868420" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="1027488" />
@@ -8244,7 +8244,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -8378,7 +8378,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -8512,7 +8512,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -8646,7 +8646,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -8780,7 +8780,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -8914,7 +8914,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -9048,7 +9048,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -9182,7 +9182,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -9316,7 +9316,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -9450,7 +9450,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -9584,7 +9584,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -9718,7 +9718,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -9852,7 +9852,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -9986,7 +9986,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -10120,7 +10120,7 @@
 												<OriginalCrc Value="38042" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868398" />
+											<LastModDate Value="1783868436" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="755168" />
@@ -10271,7 +10271,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -10405,7 +10405,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -10539,7 +10539,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -10673,7 +10673,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -10807,7 +10807,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -10941,7 +10941,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -11075,7 +11075,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -11209,7 +11209,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -11343,7 +11343,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -11477,7 +11477,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -11611,7 +11611,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -11745,7 +11745,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -11879,7 +11879,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -12013,7 +12013,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -12147,7 +12147,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -12281,7 +12281,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -12427,7 +12427,7 @@
 						<ParametersListWrapper LomId="0" />
 						<Pointee Id="117167" />
 						<LastSelectedTimeableIndex Value="1" />
-						<LastSelectedClipEnvelopeIndex Value="1" />
+						<LastSelectedClipEnvelopeIndex Value="0" />
 						<LastPresetRef>
 							<Value />
 						</LastPresetRef>
@@ -12454,6 +12454,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="117169">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="130564">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="130565">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>
@@ -12745,7 +12762,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -12879,7 +12896,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -13154,7 +13171,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -13429,7 +13446,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -13704,7 +13721,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -13923,8 +13940,8 @@
 											<Envelopes />
 										</Envelopes>
 										<ScrollerTimePreserver>
-											<LeftTime Value="309.98478968947717" />
-											<RightTime Value="313.98478968947717" />
+											<LeftTime Value="304" />
+											<RightTime Value="311.2271332833833" />
 										</ScrollerTimePreserver>
 										<TimeSelection>
 											<AnchorTime Value="0" />
@@ -13979,7 +13996,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -14254,7 +14271,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -14529,7 +14546,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -14804,7 +14821,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />
@@ -15079,7 +15096,7 @@
 												<OriginalCrc Value="29805" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1783868420" />
+											<LastModDate Value="1783868563" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 											<DefaultDuration Value="5013792" />

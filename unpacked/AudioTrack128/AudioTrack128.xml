@@ -8,8 +8,8 @@
 					<IsValueSampleBased Value="false" />
 				</TrackDelay>
 				<Name>
-					<EffectiveName Value="38-Audio [2026-07-12 180239]" />
-					<UserName Value="" />
+					<EffectiveName Value="White Noise" />
+					<UserName Value="White Noise" />
 					<Annotation Value="" />
 					<MemorizedFirstClipName Value="Audio [2026-07-12 180239]" />
 				</Name>
@@ -566,6 +566,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="130566">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="130567">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="1">
 								<Send>
 									<LomId Value="0" />
@@ -641,7 +658,7 @@
 						</SplitStereoPanR>
 						<Volume>
 							<LomId Value="479" />
-							<Manual Value="0.2041737735" />
+							<Manual Value="0.1412537396" />
 							<MidiControllerRange>
 								<Min Value="0.0003162277571" />
 								<Max Value="1.99526238" />
@@ -1332,8 +1349,8 @@
 											<Envelopes />
 										</Envelopes>
 										<ScrollerTimePreserver>
-											<LeftTime Value="0" />
-											<RightTime Value="7.2271332833832833" />
+											<LeftTime Value="0.0000312999502511956962" />
+											<RightTime Value="7.2271645833333338" />
 										</ScrollerTimePreserver>
 										<TimeSelection>
 											<AnchorTime Value="0" />

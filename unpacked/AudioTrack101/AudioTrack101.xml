@@ -23,11 +23,11 @@
 							<Automation>
 								<Events>
 									<FloatEvent Id="48" Time="-63072000" Value="255.63118" />
-									<FloatEvent Id="578" Time="846" Value="255.63118" />
-									<FloatEvent Id="577" Time="848" Value="7533.58496" />
-									<FloatEvent Id="576" Time="848" Value="255.63118" />
-									<FloatEvent Id="575" Time="1078" Value="255.63118" />
-									<FloatEvent Id="574" Time="1080" Value="7533.58496" />
+									<FloatEvent Id="583" Time="774" Value="255.63118" />
+									<FloatEvent Id="582" Time="776" Value="7533.58496" />
+									<FloatEvent Id="581" Time="776" Value="255.63118" />
+									<FloatEvent Id="580" Time="1006" Value="255.63118" />
+									<FloatEvent Id="579" Time="1008" Value="7533.58496" />
 								</Events>
 								<AutomationTransformViewState>
 									<IsTransformPending Value="false" />
@@ -167,6 +167,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="108063">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="130626">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="130627">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>
@@ -370,11 +387,11 @@
 						<Sample>
 							<ArrangerAutomation>
 								<Events>
-									<AudioClip Id="26" Time="846">
+									<AudioClip Id="26" Time="774">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="846" />
-										<CurrentEnd Value="848" />
+										<CurrentStart Value="774" />
+										<CurrentEnd Value="776" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -462,7 +479,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="45">
+														<FileRef Id="65">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Billy Daniel Bunter and Sanxion Old Skool Sample Pack/FX/Uprisers/B+S - Riser 2 - 140bpm.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Billy Daniel Bunter and Sanxion Old Skool Sample Pack/FX/Uprisers/B+S - Riser 2 - 140bpm.wav" />
@@ -523,11 +540,11 @@
 										<MarkersGenerated Value="true" />
 										<IsSongTempoLeader Value="false" />
 									</AudioClip>
-									<AudioClip Id="8" Time="1078">
+									<AudioClip Id="8" Time="1006">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="1078" />
-										<CurrentEnd Value="1080" />
+										<CurrentStart Value="1006" />
+										<CurrentEnd Value="1008" />
 										<Loop>
 											<LoopStart Value="0" />
 											<LoopEnd Value="32" />
@@ -615,7 +632,7 @@
 											<SourceContext>
 												<SourceContext Id="0">
 													<OriginalFileRef>
-														<FileRef Id="45">
+														<FileRef Id="65">
 															<RelativePathType Value="1" />
 															<RelativePath Value="../../../../../Samples/_packs/Billy Daniel Bunter and Sanxion Old Skool Sample Pack/FX/Uprisers/B+S - Riser 2 - 140bpm.wav" />
 															<Path Value="/Users/notumschaltung/Samples/_packs/Billy Daniel Bunter and Sanxion Old Skool Sample Pack/FX/Uprisers/B+S - Riser 2 - 140bpm.wav" />
