@@ -657,7 +657,7 @@ func _queue_successor() -> void:
 	_pending_seg = target
 	_pending_clip = _pick_clip(target)
 	_pending_variation = _arm_clip(_pending_clip, target)
-	if _playback:
+	if _playback and _pending_clip >= 0:
 		_playback.switch_to_clip(_pending_clip)
 
 
@@ -961,6 +961,7 @@ func _progress_distance(seg: Dictionary) -> float:
 			if d < best:
 				best = d
 	return best
+
 # ---------------------------------------------------------------------------
 # WAV fallback loader (for exported builds)
 # ---------------------------------------------------------------------------
