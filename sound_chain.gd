@@ -21,19 +21,57 @@ extends Node
 ##   SoundChain.start(12345)
 ##   SoundChain.pause()
 ##   SoundChain.stop()
+##
+## --- Timing model ---
+## Transitions are scheduled by Godot's native [AudioStreamInteractive]: one
+## clip per segment, a single CLIP_ANY→CLIP_ANY transition firing at the
+## outgoing clip's musical end (beat_count × 60 / bpm), executed on the audio
+## thread sample-accurately.  This script only decides *which* clip comes next
+## (the Markov walk) and queues it with switch_to_clip(); the engine owns all
+## timing.  Because segment audio does not loop, the engine lets the outgoing
+## clip ring out to its natural file end — the baked tail overlaps the next
+## segment exactly like before.
+##
+## Two engine constraints shape the implementation:
+##   * The AudioStreamInteractive resource must NOT be modified while playing
+##     (set_clip_stream & co. bump an internal version and the playback kills
+##     itself).  So each clip's stream is a [BeatSyncStream] wrapper whose
+##     *contents* we swap to pick a variation — a separate resource, safe to
+##     touch at runtime.  The wrapper also reports bpm/beat_count so END
+##     transitions stay beat-aligned (all clips share the internal 171 grid;
+##     beat_count = the segment's length_beats).
+##   * get_current_clip_index() doesn't change on a self-transition, so
+##     segments that can follow themselves (repeat > 1 or self in `next`) get
+##     TWIN clips that alternate.  Every hop is then an observable clip-index
+##     change: the walk advances purely on that event.  It also means the
+##     pending clip is never the one currently sounding, making the variation
+##     pool swap race-free.
+## A frame-delta clock remains only to emit [signal beat_advanced] — it plays
+## no part in scheduling.
 
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
 
 const DEFAULT_LENGTH_BEATS  := 16
-const DEFAULT_LOOKAHEAD     := 2
-const MAX_PLAYERS           := 4
+
+## AudioStreamInteractive's hard clip limit (MAX_CLIPS in the engine).
+const MAX_INTERACTIVE_CLIPS := 63
 
 ## Special "next" target.  When selected it ends the current track and lets the
 ## engine jump to a different song (progress-filtered, weighted).  See
 ## [method _select_new_track].
 const END_TRACK := "END_TRACK"
+
+
+## Clip stream wrapper: holds the currently-chosen audio variation (pool of
+## exactly one stream, swapped by [method _arm_clip]) and reports the beat
+## metadata AudioStreamInteractive needs to schedule the END transition.
+class BeatSyncStream extends AudioStreamRandomizer:
+	var sync_bpm  := 0.0
+	var sync_beats := 0
+	func _get_bpm() -> float: return sync_bpm
+	func _get_beat_count() -> int: return sync_beats
 
 # ---------------------------------------------------------------------------
 # Signals (for UI / debug — the walk itself does not depend on them)
@@ -70,17 +108,33 @@ var _cur_name   := ""   ## Currently-playing segment name
 var _cur_seg    := {}   ## Currently-playing segment data
 var _cur_track  := ""   ## Track owning the currently-playing segment
 var _cur_variation := "" ## The `audio` variation chosen for the current pass
-var _cur_start  := 0    ## Beat on which current segment (this pass) started
+var _cur_clip   := -1   ## Clip index currently sounding
 var _reps_left  := 0    ## Remaining extra `repeat` passes of the current segment
 
-var _next_name  := ""   ## Pre-selected next segment
-var _next_done  := false ## Whether next selection has happened this cycle
+var _next_name  := ""   ## Scratch: last result of _select_next()
 
-var _timer      : Timer
-var _pool       : Array[AudioStreamPlayer] = []
-var _active     := {}   ## AudioStreamPlayer → segment_name
+## The hop we've asked the engine to make at the current clip's musical end.
+## An empty _pending_seg means nothing is queued (dead end → playback winds
+## down via the player's `finished` signal).
+var _pending_seg  := ""
+var _pending_clip := -1
+var _pending_fresh := false  ## true = a real `next` pick; false = a `repeat` pass
+var _pending_variation := ""
 
-var _bus_name        := &"Master"       ## Audio bus for all players
+# Native interactive-audio playback
+var _interactive : AudioStreamInteractive
+var _player      : AudioStreamPlayer
+var _playback    : AudioStreamPlaybackInteractive
+var _clips_of   := {}   ## segment name → Array of clip indices ([primary] or [primary, twin])
+var _clip_seg   : Array[String] = []  ## clip index → segment name
+var _wrappers   := {}   ## clip index → BeatSyncStream
+var _variations := {}   ## segment name → { streams: Array, names: Array }
+
+# Beat clock for the beat_advanced signal only (no scheduling role).
+var _play_elapsed_usec := 0
+var _beat_usec         := 500_000
+
+var _bus_name        := &"Master"       ## Audio bus for the player
 var _audio_base      := "res://segments"  ## Base directory for segment audio files
 var _playback_speed  := 1.0                ## Playback speed / pitch scale (1.0 = normal)
 var _history         : Array[String] = []  ## Segment names in order since last start()
@@ -131,12 +185,11 @@ func load_metadata(path: String) -> void:
 				cfg.get("progress", []), arr.get("segments", []),
 				float(cfg.get("probability", 1.0)))
 
-	# (Re)create timer and player pool
-	_setup_timer()
-	_setup_pool()
+	_recalc_beat_usec()
+	_build_interactive()
 
-	print("SoundChain: loaded %d tracks, %d segments, %d BPM (%.3f s/beat)" %
-		[_tracks.size(), _segments.size(), int(_bpm), _beat_secs])
+	print("SoundChain: loaded %d tracks, %d segments (%d clips), %d BPM (%.3f s/beat)" %
+		[_tracks.size(), _segments.size(), _clip_seg.size(), int(_bpm), _beat_secs])
 
 
 ## Load one track's arrangement file, returning its parsed dict (with
@@ -187,6 +240,97 @@ func _add_track(track_name: String, start_segments: Dictionary, progress: Array,
 	}
 
 
+## True when a segment can be followed by itself (a `repeat` pass or a
+## self-loop in `next`) — such segments need a twin clip (see header).
+func _self_following(seg: Dictionary, name: String) -> bool:
+	if int(seg.get("repeat", 1)) > 1:
+		return true
+	return (seg.get("next", {}) as Dictionary).has(name)
+
+
+## Build the AudioStreamInteractive: one clip per segment (two for segments
+## that can follow themselves), each holding a BeatSyncStream wrapper with the
+## shared 171-grid beat metadata.  All variation audio is preloaded here (no
+## runtime load hitches).  One wildcard END transition covers every clip pair.
+## The resource is never modified after playback starts.
+func _build_interactive() -> void:
+	_interactive = AudioStreamInteractive.new()
+	_clips_of.clear()
+	_clip_seg.clear()
+	_wrappers.clear()
+	_variations.clear()
+
+	# Preload every segment's variation streams.
+	for name in _segments:
+		var seg: Dictionary = _segments[name]
+		var streams: Array = []
+		var names: Array = []
+		for entry in seg.get("audio", []):
+			var path := _resolve_entry_path(str(entry), name)
+			if path == "":
+				continue
+			var s := _load_stream(path)
+			if s == null:
+				push_warning("SoundChain: failed to load '%s' for segment '%s'" % [path, name])
+				continue
+			streams.append(s)
+			names.append(str(entry))
+		if streams.is_empty():
+			# Fallback: try <segment name>.ogg/.wav
+			var path := _resolve_entry_path(name, name)
+			if path != "":
+				var s := _load_stream(path)
+				if s != null:
+					streams.append(s)
+					names.append(name)
+		if streams.is_empty():
+			push_error("SoundChain: no audio for segment '%s'" % name)
+		_variations[name] = { "streams": streams, "names": names }
+
+	# Plan the clip layout.
+	var total := 0
+	for name in _segments:
+		total += 2 if _self_following(_segments[name], name) else 1
+	if total > MAX_INTERACTIVE_CLIPS:
+		push_error("SoundChain: %d clips exceed AudioStreamInteractive's limit of %d" %
+			[total, MAX_INTERACTIVE_CLIPS])
+	_interactive.clip_count = total
+
+	var idx := 0
+	for name in _segments:
+		var seg: Dictionary = _segments[name]
+		var copies := 2 if _self_following(seg, name) else 1
+		var arr := []
+		for c in copies:
+			var w := BeatSyncStream.new()
+			w.sync_bpm = _bpm
+			w.sync_beats = int(seg.get("length_beats", DEFAULT_LENGTH_BEATS))
+			w.random_pitch = 1.0
+			w.random_volume_offset_db = 0.0
+			var streams: Array = _variations[name]["streams"]
+			if not streams.is_empty():
+				w.add_stream(0, streams[0])
+			_interactive.set_clip_name(idx, name if c == 0 else name + "#2")
+			_interactive.set_clip_stream(idx, w)
+			_wrappers[idx] = w
+			_clip_seg.append(name)
+			arr.append(idx)
+			idx += 1
+		_clips_of[name] = arr
+
+	# One wildcard transition: fire at the outgoing clip's musical end, start
+	# the incoming at its beginning, no fades — non-looping sources ring out to
+	# their natural file end (the baked tail overlaps the next clip).
+	_interactive.add_transition(
+		AudioStreamInteractive.CLIP_ANY, AudioStreamInteractive.CLIP_ANY,
+		AudioStreamInteractive.TRANSITION_FROM_TIME_END,
+		AudioStreamInteractive.TRANSITION_TO_TIME_START,
+		AudioStreamInteractive.FADE_DISABLED, 1.0, false, -1, false)
+
+	if _player:
+		_player.stream = _interactive
+
+
 ## Start a new playthrough with a normal metadata-driven pick (weighted,
 ## progress-filtered track + start segment).  [param seed_value] seeds the RNG so
 ## the same seed + progress trajectory yields the same sequence; pass a negative
@@ -216,77 +360,86 @@ func start_segment_at(seg_name: String, seed_value: int = -1) -> void:
 ## Shared playthrough kick-off: seed the RNG, arm state and play [param first].
 func _begin(first: String, seed_value: int) -> void:
 	stop()
-	if _segments.is_empty():
+	if _segments.is_empty() or _interactive == null:
 		push_error("SoundChain: no metadata loaded — call load_metadata() first")
 		return
 
-	_rng.set_seed(seed_value if seed_value >= 0 else randi())
-	_beat      = 0
-	_playing   = true
-	_paused    = false
-
 	if first == "":
 		push_error("SoundChain: no start segment could be selected")
-		_playing = false
 		return
 
-	_start_segment(first, 0)
-	_timer.start()
+	_rng.set_seed(seed_value if seed_value >= 0 else randi())
+	_beat = 0
+	_play_elapsed_usec = 0
+	_playing = true
+	_paused  = false
+
+	var clip: int = _clips_of[first][0]
+	_interactive.initial_clip = clip   # resource not playing yet — safe
+	var v := _arm_clip(clip, first)
+	_player.play()
+	_playback = _player.get_stream_playback() as AudioStreamPlaybackInteractive
+
+	_promote(first, clip, true, v)
 	playback_changed.emit(_playing, _paused)
 
 
-## Toggle pause.  Audio players and the beat clock are paused together.
+## Toggle pause.  Player audio (and thereby the engine's transition timing) and
+## the beat clock are frozen together.
 func pause() -> void:
 	if not _playing:
 		return
 	_paused = not _paused
-	_timer.paused = _paused
-	for player in _active:
-		player.stream_paused = _paused
+	if _player:
+		_player.stream_paused = _paused
 	playback_changed.emit(_playing, _paused)
 
 
-## Stop playback immediately and release all players.
+## Stop playback immediately and release the player.
 func stop() -> void:
 	_stop_all()
 
 
 ## Skip to the next segment right now, bypassing any remaining `repeat` passes.
-## Resolves the current segment's `next` table (including END_TRACK) exactly as the
-## automatic hand-off would.  No-op unless actively playing.
+## Resolves the current segment's `next` table (including END_TRACK) exactly as
+## the automatic hand-off would.  No-op unless actively playing.
+##
+## Unlike an automatic boundary transition (where the outgoing tail rings out
+## under the next), a manual skip cuts the current audio and restarts playback
+## at the target — matching the old skip's hard cut.
 func skip() -> void:
 	if not is_playing() or _cur_name == "":
 		return
 	_reps_left = 0
-	if not _next_done:
-		_select_next()
+	_select_next()
 	if _next_name == "":
 		return
-	# Unlike an automatic boundary transition (where the outgoing segment's tail
-	# is meant to ring out under the next), a manual skip happens mid-segment, so
-	# cut the current audio before starting the next.
-	_silence_active()
-	_start_segment(_next_name, _beat)
-
-
-## Stop and release every currently-sounding player without tearing down the
-## playthrough (state, timer and beat clock keep running).
-func _silence_active() -> void:
-	for player in _active.keys():
-		if is_instance_valid(player):
-			player.stop()
-			player.stream = null
-	_active.clear()
+	var target := _next_name
+	_player.stop()
+	var clip: int = _clips_of[target][0]
+	_interactive.initial_clip = clip   # not playing during the swap — safe
+	var v := _arm_clip(clip, target)
+	_player.play()
+	_playback = _player.get_stream_playback() as AudioStreamPlaybackInteractive
+	_promote(target, clip, true, v)
 
 
 ## Update the progress value [0.0, 1.0].  If a next segment has already been
-## pre-selected, its validity is re-checked and may trigger a re-selection.
+## queued, its validity is re-checked and may trigger a re-selection (the new
+## switch request simply replaces the previous one in the engine).
 func set_progress(value: float) -> void:
 	_progress = clampf(value, 0.0, 1.0)
 
-	if _next_done and _next_name != "":
-		if not _valid_for_progress(_segments.get(_next_name, {})):
+	# Only a real (non-repeat) queued pick can become progress-invalid.
+	if _playing and _pending_seg != "" and _pending_fresh:
+		if not _valid_for_progress(_segments.get(_pending_seg, {})):
 			_select_next()
+			if _next_name != "":
+				_pending_seg = _next_name
+				_pending_clip = _pick_clip(_pending_seg)
+				_pending_variation = _arm_clip(_pending_clip, _pending_seg)
+				if _playback:
+					_playback.switch_to_clip(_pending_clip)
 
 
 ## Returns true when playback is active and not paused.
@@ -294,13 +447,12 @@ func is_playing() -> bool:
 	return _playing and not _paused
 
 
-## Set the audio bus used by all players.  Call before [method start];
-## existing players are updated immediately.
+## Set the audio bus used by the player.  Call before [method start];
+## the existing player is updated immediately.
 func set_bus(bus: StringName) -> void:
 	_bus_name = bus
-	for p in _pool:
-		if is_instance_valid(p):
-			p.bus = _bus_name
+	if _player and is_instance_valid(_player):
+		_player.bus = _bus_name
 
 
 ## Set the base directory for resolving segment audio files whose path is not
@@ -327,11 +479,13 @@ func get_volume() -> float:
 
 
 ## Set playback speed (1.0 = normal, 0.5 = half, 2.0 = double).
-## Changes pitch as well — intended for temporary sound effects.
-## Updates all currently-playing and idle players immediately.
+## Changes pitch as well — intended for temporary sound effects.  The engine's
+## transition timing scales with the audio automatically.
 func set_playback_speed(speed: float) -> void:
 	_playback_speed = maxf(0.05, speed)
-	_apply_playback_speed()
+	_recalc_beat_usec()
+	if _player and is_instance_valid(_player):
+		_player.pitch_scale = _playback_speed
 
 
 ## Read-only accessors (useful for debug / UI).
@@ -408,88 +562,130 @@ func set_track_progress(track_name: String, progress: Array) -> void:
 # ---------------------------------------------------------------------------
 
 func _ready() -> void:
-	# Create timer early so it's always present; wait_time updated on load.
-	_timer = Timer.new()
-	_timer.one_shot = false
-	_timer.wait_time = _beat_secs
-	_timer.timeout.connect(_on_beat)
-	add_child(_timer)
-
-	# Prime the pool (no-op until metadata is loaded and _setup_pool runs).
-	_pool.clear()
-	for _i in MAX_PLAYERS:
-		var p := AudioStreamPlayer.new()
-		p.bus = _bus_name
-		p.pitch_scale = _playback_speed
-		p.finished.connect(_on_player_done.bind(p))
-		add_child(p)
-		_pool.append(p)
+	_player = AudioStreamPlayer.new()
+	_player.bus = _bus_name
+	_player.pitch_scale = _playback_speed
+	_player.finished.connect(_on_player_finished)
+	add_child(_player)
 
 
 func _exit_tree() -> void:
 	_stop_all()
 
-# ---------------------------------------------------------------------------
-# Internal setup
-# ---------------------------------------------------------------------------
 
-func _setup_timer() -> void:
-	if _timer:
-		_timer.wait_time = _beat_secs / _playback_speed
-
-
-func _setup_pool() -> void:
-	# Recycle existing players: stop them and clear active set.
-	for player in _active.keys():
-		if is_instance_valid(player):
-			player.stop()
-			player.stream = null
-	_active.clear()
-
-
-## Push _playback_speed to all players (active + idle) and rescale beat clock.
-func _apply_playback_speed() -> void:
-	if _timer:
-		_timer.wait_time = _beat_secs / _playback_speed
-	for p in _pool:
-		if is_instance_valid(p):
-			p.pitch_scale = _playback_speed
-
-# ---------------------------------------------------------------------------
-# Beat clock
-# ---------------------------------------------------------------------------
-
-func _on_beat() -> void:
+## Advance the beat signal clock and watch for the engine executing the queued
+## hop (the clip index changes at the outgoing clip's musical end — the seam
+## itself was placed sample-accurately on the audio thread; this poll only
+## promotes bookkeeping, so its frame quantization is cosmetic).
+func _process(delta: float) -> void:
 	if not _playing or _paused:
 		return
 
-	_beat += 1
+	_play_elapsed_usec += int(delta * 1_000_000.0)
+	if _beat_usec > 0:
+		var b := _play_elapsed_usec / _beat_usec
+		while _beat < b:
+			_beat += 1
+			beat_advanced.emit(_beat)
 
-	# Safety: nothing to schedule against
-	if _cur_name == "":
+	if _playback == null:
 		return
+	var idx := _playback.get_current_clip_index()
+	if idx == _cur_clip:
+		return
+	if idx == _pending_clip and idx >= 0:
+		_promote(_pending_seg, idx, _pending_fresh, _pending_variation)
+	elif idx >= 0 and idx < _clip_seg.size():
+		# Shouldn't happen; adopt whatever the engine is actually playing.
+		push_warning("SoundChain: resync — engine on unexpected clip %d ('%s')" % [idx, _clip_seg[idx]])
+		_promote(_clip_seg[idx], idx, true, "")
 
-	beat_advanced.emit(_beat)
 
-	var end_beat  : int = _cur_start + _cur_seg.get("length_beats", DEFAULT_LENGTH_BEATS)
-	var lookahead : int = _metadata.get("lookahead_beats", DEFAULT_LOOKAHEAD)
-
-	if _reps_left > 0:
-		# --- More `repeat` passes to go: replay the same segment on the boundary ---
-		if _beat >= end_beat:
-			_reps_left -= 1
-			_start_segment(_cur_name, _beat, false)
-	else:
-		# --- Final pass: pre-select then hand off to the next segment ---
-		if not _next_done and _beat >= end_beat - lookahead:
-			_select_next()
-
-		if _next_done and _next_name != "" and _beat >= end_beat:
-			_start_segment(_next_name, _beat)
-
-	# --- If nothing is playing and nothing is queued, wind down ---
-	if _active.is_empty() and _next_name == "":
+## The interactive playback ended (dead-end segment played out its tail with
+## nothing queued).  Wind the playthrough down.
+func _on_player_finished() -> void:
+	if _playing:
 		_stop_all()
+
+# ---------------------------------------------------------------------------
+# Walk bookkeeping
+# ---------------------------------------------------------------------------
+
+## Adopt [param seg_name]/[param clip] as the currently-sounding segment and
+## immediately queue its successor with the engine.  [param fresh] true re-arms
+## the `repeat` counter; false is a repeat pass of the same segment.
+func _promote(seg_name: String, clip: int, fresh: bool, variation: String) -> void:
+	_cur_name = seg_name
+	_cur_seg  = _segments.get(seg_name, {})
+	_cur_track = _seg_track.get(seg_name, _cur_track)
+	_cur_variation = variation
+	_cur_clip = clip
+
+	if fresh:
+		_reps_left = maxi(1, int(_cur_seg.get("repeat", 1))) - 1
+
+	_history.append(seg_name)
+	print("SoundChain: beat %3d → '%s'  (len=%d, pass %d/%d, var=%s)" %
+		[_beat, seg_name, get_current_length_beats(),
+		get_current_pass(), get_current_total_passes(), variation])
+	segment_changed.emit(_cur_name, _cur_track)
+
+	_queue_successor()
+
+
+## Decide the next hop (repeat pass / weighted `next` / END_TRACK → new track)
+## and ask the engine to switch at the current clip's musical end.
+func _queue_successor() -> void:
+	_pending_seg = ""
+	_pending_clip = -1
+	_pending_fresh = false
+	_pending_variation = ""
+
+	var target := ""
+	if _reps_left > 0:
+		_reps_left -= 1
+		target = _cur_name
+		_pending_fresh = false
+	else:
+		_select_next()
+		target = _next_name
+		_pending_fresh = true
+
+	if target == "":
+		return  # dead end → clip plays out its tail, `finished` winds down
+
+	_pending_seg = target
+	_pending_clip = _pick_clip(target)
+	_pending_variation = _arm_clip(_pending_clip, target)
+	if _playback:
+		_playback.switch_to_clip(_pending_clip)
+
+
+## The clip index a hop into [param seg_name] should use: the twin of the
+## current clip when hopping to the same segment, else the primary.
+func _pick_clip(seg_name: String) -> int:
+	var arr: Array = _clips_of.get(seg_name, [])
+	if arr.size() == 2 and arr[0] == _cur_clip:
+		return arr[1]
+	return arr[0] if not arr.is_empty() else -1
+
+
+## Choose a random `audio` variation for [param seg_name] (deterministic for a
+## given RNG seed) and install it as clip [param clip]'s stream content.  The
+## clip is never the one currently sounding, so this is race-free — and it does
+## not touch the AudioStreamInteractive resource itself.
+func _arm_clip(clip: int, seg_name: String) -> String:
+	var d: Dictionary = _variations.get(seg_name, {})
+	var streams: Array = d.get("streams", [])
+	if streams.is_empty() or clip < 0:
+		return ""
+	var i := _rng.randi() % streams.size()
+	(_wrappers[clip] as BeatSyncStream).set_stream(0, streams[i])
+	return d["names"][i]
+
+
+func _recalc_beat_usec() -> void:
+	_beat_usec = maxi(1, int(_beat_secs / _playback_speed * 1_000_000.0))
 
 # ---------------------------------------------------------------------------
 # Selection logic
@@ -517,7 +713,6 @@ func _select_start() -> String:
 ## Pick the next segment from the current segment's "next" table.
 ## A selected [constant END_TRACK] is resolved into the start of a new track.
 func _select_next() -> void:
-	_next_done = true
 	_next_name = ""
 
 	if _cur_name == "":
@@ -667,144 +862,70 @@ func _pick_any_valid() -> String:
 # Playback helpers
 # ---------------------------------------------------------------------------
 
-## Resolve the audio file path for a segment.
-## Priority: explicit "audio" field → {_audio_base}/{name}.wav → .ogg.
-##
-## The "audio" field is always a list of interchangeable "variations".  One
-## entry is chosen at random every time the segment starts — the variations are
-## musically equivalent, so which one plays does not matter.  A list with a
-## single entry simply always plays that entry.
-##
-## Each variation accepts:
+## Resolve a single `audio` entry (or a bare segment name) to a concrete file
+## path, or "" if none exists.
 ##   - full path:  "res://some/fx.ogg"  (used as-is)
-##   - bare name:  "a0.wav"            (prefixed with _audio_base)
-##   - bare name without extension: "a0"  (tries .wav then .ogg)
-func _resolve_audio(seg: Dictionary, seg_name: String) -> String:
-	_cur_variation = ""
-	var variations: Array = seg.get("audio", [])
-	if not variations.is_empty():
-		var p := str(variations[_rng.randi() % variations.size()])
-		_cur_variation = p
-		if p.begins_with("res://") or p.begins_with("user://") or p.begins_with("/") or (p.length() >= 2 and p[1] == ":"):
-			# Absolute path — use as-is
-			return p
-		if p.ends_with(".wav") or p.ends_with(".ogg"):
-			# Bare filename with extension — prefix with _audio_base
-			var candidate := _audio_base + "/" + p
+##   - bare name with extension: "a0.wav"  (prefixed with _audio_base)
+##   - bare name without extension: "a0"   (tries .ogg then .wav)
+func _resolve_entry_path(p: String, seg_name: String) -> String:
+	if p.begins_with("res://") or p.begins_with("user://") or p.begins_with("/") or (p.length() >= 2 and p[1] == ":"):
+		return p
+	if p.ends_with(".wav") or p.ends_with(".ogg"):
+		var candidate := _audio_base + "/" + p
+		if FileAccess.file_exists(candidate):
+			return candidate
+	else:
+		for ext in [".ogg", ".wav"]:
+			var candidate: String = _audio_base + "/" + p + ext
 			if FileAccess.file_exists(candidate):
 				return candidate
-		else:
-			# Bare name without extension — try both
-			for ext in [".wav", ".ogg"]:
-				var candidate: String = _audio_base + "/" + p + ext
-				if FileAccess.file_exists(candidate):
-					return candidate
 
-	for ext in [".wav", ".ogg"]:
-		var p : String = _audio_base + "/" + seg_name + ext
-		if FileAccess.file_exists(p):
-			return p
-
+	# Fallback to <segment name>.ogg/.wav
+	if seg_name != p:
+		for ext in [".ogg", ".wav"]:
+			var candidate: String = _audio_base + "/" + seg_name + ext
+			if FileAccess.file_exists(candidate):
+				return candidate
 	return ""
 
 
-## Start playing `seg_name` at the given beat position.
-## [param fresh] true means this is a newly-selected segment, so its `repeat`
-## counter is (re)armed; false means this is a replay of the current segment for
-## another of its `repeat` passes (counter left as-is).
-func _start_segment(seg_name: String, at_beat: int, fresh: bool = true) -> void:
-	var seg = _segments.get(seg_name, {})
-	if seg.is_empty():
-		push_error("SoundChain: unknown segment '%s'" % seg_name)
-		return
-
-	if fresh:
-		# Arm the repeat counter: total passes minus this first one.
-		_reps_left = maxi(1, int(seg.get("repeat", 1))) - 1
-
-	var path := _resolve_audio(seg, seg_name)
-	if path == "":
-		push_error("SoundChain: audio not found for segment '%s'" % seg_name)
-		return
-
-	var stream := load(path)
-	if stream == null:
-		stream = _load_wav_fallback(path)
-	if stream == null:
-		stream = _load_ogg_fallback(path)
-	if stream == null:
-		push_error("SoundChain: failed to load audio: " + path)
-		return
-
-	var player := _get_free_player()
-	if player == null:
-		push_warning("SoundChain: all %d players busy — skipping '%s'" % [MAX_PLAYERS, seg_name])
-		return
-
-	player.pitch_scale = _playback_speed
-	player.stream = stream
-	player.play()
-	_active[player] = seg_name
-
-	_cur_name  = seg_name
-	_cur_seg   = seg
-	_cur_track = _seg_track.get(seg_name, _cur_track)
-	_cur_start = at_beat
-	_next_name = ""
-	_next_done = false
-
-	_history.append(seg_name)
-
-	var total_reps := maxi(1, int(seg.get("repeat", 1)))
-	print("SoundChain: beat %3d → start '%s'  (len=%d beats, pass %d/%d, path=%s)" %
-		[at_beat, seg_name, seg.get("length_beats", DEFAULT_LENGTH_BEATS),
-		total_reps - _reps_left, total_reps, path])
-
-	segment_changed.emit(_cur_name, _cur_track)
+## Load an audio file to an AudioStream, using the RIFF/Ogg fallbacks for
+## absolute paths that ResourceLoader can't handle (e.g. exported builds).
+func _load_stream(path: String) -> AudioStream:
+	var s := load(path) as AudioStream
+	if s == null:
+		s = _load_ogg_fallback(path)
+	if s == null:
+		s = _load_wav_fallback(path)
+	return s
 
 
 ## Stop everything and reset state.
 func _stop_all() -> void:
 	_playing = false
 	_paused  = false
-	if _timer:
-		_timer.stop()
 
-	for player in _active.keys():
-		if is_instance_valid(player):
-			player.stop()
-			player.stream = null
-	_active.clear()
+	if _player and is_instance_valid(_player):
+		_player.stop()
+	_playback = null
 
 	_cur_name  = ""
 	_cur_seg   = {}
 	_cur_track = ""
 	_cur_variation = ""
+	_cur_clip  = -1
 	_reps_left = 0
 	_next_name = ""
-	_next_done = false
+	_pending_seg = ""
+	_pending_clip = -1
+	_pending_fresh = false
+	_pending_variation = ""
 	_beat      = 0
+	_play_elapsed_usec = 0
 	_history.clear()
 
 	segment_changed.emit("", "")
 	playback_changed.emit(false, false)
-
-
-## Return the first non-playing AudioStreamPlayer from the pool (or null).
-func _get_free_player() -> AudioStreamPlayer:
-	for p in _pool:
-		if is_instance_valid(p) and not p.playing:
-			return p
-	return null
-
-# ---------------------------------------------------------------------------
-# Signal callbacks
-# ---------------------------------------------------------------------------
-
-func _on_player_done(player: AudioStreamPlayer) -> void:
-	_active.erase(player)
-	if is_instance_valid(player):
-		player.stream = null
 
 # ---------------------------------------------------------------------------
 # Progress helpers
