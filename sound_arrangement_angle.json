@@ -23,7 +23,7 @@
       "progress": [ [0.0, 1.0] ],
       "length_beats": 96,
       "next": {
-        "114-angle-pre": 1.0,
+        "114-angle-pre": 0.5,
         "114-angle-beat": 1.0
       }
     },
@@ -54,14 +54,24 @@
     {
       "name": "114-angle-drop",
       "audio": [
-        "114-Angle rytm guide drop 1-72",
         "114-Angle rytm guide drop 2-72"
       ],
       "progress": [ [0.0, 1.0] ],
       "length_beats": 96,
+      "max_repeats": 2,
       "next": {
         "114-angle-drop": 1.0,
-        "114-angle-breakdown": 0.5,
+        "114-angle-winddown": 1.0
+      }
+    },
+    {
+      "name": "114-angle-winddown",
+      "audio": [
+        "114-Angle rytm guide drop 1-72"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 96,
+      "next": {
         "END_TRACK": 0.5
       }
     }

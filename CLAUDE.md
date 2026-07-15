@@ -75,6 +75,7 @@ Each entry in `segments`:
 | `progress`     | List of `[lo, hi]` intervals in `[0, 1]`. The segment is only eligible when the current `progress` value (set via `set_progress()`) falls inside one of them. `[[0.0, 1.0]]` = always eligible. |
 | `length_beats` | Length in **internal (171 BPM) beats** — determines when the next segment fires. Derived as `(total_length − tail) × 171 / native_bpm` (tail 8 @114, 16 @171; see the ×3/2 trick above). |
 | `repeat`       | How many times the segment plays back-to-back before consulting `next`. Default `1`. Each pass re-triggers the audio (a fresh `audio` variation may be picked) but does **not** re-select from `next` until the last pass. |
+| `max_repeats`  | Cap on how many times the segment may play back-to-back via a **self-loop in `next`**. Default `0` (unlimited). Once it has run this many consecutive times, the segment is dropped from its own `next` table for the following pick, forcing the walk elsewhere. Ignored when the self-loop is the segment's *only* `next` entry (excluding it would dead-end). Counts only next-driven self-loops — `repeat` passes don't count. |
 | `next`         | `{ name: weight }` transition table. Weights are **relative** (the engine normalizes by their sum), so `1.0 / 0.5 / 0.2` just express ratios, not probabilities. The reserved target **`END_TRACK`** may appear here like any other key — selecting it ends the current track (see below). |
 
 ### Selection rules (how the engine walks the graph)

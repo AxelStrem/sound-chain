@@ -110,6 +110,7 @@ var _cur_track  := ""   ## Track owning the currently-playing segment
 var _cur_variation := "" ## The `audio` variation chosen for the current pass
 var _cur_clip   := -1   ## Clip index currently sounding
 var _reps_left  := 0    ## Remaining extra `repeat` passes of the current segment
+var _run_len    := 0    ## Consecutive fresh self-loops of _cur_name (for `max_repeats`)
 
 var _next_name  := ""   ## Scratch: last result of _select_next()
 
@@ -615,6 +616,7 @@ func _on_player_finished() -> void:
 ## immediately queue its successor with the engine.  [param fresh] true re-arms
 ## the `repeat` counter; false is a repeat pass of the same segment.
 func _promote(seg_name: String, clip: int, fresh: bool, variation: String) -> void:
+	var prev := _cur_name
 	_cur_name = seg_name
 	_cur_seg  = _segments.get(seg_name, {})
 	_cur_track = _seg_track.get(seg_name, _cur_track)
@@ -623,6 +625,9 @@ func _promote(seg_name: String, clip: int, fresh: bool, variation: String) -> vo
 
 	if fresh:
 		_reps_left = maxi(1, int(_cur_seg.get("repeat", 1))) - 1
+		# Count consecutive next-driven self-loops (a `repeat` pass isn't fresh,
+		# so it never touches this) — see `max_repeats` in _select_next.
+		_run_len = _run_len + 1 if seg_name == prev else 1
 
 	_history.append(seg_name)
 	print("SoundChain: beat %3d → '%s'  (len=%d, pass %d/%d, var=%s)" %
@@ -723,6 +728,15 @@ func _select_next() -> void:
 
 	if next_map.is_empty():
 		return  # dead end → playback will naturally stop
+
+	# `max_repeats`: cap on how many times a segment may play back-to-back via a
+	# self-loop in `next`.  Once it has run that many times, drop it from its own
+	# next table so the pick is forced elsewhere.  Skipped when self is the only
+	# candidate (excluding it would dead-end the track).
+	var max_reps := int(seg.get("max_repeats", 0))
+	if max_reps > 0 and _run_len >= max_reps and next_map.has(_cur_name) and next_map.size() > 1:
+		next_map = next_map.duplicate()
+		next_map.erase(_cur_name)
 
 	var pick := _weighted_pick(next_map)
 	if pick == "":
@@ -915,6 +929,7 @@ func _stop_all() -> void:
 	_cur_variation = ""
 	_cur_clip  = -1
 	_reps_left = 0
+	_run_len   = 0
 	_next_name = ""
 	_pending_seg = ""
 	_pending_clip = -1
