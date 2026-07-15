@@ -2,29 +2,34 @@
   "bpm": 171,
   "lookahead_beats": 3,
   "tracks": {
-    "pianoloops": {
-      "probability": 1.0,
-      "progress": [ [0.0, 0.08] ]
-    },
-    "noisestep": {
-      "probability": 1.0,
-      "progress": [ [0.0, 0.28] ]
-    },
-    "guitargods": {
-      "probability": 1.0,
-      "progress": [ [0.12, 0.48] ]
-    },
-    "aphex": {
-      "probability": 1.0,
-      "progress": [ [0.25, 0.7] ]
-    },
-    "dnb": {
-      "probability": 1.0,
-      "progress": [ [0.4, 1.0] ]
-    },
-    "techno": {
-      "probability": 1.0,
-      "progress": [ [0.0, 0.34] ]
-    }
+	"pianoloops": {
+	  "probability": 1.0,
+	  "progress": [ [0.0, 0.08] ]
+	},
+	"noisestep": {
+	  "probability": 1.0,
+	  "progress": [ [0.0, 0.36] ]
+	},
+	"guitargods": {
+	  "probability": 1.0,
+	  "progress": [ [0.12, 0.48] ]
+	},
+	"aphex": {
+	  "probability": 1.0,
+	  "progress": [ [0.25, 0.7] ]
+	},
+	"dnb": {
+	  "probability": 1.0,
+	  "progress": [ [0.4, 1.0] ]
+	},
+	"techno": {
+	  "probability": 1.0,
+	  "progress": [ [0.0, 0.48] ]
+	},
+	"angle rytm guide": {
+	  "probability": 1.0,
+	  "progress": [ [0.0, 0.25] ],
+	  "file": "sound_arrangement_angle.json"
+	}
   }
 }

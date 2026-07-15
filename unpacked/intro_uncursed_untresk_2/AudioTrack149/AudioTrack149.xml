@@ -1,0 +1,1308 @@
+<AudioTrack Id="149" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
+				<LomId Value="0" />
+				<LomIdView Value="0" />
+				<IsContentSelectedInDocument Value="false" />
+				<PreferredContentViewMode Value="0" />
+				<TrackDelay>
+					<Value Value="0" />
+					<IsValueSampleBased Value="false" />
+				</TrackDelay>
+				<Name>
+					<EffectiveName Value="68-01_031029_0001_TR03" />
+					<UserName Value="" />
+					<Annotation Value="" />
+					<MemorizedFirstClipName Value="01_031029_0001_TR03" />
+				</Name>
+				<Color Value="5" />
+				<AutomationEnvelopes>
+					<Envelopes />
+				</AutomationEnvelopes>
+				<TrackGroupId Value="151" />
+				<TrackUnfolded Value="true" />
+				<DevicesListWrapper LomId="0" />
+				<ClipSlotsListWrapper LomId="0" />
+				<ArrangementClipsListWrapper LomId="0" />
+				<TakeLanesListWrapper LomId="0" />
+				<ViewData Value="{&quot;push-instrument-selected-notes&quot;: [36], &quot;push-note-repeat-rate&quot;: 0.5, &quot;push-note-repeat-enabled&quot;: false}" />
+				<TakeLanes>
+					<TakeLanes />
+					<AreTakeLanesFolded Value="true" />
+				</TakeLanes>
+				<LinkedTrackGroupId Value="2" />
+				<SavedPlayingSlot Value="-1" />
+				<SavedPlayingOffset Value="0" />
+				<Freeze Value="false" />
+				<PostProcessFreezeClips Value="0" />
+				<DeviceChain>
+					<AutomationLanes>
+						<AutomationLanes>
+							<AutomationLane Id="0">
+								<SelectedDevice Value="1" />
+								<SelectedEnvelope Value="1" />
+								<IsContentSelectedInDocument Value="false" />
+								<LaneHeight Value="68" />
+							</AutomationLane>
+						</AutomationLanes>
+						<AreAdditionalAutomationLanesFolded Value="false" />
+					</AutomationLanes>
+					<ClipEnvelopeChooserViewState>
+						<SelectedDevice Value="0" />
+						<SelectedEnvelope Value="1" />
+						<PreferModulationVisible Value="true" />
+					</ClipEnvelopeChooserViewState>
+					<AudioInputRouting>
+						<Target Value="AudioIn/External/M0" />
+						<UpperDisplayString Value="Ext. In" />
+						<LowerDisplayString Value="1" />
+						<MpeSettings>
+							<ZoneType Value="0" />
+							<FirstNoteChannel Value="1" />
+							<LastNoteChannel Value="15" />
+						</MpeSettings>
+						<MpePitchBendUsesTuning Value="true" />
+					</AudioInputRouting>
+					<MidiInputRouting>
+						<Target Value="MidiIn/External.All/-1" />
+						<UpperDisplayString Value="Ext: All Ins" />
+						<LowerDisplayString Value="" />
+						<MpeSettings>
+							<ZoneType Value="0" />
+							<FirstNoteChannel Value="1" />
+							<LastNoteChannel Value="15" />
+						</MpeSettings>
+						<MpePitchBendUsesTuning Value="true" />
+					</MidiInputRouting>
+					<AudioOutputRouting>
+						<Target Value="AudioOut/GroupTrack" />
+						<UpperDisplayString Value="Group" />
+						<LowerDisplayString Value="" />
+						<MpeSettings>
+							<ZoneType Value="0" />
+							<FirstNoteChannel Value="1" />
+							<LastNoteChannel Value="15" />
+						</MpeSettings>
+						<MpePitchBendUsesTuning Value="true" />
+					</AudioOutputRouting>
+					<MidiOutputRouting>
+						<Target Value="MidiOut/None" />
+						<UpperDisplayString Value="None" />
+						<LowerDisplayString Value="" />
+						<MpeSettings>
+							<ZoneType Value="0" />
+							<FirstNoteChannel Value="1" />
+							<LastNoteChannel Value="15" />
+						</MpeSettings>
+						<MpePitchBendUsesTuning Value="true" />
+					</MidiOutputRouting>
+					<Mixer>
+						<LomId Value="0" />
+						<LomIdView Value="0" />
+						<IsExpanded Value="true" />
+						<BreakoutIsExpanded Value="false" />
+						<On>
+							<LomId Value="0" />
+							<Manual Value="true" />
+							<AutomationTarget Id="137285">
+								<LockEnvelope Value="0" />
+							</AutomationTarget>
+							<MidiCCOnOffThresholds>
+								<Min Value="64" />
+								<Max Value="127" />
+							</MidiCCOnOffThresholds>
+						</On>
+						<ModulationSourceCount Value="0" />
+						<ParametersListWrapper LomId="0" />
+						<Pointee Id="137286" />
+						<LastSelectedTimeableIndex Value="1" />
+						<LastSelectedClipEnvelopeIndex Value="1" />
+						<LastPresetRef>
+							<Value />
+						</LastPresetRef>
+						<LockedScripts />
+						<IsFolded Value="false" />
+						<ShouldShowPresetName Value="false" />
+						<UserName Value="" />
+						<Annotation Value="" />
+						<SourceContext>
+							<Value />
+						</SourceContext>
+						<MpePitchBendUsesTuning Value="true" />
+						<ViewData Value="{}" />
+						<Sends>
+							<TrackSendHolder Id="0">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="137287">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="137288">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="1">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="137289">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="137290">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="2">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="137291">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="137292">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+						</Sends>
+						<Speaker>
+							<LomId Value="0" />
+							<Manual Value="true" />
+							<AutomationTarget Id="137293">
+								<LockEnvelope Value="0" />
+							</AutomationTarget>
+							<MidiCCOnOffThresholds>
+								<Min Value="64" />
+								<Max Value="127" />
+							</MidiCCOnOffThresholds>
+						</Speaker>
+						<SoloSink Value="false" />
+						<PanMode Value="0" />
+						<Pan>
+							<LomId Value="737" />
+							<Manual Value="-1" />
+							<MidiControllerRange>
+								<Min Value="-1" />
+								<Max Value="1" />
+							</MidiControllerRange>
+							<AutomationTarget Id="137294">
+								<LockEnvelope Value="0" />
+							</AutomationTarget>
+							<ModulationTarget Id="137295">
+								<LockEnvelope Value="0" />
+							</ModulationTarget>
+						</Pan>
+						<SplitStereoPanL>
+							<LomId Value="0" />
+							<Manual Value="-1" />
+							<MidiControllerRange>
+								<Min Value="-1" />
+								<Max Value="1" />
+							</MidiControllerRange>
+							<AutomationTarget Id="137296">
+								<LockEnvelope Value="0" />
+							</AutomationTarget>
+							<ModulationTarget Id="137297">
+								<LockEnvelope Value="0" />
+							</ModulationTarget>
+						</SplitStereoPanL>
+						<SplitStereoPanR>
+							<LomId Value="0" />
+							<Manual Value="1" />
+							<MidiControllerRange>
+								<Min Value="-1" />
+								<Max Value="1" />
+							</MidiControllerRange>
+							<AutomationTarget Id="137298">
+								<LockEnvelope Value="0" />
+							</AutomationTarget>
+							<ModulationTarget Id="137299">
+								<LockEnvelope Value="0" />
+							</ModulationTarget>
+						</SplitStereoPanR>
+						<Volume>
+							<LomId Value="0" />
+							<Manual Value="1" />
+							<MidiControllerRange>
+								<Min Value="0.0003162277571" />
+								<Max Value="1.99526238" />
+							</MidiControllerRange>
+							<AutomationTarget Id="137300">
+								<LockEnvelope Value="0" />
+							</AutomationTarget>
+							<ModulationTarget Id="137301">
+								<LockEnvelope Value="0" />
+							</ModulationTarget>
+						</Volume>
+						<ViewStateSessionTrackWidth Value="93" />
+						<CrossFadeState>
+							<LomId Value="0" />
+							<Manual Value="1" />
+							<AutomationTarget Id="137302">
+								<LockEnvelope Value="0" />
+							</AutomationTarget>
+							<MidiControllerRange>
+								<Min Value="0" />
+								<Max Value="2" />
+							</MidiControllerRange>
+						</CrossFadeState>
+						<SendsListWrapper LomId="0" />
+					</Mixer>
+					<MainSequencer>
+						<LomId Value="0" />
+						<LomIdView Value="0" />
+						<IsExpanded Value="true" />
+						<BreakoutIsExpanded Value="false" />
+						<On>
+							<LomId Value="0" />
+							<Manual Value="true" />
+							<AutomationTarget Id="137303">
+								<LockEnvelope Value="0" />
+							</AutomationTarget>
+							<MidiCCOnOffThresholds>
+								<Min Value="64" />
+								<Max Value="127" />
+							</MidiCCOnOffThresholds>
+						</On>
+						<ModulationSourceCount Value="0" />
+						<ParametersListWrapper LomId="0" />
+						<Pointee Id="137304" />
+						<LastSelectedTimeableIndex Value="0" />
+						<LastSelectedClipEnvelopeIndex Value="1" />
+						<LastPresetRef>
+							<Value />
+						</LastPresetRef>
+						<LockedScripts />
+						<IsFolded Value="false" />
+						<ShouldShowPresetName Value="true" />
+						<UserName Value="" />
+						<Annotation Value="" />
+						<SourceContext>
+							<Value />
+						</SourceContext>
+						<MpePitchBendUsesTuning Value="true" />
+						<ViewData Value="{}" />
+						<ClipSlotList>
+							<ClipSlot Id="0">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="1">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="2">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="3">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="4">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="5">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="6">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="7">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+						</ClipSlotList>
+						<MonitoringEnum Value="2" />
+						<KeepRecordMonitoringLatency Value="true" />
+						<Sample>
+							<ArrangerAutomation>
+								<Events>
+									<AudioClip Id="1" Time="0">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="0" />
+										<CurrentEnd Value="63" />
+										<Loop>
+											<LoopStart Value="2.631578947368439" />
+											<LoopEnd Value="35.789473684210769" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="1014.7526530612245" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="1014.7526530612245" />
+										</Loop>
+										<Name Value="01_031029_0001_TR03" />
+										<Annotation Value="" />
+										<Color Value="5" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="0" />
+											<RightTime Value="1014.7526530482515" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="false" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="false" />
+										<TakeId Value="1" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<SampleRef>
+											<FileRef>
+												<RelativePathType Value="1" />
+												<RelativePath Value="../../../../../Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+												<Path Value="/Users/notumschaltung/Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+												<Type Value="2" />
+												<LivePackName Value="" />
+												<LivePackId Value="" />
+												<OriginalFileSize Value="89506732" />
+												<OriginalCrc Value="31927" />
+												<SourceHint Value="" />
+											</FileRef>
+											<LastModDate Value="1067423310" />
+											<SourceContext>
+												<SourceContext Id="0">
+													<OriginalFileRef>
+														<FileRef Id="13">
+															<RelativePathType Value="1" />
+															<RelativePath Value="../../../../../Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+															<Path Value="/Users/notumschaltung/Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+															<Type Value="2" />
+															<LivePackName Value="" />
+															<LivePackId Value="" />
+															<OriginalFileSize Value="89506732" />
+															<OriginalCrc Value="31927" />
+															<SourceHint Value="" />
+														</FileRef>
+													</OriginalFileRef>
+													<BrowserContentPath Value="userfolder:/Users/notumschaltung/Samples/__MODULAR%20IN#031029_0001:01_031029_0001_TR03.wav" />
+													<LocalFiltersJson Value="" />
+												</SourceContext>
+											</SourceContext>
+											<SampleUsageHint Value="0" />
+											<DefaultDuration Value="44750592" />
+											<DefaultSampleRate Value="44100" />
+											<SamplesToAutoWarp Value="0" />
+										</SampleRef>
+										<Onsets>
+											<UserOnsets />
+											<HasUserOnsets Value="false" />
+										</Onsets>
+										<WarpMode Value="4" />
+										<GranularityTones Value="30" />
+										<GranularityTexture Value="65" />
+										<FluctuationTexture Value="25" />
+										<TransientResolution Value="6" />
+										<TransientLoopMode Value="2" />
+										<TransientEnvelope Value="100" />
+										<ComplexProFormants Value="100" />
+										<ComplexProEnvelope Value="128" />
+										<Sync Value="true" />
+										<HiQ Value="true" />
+										<Fade Value="true" />
+										<Fades>
+											<FadeInLength Value="0" />
+											<FadeOutLength Value="0" />
+											<ClipFadesAreInitialized Value="true" />
+											<CrossfadeInState Value="0" />
+											<FadeInCurveSkew Value="0" />
+											<FadeInCurveSlope Value="0" />
+											<FadeOutCurveSkew Value="0" />
+											<FadeOutCurveSlope Value="0" />
+											<IsDefaultFadeIn Value="true" />
+											<IsDefaultFadeOut Value="true" />
+										</Fades>
+										<PitchCoarse Value="0" />
+										<PitchFine Value="0" />
+										<SampleVolume Value="1" />
+										<WarpMarkers>
+											<WarpMarker Id="107" SecTime="2.631578947368439" BeatTime="0" />
+											<WarpMarker Id="108" SecTime="267.89473684210373" BeatTime="504" />
+											<WarpMarker Id="109" SecTime="267.90570175438444" BeatTime="504.03125" />
+										</WarpMarkers>
+										<SavedWarpMarkersForStretched />
+										<MarkersGenerated Value="true" />
+										<IsSongTempoLeader Value="false" />
+									</AudioClip>
+									<AudioClip Id="2" Time="72">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="72" />
+										<CurrentEnd Value="136" />
+										<Loop>
+											<LoopStart Value="36.315789473684461" />
+											<LoopEnd Value="69.999999999998067" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="1014.7526530612245" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="1014.7526530612245" />
+										</Loop>
+										<Name Value="01_031029_0001_TR03" />
+										<Annotation Value="" />
+										<Color Value="5" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="0" />
+											<RightTime Value="1014.7526530482515" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="false" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="false" />
+										<TakeId Value="1" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<SampleRef>
+											<FileRef>
+												<RelativePathType Value="1" />
+												<RelativePath Value="../../../../../Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+												<Path Value="/Users/notumschaltung/Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+												<Type Value="2" />
+												<LivePackName Value="" />
+												<LivePackId Value="" />
+												<OriginalFileSize Value="89506732" />
+												<OriginalCrc Value="31927" />
+												<SourceHint Value="" />
+											</FileRef>
+											<LastModDate Value="1067423310" />
+											<SourceContext>
+												<SourceContext Id="0">
+													<OriginalFileRef>
+														<FileRef Id="13">
+															<RelativePathType Value="1" />
+															<RelativePath Value="../../../../../Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+															<Path Value="/Users/notumschaltung/Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+															<Type Value="2" />
+															<LivePackName Value="" />
+															<LivePackId Value="" />
+															<OriginalFileSize Value="89506732" />
+															<OriginalCrc Value="31927" />
+															<SourceHint Value="" />
+														</FileRef>
+													</OriginalFileRef>
+													<BrowserContentPath Value="userfolder:/Users/notumschaltung/Samples/__MODULAR%20IN#031029_0001:01_031029_0001_TR03.wav" />
+													<LocalFiltersJson Value="" />
+												</SourceContext>
+											</SourceContext>
+											<SampleUsageHint Value="0" />
+											<DefaultDuration Value="44750592" />
+											<DefaultSampleRate Value="44100" />
+											<SamplesToAutoWarp Value="0" />
+										</SampleRef>
+										<Onsets>
+											<UserOnsets />
+											<HasUserOnsets Value="false" />
+										</Onsets>
+										<WarpMode Value="4" />
+										<GranularityTones Value="30" />
+										<GranularityTexture Value="65" />
+										<FluctuationTexture Value="25" />
+										<TransientResolution Value="6" />
+										<TransientLoopMode Value="2" />
+										<TransientEnvelope Value="100" />
+										<ComplexProFormants Value="100" />
+										<ComplexProEnvelope Value="128" />
+										<Sync Value="true" />
+										<HiQ Value="true" />
+										<Fade Value="true" />
+										<Fades>
+											<FadeInLength Value="0" />
+											<FadeOutLength Value="0" />
+											<ClipFadesAreInitialized Value="true" />
+											<CrossfadeInState Value="0" />
+											<FadeInCurveSkew Value="0" />
+											<FadeInCurveSlope Value="0" />
+											<FadeOutCurveSkew Value="0" />
+											<FadeOutCurveSlope Value="0" />
+											<IsDefaultFadeIn Value="true" />
+											<IsDefaultFadeOut Value="true" />
+										</Fades>
+										<PitchCoarse Value="0" />
+										<PitchFine Value="0" />
+										<SampleVolume Value="1" />
+										<WarpMarkers>
+											<WarpMarker Id="104" SecTime="36.315789473684461" BeatTime="0" />
+											<WarpMarker Id="105" SecTime="263.68421052636404" BeatTime="432" />
+											<WarpMarker Id="106" SecTime="263.69517543864475" BeatTime="432.03125" />
+										</WarpMarkers>
+										<SavedWarpMarkersForStretched />
+										<MarkersGenerated Value="true" />
+										<IsSongTempoLeader Value="false" />
+									</AudioClip>
+									<AudioClip Id="3" Time="144">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="144" />
+										<CurrentEnd Value="208" />
+										<Loop>
+											<LoopStart Value="69.999999999998067" />
+											<LoopEnd Value="103.68421052633066" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="1014.7526530612245" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="1014.7526530612245" />
+										</Loop>
+										<Name Value="01_031029_0001_TR03" />
+										<Annotation Value="" />
+										<Color Value="5" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="0" />
+											<RightTime Value="1014.7526530482515" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="false" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="false" />
+										<TakeId Value="1" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<SampleRef>
+											<FileRef>
+												<RelativePathType Value="1" />
+												<RelativePath Value="../../../../../Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+												<Path Value="/Users/notumschaltung/Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+												<Type Value="2" />
+												<LivePackName Value="" />
+												<LivePackId Value="" />
+												<OriginalFileSize Value="89506732" />
+												<OriginalCrc Value="31927" />
+												<SourceHint Value="" />
+											</FileRef>
+											<LastModDate Value="1067423310" />
+											<SourceContext>
+												<SourceContext Id="0">
+													<OriginalFileRef>
+														<FileRef Id="13">
+															<RelativePathType Value="1" />
+															<RelativePath Value="../../../../../Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+															<Path Value="/Users/notumschaltung/Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+															<Type Value="2" />
+															<LivePackName Value="" />
+															<LivePackId Value="" />
+															<OriginalFileSize Value="89506732" />
+															<OriginalCrc Value="31927" />
+															<SourceHint Value="" />
+														</FileRef>
+													</OriginalFileRef>
+													<BrowserContentPath Value="userfolder:/Users/notumschaltung/Samples/__MODULAR%20IN#031029_0001:01_031029_0001_TR03.wav" />
+													<LocalFiltersJson Value="" />
+												</SourceContext>
+											</SourceContext>
+											<SampleUsageHint Value="0" />
+											<DefaultDuration Value="44750592" />
+											<DefaultSampleRate Value="44100" />
+											<SamplesToAutoWarp Value="0" />
+										</SampleRef>
+										<Onsets>
+											<UserOnsets />
+											<HasUserOnsets Value="false" />
+										</Onsets>
+										<WarpMode Value="4" />
+										<GranularityTones Value="30" />
+										<GranularityTexture Value="65" />
+										<FluctuationTexture Value="25" />
+										<TransientResolution Value="6" />
+										<TransientLoopMode Value="2" />
+										<TransientEnvelope Value="100" />
+										<ComplexProFormants Value="100" />
+										<ComplexProEnvelope Value="128" />
+										<Sync Value="true" />
+										<HiQ Value="true" />
+										<Fade Value="true" />
+										<Fades>
+											<FadeInLength Value="0" />
+											<FadeOutLength Value="0" />
+											<ClipFadesAreInitialized Value="true" />
+											<CrossfadeInState Value="0" />
+											<FadeInCurveSkew Value="0" />
+											<FadeInCurveSlope Value="0" />
+											<FadeOutCurveSkew Value="0" />
+											<FadeOutCurveSlope Value="0" />
+											<IsDefaultFadeIn Value="true" />
+											<IsDefaultFadeOut Value="true" />
+										</Fades>
+										<PitchCoarse Value="0" />
+										<PitchFine Value="0" />
+										<SampleVolume Value="1" />
+										<WarpMarkers>
+											<WarpMarker Id="1262" SecTime="69.999999999998067" BeatTime="0" />
+											<WarpMarker Id="1263" SecTime="259.47368421052306" BeatTime="360" />
+											<WarpMarker Id="1264" SecTime="259.48464912280377" BeatTime="360.03125" />
+										</WarpMarkers>
+										<SavedWarpMarkersForStretched />
+										<MarkersGenerated Value="true" />
+										<IsSongTempoLeader Value="false" />
+									</AudioClip>
+									<AudioClip Id="16" Time="216">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="216" />
+										<CurrentEnd Value="280" />
+										<Loop>
+											<LoopStart Value="69.999999999998067" />
+											<LoopEnd Value="103.68421052632335" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="1014.7526530612245" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="1014.7526530612245" />
+										</Loop>
+										<Name Value="01_031029_0001_TR03" />
+										<Annotation Value="" />
+										<Color Value="5" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="0" />
+											<RightTime Value="1014.7526530482515" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="false" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="false" />
+										<TakeId Value="1" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<SampleRef>
+											<FileRef>
+												<RelativePathType Value="1" />
+												<RelativePath Value="../../../../../Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+												<Path Value="/Users/notumschaltung/Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+												<Type Value="2" />
+												<LivePackName Value="" />
+												<LivePackId Value="" />
+												<OriginalFileSize Value="89506732" />
+												<OriginalCrc Value="31927" />
+												<SourceHint Value="" />
+											</FileRef>
+											<LastModDate Value="1067423310" />
+											<SourceContext>
+												<SourceContext Id="0">
+													<OriginalFileRef>
+														<FileRef Id="13">
+															<RelativePathType Value="1" />
+															<RelativePath Value="../../../../../Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+															<Path Value="/Users/notumschaltung/Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+															<Type Value="2" />
+															<LivePackName Value="" />
+															<LivePackId Value="" />
+															<OriginalFileSize Value="89506732" />
+															<OriginalCrc Value="31927" />
+															<SourceHint Value="" />
+														</FileRef>
+													</OriginalFileRef>
+													<BrowserContentPath Value="userfolder:/Users/notumschaltung/Samples/__MODULAR%20IN#031029_0001:01_031029_0001_TR03.wav" />
+													<LocalFiltersJson Value="" />
+												</SourceContext>
+											</SourceContext>
+											<SampleUsageHint Value="0" />
+											<DefaultDuration Value="44750592" />
+											<DefaultSampleRate Value="44100" />
+											<SamplesToAutoWarp Value="0" />
+										</SampleRef>
+										<Onsets>
+											<UserOnsets />
+											<HasUserOnsets Value="false" />
+										</Onsets>
+										<WarpMode Value="4" />
+										<GranularityTones Value="30" />
+										<GranularityTexture Value="65" />
+										<FluctuationTexture Value="25" />
+										<TransientResolution Value="6" />
+										<TransientLoopMode Value="2" />
+										<TransientEnvelope Value="100" />
+										<ComplexProFormants Value="100" />
+										<ComplexProEnvelope Value="128" />
+										<Sync Value="true" />
+										<HiQ Value="true" />
+										<Fade Value="true" />
+										<Fades>
+											<FadeInLength Value="0" />
+											<FadeOutLength Value="0" />
+											<ClipFadesAreInitialized Value="true" />
+											<CrossfadeInState Value="0" />
+											<FadeInCurveSkew Value="0" />
+											<FadeInCurveSlope Value="0" />
+											<FadeOutCurveSkew Value="0" />
+											<FadeOutCurveSlope Value="0" />
+											<IsDefaultFadeIn Value="true" />
+											<IsDefaultFadeOut Value="true" />
+										</Fades>
+										<PitchCoarse Value="0" />
+										<PitchFine Value="0" />
+										<SampleVolume Value="1" />
+										<WarpMarkers>
+											<WarpMarker Id="1277" SecTime="69.999999999998067" BeatTime="0" />
+											<WarpMarker Id="1278" SecTime="221.57894736844173" BeatTime="288" />
+											<WarpMarker Id="1279" SecTime="221.58991228072244" BeatTime="288.03125" />
+										</WarpMarkers>
+										<SavedWarpMarkersForStretched />
+										<MarkersGenerated Value="true" />
+										<IsSongTempoLeader Value="false" />
+									</AudioClip>
+									<AudioClip Id="23" Time="288">
+										<LomId Value="0" />
+										<LomIdView Value="0" />
+										<CurrentStart Value="288" />
+										<CurrentEnd Value="332" />
+										<Loop>
+											<LoopStart Value="272.10526315789031" />
+											<LoopEnd Value="295.26315789469311" />
+											<StartRelative Value="0" />
+											<LoopOn Value="false" />
+											<OutMarker Value="1014.7526530612245" />
+											<HiddenLoopStart Value="0" />
+											<HiddenLoopEnd Value="1014.7526530612245" />
+										</Loop>
+										<Name Value="01_031029_0001_TR03" />
+										<Annotation Value="" />
+										<Color Value="5" />
+										<LaunchMode Value="0" />
+										<LaunchQuantisation Value="0" />
+										<TimeSignature>
+											<TimeSignatures>
+												<RemoteableTimeSignature Id="0">
+													<Numerator Value="4" />
+													<Denominator Value="4" />
+													<Time Value="0" />
+												</RemoteableTimeSignature>
+											</TimeSignatures>
+										</TimeSignature>
+										<Envelopes>
+											<Envelopes />
+										</Envelopes>
+										<ScrollerTimePreserver>
+											<LeftTime Value="0" />
+											<RightTime Value="1014.7526530482515" />
+										</ScrollerTimePreserver>
+										<TimeSelection>
+											<AnchorTime Value="0" />
+											<OtherTime Value="0" />
+										</TimeSelection>
+										<Legato Value="false" />
+										<Ram Value="false" />
+										<GrooveSettings>
+											<GrooveId Value="-1" />
+										</GrooveSettings>
+										<Disabled Value="true" />
+										<VelocityAmount Value="0" />
+										<FollowAction>
+											<FollowTime Value="4" />
+											<IsLinked Value="true" />
+											<LoopIterations Value="1" />
+											<FollowActionA Value="4" />
+											<FollowActionB Value="0" />
+											<FollowChanceA Value="100" />
+											<FollowChanceB Value="0" />
+											<JumpIndexA Value="1" />
+											<JumpIndexB Value="1" />
+											<FollowActionEnabled Value="false" />
+										</FollowAction>
+										<Grid>
+											<FixedNumerator Value="1" />
+											<FixedDenominator Value="16" />
+											<GridIntervalPixel Value="20" />
+											<Ntoles Value="2" />
+											<SnapToGrid Value="true" />
+											<Fixed Value="false" />
+										</Grid>
+										<FreezeStart Value="0" />
+										<FreezeEnd Value="0" />
+										<IsWarped Value="false" />
+										<TakeId Value="1" />
+										<IsInKey Value="true" />
+										<ScaleInformation>
+											<Root Value="0" />
+											<Name Value="0" />
+										</ScaleInformation>
+										<AutomationEnvelopesListWrapper LomId="0" />
+										<SampleRef>
+											<FileRef>
+												<RelativePathType Value="1" />
+												<RelativePath Value="../../../../../Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+												<Path Value="/Users/notumschaltung/Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+												<Type Value="2" />
+												<LivePackName Value="" />
+												<LivePackId Value="" />
+												<OriginalFileSize Value="89506732" />
+												<OriginalCrc Value="31927" />
+												<SourceHint Value="" />
+											</FileRef>
+											<LastModDate Value="1067423310" />
+											<SourceContext>
+												<SourceContext Id="0">
+													<OriginalFileRef>
+														<FileRef Id="13">
+															<RelativePathType Value="1" />
+															<RelativePath Value="../../../../../Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+															<Path Value="/Users/notumschaltung/Samples/__MODULAR IN/031029_0001/01_031029_0001_TR03.wav" />
+															<Type Value="2" />
+															<LivePackName Value="" />
+															<LivePackId Value="" />
+															<OriginalFileSize Value="89506732" />
+															<OriginalCrc Value="31927" />
+															<SourceHint Value="" />
+														</FileRef>
+													</OriginalFileRef>
+													<BrowserContentPath Value="userfolder:/Users/notumschaltung/Samples/__MODULAR%20IN#031029_0001:01_031029_0001_TR03.wav" />
+													<LocalFiltersJson Value="" />
+												</SourceContext>
+											</SourceContext>
+											<SampleUsageHint Value="0" />
+											<DefaultDuration Value="44750592" />
+											<DefaultSampleRate Value="44100" />
+											<SamplesToAutoWarp Value="0" />
+										</SampleRef>
+										<Onsets>
+											<UserOnsets />
+											<HasUserOnsets Value="false" />
+										</Onsets>
+										<WarpMode Value="4" />
+										<GranularityTones Value="30" />
+										<GranularityTexture Value="65" />
+										<FluctuationTexture Value="25" />
+										<TransientResolution Value="6" />
+										<TransientLoopMode Value="2" />
+										<TransientEnvelope Value="100" />
+										<ComplexProFormants Value="100" />
+										<ComplexProEnvelope Value="128" />
+										<Sync Value="true" />
+										<HiQ Value="true" />
+										<Fade Value="true" />
+										<Fades>
+											<FadeInLength Value="0" />
+											<FadeOutLength Value="0.00399990634365634395" />
+											<ClipFadesAreInitialized Value="true" />
+											<CrossfadeInState Value="0" />
+											<FadeInCurveSkew Value="0" />
+											<FadeInCurveSlope Value="0" />
+											<FadeOutCurveSkew Value="0" />
+											<FadeOutCurveSlope Value="0" />
+											<IsDefaultFadeIn Value="true" />
+											<IsDefaultFadeOut Value="false" />
+										</Fades>
+										<PitchCoarse Value="0" />
+										<PitchFine Value="0" />
+										<SampleVolume Value="1" />
+										<WarpMarkers>
+											<WarpMarker Id="6846" SecTime="272.10526315789031" BeatTime="0" />
+											<WarpMarker Id="6847" SecTime="385.78947368419904" BeatTime="216" />
+											<WarpMarker Id="6848" SecTime="385.80043859647975" BeatTime="216.03125" />
+										</WarpMarkers>
+										<SavedWarpMarkersForStretched />
+										<MarkersGenerated Value="true" />
+										<IsSongTempoLeader Value="false" />
+									</AudioClip>
+								</Events>
+								<AutomationTransformViewState>
+									<IsTransformPending Value="false" />
+									<TimeAndValueTransforms />
+								</AutomationTransformViewState>
+							</ArrangerAutomation>
+						</Sample>
+						<VolumeModulationTarget Id="137305">
+							<LockEnvelope Value="0" />
+						</VolumeModulationTarget>
+						<TranspositionModulationTarget Id="137306">
+							<LockEnvelope Value="0" />
+						</TranspositionModulationTarget>
+						<TransientEnvelopeModulationTarget Id="137307">
+							<LockEnvelope Value="0" />
+						</TransientEnvelopeModulationTarget>
+						<GrainSizeModulationTarget Id="137308">
+							<LockEnvelope Value="0" />
+						</GrainSizeModulationTarget>
+						<FluxModulationTarget Id="137309">
+							<LockEnvelope Value="0" />
+						</FluxModulationTarget>
+						<SampleOffsetModulationTarget Id="137310">
+							<LockEnvelope Value="0" />
+						</SampleOffsetModulationTarget>
+						<ComplexProFormantsModulationTarget Id="137311">
+							<LockEnvelope Value="0" />
+						</ComplexProFormantsModulationTarget>
+						<ComplexProEnvelopeModulationTarget Id="137312">
+							<LockEnvelope Value="0" />
+						</ComplexProEnvelopeModulationTarget>
+						<PitchViewScrollPosition Value="-1073741824" />
+						<SampleOffsetModulationScrollPosition Value="-1073741824" />
+						<Recorder>
+							<IsArmed Value="false" />
+							<TakeCounter Value="1" />
+						</Recorder>
+					</MainSequencer>
+					<FreezeSequencer>
+						<LomId Value="0" />
+						<LomIdView Value="0" />
+						<IsExpanded Value="true" />
+						<BreakoutIsExpanded Value="false" />
+						<On>
+							<LomId Value="0" />
+							<Manual Value="true" />
+							<AutomationTarget Id="137313">
+								<LockEnvelope Value="0" />
+							</AutomationTarget>
+							<MidiCCOnOffThresholds>
+								<Min Value="64" />
+								<Max Value="127" />
+							</MidiCCOnOffThresholds>
+						</On>
+						<ModulationSourceCount Value="0" />
+						<ParametersListWrapper LomId="0" />
+						<Pointee Id="137314" />
+						<LastSelectedTimeableIndex Value="0" />
+						<LastSelectedClipEnvelopeIndex Value="0" />
+						<LastPresetRef>
+							<Value />
+						</LastPresetRef>
+						<LockedScripts />
+						<IsFolded Value="false" />
+						<ShouldShowPresetName Value="true" />
+						<UserName Value="" />
+						<Annotation Value="" />
+						<SourceContext>
+							<Value />
+						</SourceContext>
+						<MpePitchBendUsesTuning Value="true" />
+						<ViewData Value="{}" />
+						<ClipSlotList>
+							<ClipSlot Id="0">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="1">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="2">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="3">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="4">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="5">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="6">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+							<ClipSlot Id="7">
+								<LomId Value="0" />
+								<ClipSlot>
+									<Value />
+								</ClipSlot>
+								<HasStop Value="true" />
+							</ClipSlot>
+						</ClipSlotList>
+						<MonitoringEnum Value="1" />
+						<KeepRecordMonitoringLatency Value="true" />
+						<Sample>
+							<ArrangerAutomation>
+								<Events />
+								<AutomationTransformViewState>
+									<IsTransformPending Value="false" />
+									<TimeAndValueTransforms />
+								</AutomationTransformViewState>
+							</ArrangerAutomation>
+						</Sample>
+						<VolumeModulationTarget Id="137315">
+							<LockEnvelope Value="0" />
+						</VolumeModulationTarget>
+						<TranspositionModulationTarget Id="137316">
+							<LockEnvelope Value="0" />
+						</TranspositionModulationTarget>
+						<TransientEnvelopeModulationTarget Id="137317">
+							<LockEnvelope Value="0" />
+						</TransientEnvelopeModulationTarget>
+						<GrainSizeModulationTarget Id="137318">
+							<LockEnvelope Value="0" />
+						</GrainSizeModulationTarget>
+						<FluxModulationTarget Id="137319">
+							<LockEnvelope Value="0" />
+						</FluxModulationTarget>
+						<SampleOffsetModulationTarget Id="137320">
+							<LockEnvelope Value="0" />
+						</SampleOffsetModulationTarget>
+						<ComplexProFormantsModulationTarget Id="137321">
+							<LockEnvelope Value="0" />
+						</ComplexProFormantsModulationTarget>
+						<ComplexProEnvelopeModulationTarget Id="137322">
+							<LockEnvelope Value="0" />
+						</ComplexProEnvelopeModulationTarget>
+						<PitchViewScrollPosition Value="-1073741824" />
+						<SampleOffsetModulationScrollPosition Value="-1073741824" />
+						<Recorder>
+							<IsArmed Value="false" />
+							<TakeCounter Value="1" />
+						</Recorder>
+					</FreezeSequencer>
+					<DeviceChain>
+						<Devices />
+						<SignalModulations />
+					</DeviceChain>
+				</DeviceChain>
+				<IsTuned Value="true" />
+			</AudioTrack>
+			

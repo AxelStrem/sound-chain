@@ -1,0 +1,69 @@
+{
+  "start_segments": {
+    "114-angle-intro": 1.0,
+    "114-angle-pre": 1.0
+  },
+  "segments": [
+    {
+      "name": "114-angle-intro",
+      "audio": [
+        "114-Angle rytm guide intro-72"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 96,
+      "next": {
+        "114-angle-pre": 1.0
+      }
+    },
+    {
+      "name": "114-angle-pre",
+      "audio": [
+        "114-Angle rytm guide pre-72"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 96,
+      "next": {
+        "114-angle-pre": 1.0,
+        "114-angle-beat": 1.0
+      }
+    },
+    {
+      "name": "114-angle-beat",
+      "audio": [
+        "114-Angle rytm guide beat-72",
+        "114-Angle rytm guide beat 2-72"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 96,
+      "next": {
+        "114-angle-beat": 2.0,
+        "114-angle-breakdown": 1.0
+      }
+    },
+    {
+      "name": "114-angle-breakdown",
+      "audio": [
+        "114-Angle rytm guide breakdown-72"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 96,
+      "next": {
+        "114-angle-drop": 1.0
+      }
+    },
+    {
+      "name": "114-angle-drop",
+      "audio": [
+        "114-Angle rytm guide drop 1-72",
+        "114-Angle rytm guide drop 2-72"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 96,
+      "next": {
+        "114-angle-drop": 1.0,
+        "114-angle-breakdown": 0.5,
+        "END_TRACK": 0.5
+      }
+    }
+  ]
+}
