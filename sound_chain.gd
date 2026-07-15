@@ -243,10 +243,10 @@ func _add_track(track_name: String, start_segments: Dictionary, progress: Array,
 
 ## True when a segment can be followed by itself (a `repeat` pass or a
 ## self-loop in `next`) — such segments need a twin clip (see header).
-func _self_following(seg: Dictionary, name: String) -> bool:
+func _self_following(seg: Dictionary, seg_name: String) -> bool:
 	if int(seg.get("repeat", 1)) > 1:
 		return true
-	return (seg.get("next", {}) as Dictionary).has(name)
+	return (seg.get("next", {}) as Dictionary).has(seg_name)
 
 
 ## Build the AudioStreamInteractive: one clip per segment (two for segments
@@ -262,45 +262,45 @@ func _build_interactive() -> void:
 	_variations.clear()
 
 	# Preload every segment's variation streams.
-	for name in _segments:
-		var seg: Dictionary = _segments[name]
+	for seg_name in _segments:
+		var seg: Dictionary = _segments[seg_name]
 		var streams: Array = []
 		var names: Array = []
 		for entry in seg.get("audio", []):
-			var path := _resolve_entry_path(str(entry), name)
+			var path := _resolve_entry_path(str(entry), seg_name)
 			if path == "":
 				continue
 			var s := _load_stream(path)
 			if s == null:
-				push_warning("SoundChain: failed to load '%s' for segment '%s'" % [path, name])
+				push_warning("SoundChain: failed to load '%s' for segment '%s'" % [path, seg_name])
 				continue
 			streams.append(s)
 			names.append(str(entry))
 		if streams.is_empty():
 			# Fallback: try <segment name>.ogg/.wav
-			var path := _resolve_entry_path(name, name)
+			var path := _resolve_entry_path(seg_name, seg_name)
 			if path != "":
 				var s := _load_stream(path)
 				if s != null:
 					streams.append(s)
-					names.append(name)
+					names.append(seg_name)
 		if streams.is_empty():
-			push_error("SoundChain: no audio for segment '%s'" % name)
-		_variations[name] = { "streams": streams, "names": names }
+			push_error("SoundChain: no audio for segment '%s'" % seg_name)
+		_variations[seg_name] = { "streams": streams, "names": names }
 
 	# Plan the clip layout.
 	var total := 0
-	for name in _segments:
-		total += 2 if _self_following(_segments[name], name) else 1
+	for seg_name in _segments:
+		total += 2 if _self_following(_segments[seg_name], seg_name) else 1
 	if total > MAX_INTERACTIVE_CLIPS:
 		push_error("SoundChain: %d clips exceed AudioStreamInteractive's limit of %d" %
 			[total, MAX_INTERACTIVE_CLIPS])
 	_interactive.clip_count = total
 
 	var idx := 0
-	for name in _segments:
-		var seg: Dictionary = _segments[name]
-		var copies := 2 if _self_following(seg, name) else 1
+	for seg_name in _segments:
+		var seg: Dictionary = _segments[seg_name]
+		var copies := 2 if _self_following(seg, seg_name) else 1
 		var arr := []
 		for c in copies:
 			var w := BeatSyncStream.new()
@@ -308,16 +308,16 @@ func _build_interactive() -> void:
 			w.sync_beats = int(seg.get("length_beats", DEFAULT_LENGTH_BEATS))
 			w.random_pitch = 1.0
 			w.random_volume_offset_db = 0.0
-			var streams: Array = _variations[name]["streams"]
+			var streams: Array = _variations[seg_name]["streams"]
 			if not streams.is_empty():
 				w.add_stream(0, streams[0])
-			_interactive.set_clip_name(idx, name if c == 0 else name + "#2")
+			_interactive.set_clip_name(idx, seg_name if c == 0 else seg_name + "#2")
 			_interactive.set_clip_stream(idx, w)
 			_wrappers[idx] = w
-			_clip_seg.append(name)
+			_clip_seg.append(seg_name)
 			arr.append(idx)
 			idx += 1
-		_clips_of[name] = arr
+		_clips_of[seg_name] = arr
 
 	# One wildcard transition: fire at the outgoing clip's musical end, start
 	# the incoming at its beginning, no fades — non-looping sources ring out to
@@ -584,6 +584,7 @@ func _process(delta: float) -> void:
 
 	_play_elapsed_usec += int(delta * 1_000_000.0)
 	if _beat_usec > 0:
+		@warning_ignore("integer_division")
 		var b := _play_elapsed_usec / _beat_usec
 		while _beat < b:
 			_beat += 1
