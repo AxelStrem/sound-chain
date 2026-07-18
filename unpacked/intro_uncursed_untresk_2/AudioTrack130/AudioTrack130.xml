@@ -8,7 +8,7 @@
 					<IsValueSampleBased Value="false" />
 				</TrackDelay>
 				<Name>
-					<EffectiveName Value="40-Audio" />
+					<EffectiveName Value="41-Audio" />
 					<UserName Value="" />
 					<Annotation Value="" />
 					<MemorizedFirstClipName Value="" />
@@ -141,6 +141,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="119170">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="148052">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="148053">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>

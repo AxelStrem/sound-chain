@@ -23,8 +23,8 @@
 							<Automation>
 								<Events>
 									<FloatEvent Id="387" Time="-63072000" Value="48.081974" />
-									<FloatEvent Id="1132" Time="504" Value="48.081974" />
-									<FloatEvent Id="1133" Time="504" Value="6650.28125" />
+									<FloatEvent Id="1290" Time="296" Value="48.081974" />
+									<FloatEvent Id="1289" Time="296" Value="6650.28125" />
 								</Events>
 								<AutomationTransformViewState>
 									<IsTransformPending Value="false" />
@@ -181,6 +181,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="98379">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="148058">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="148059">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>

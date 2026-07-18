@@ -8,7 +8,7 @@
 					<IsValueSampleBased Value="false" />
 				</TrackDelay>
 				<Name>
-					<EffectiveName Value="C-Delay" />
+					<EffectiveName Value="D-Delay" />
 					<UserName Value="" />
 					<Annotation Value="" />
 					<MemorizedFirstClipName Value="" />
@@ -137,6 +137,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="505">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="false" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="148120">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="148121">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>

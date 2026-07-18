@@ -146,6 +146,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="147970">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="147971">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="2">
 								<Send>
 									<LomId Value="0" />

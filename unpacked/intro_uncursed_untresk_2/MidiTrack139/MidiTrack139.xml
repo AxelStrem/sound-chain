@@ -211,7 +211,7 @@
 						<ParametersListWrapper LomId="0" />
 						<Pointee Id="128274" />
 						<LastSelectedTimeableIndex Value="0" />
-						<LastSelectedClipEnvelopeIndex Value="0" />
+						<LastSelectedClipEnvelopeIndex Value="1" />
 						<LastPresetRef>
 							<Value />
 						</LastPresetRef>
@@ -238,6 +238,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="128276">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="148000">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="148001">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>
@@ -465,7 +482,7 @@
 							</ArrangerAutomation>
 						</ClipTimeable>
 						<Recorder>
-							<IsArmed Value="true" />
+							<IsArmed Value="false" />
 							<TakeCounter Value="8" />
 						</Recorder>
 						<MidiControllers>
@@ -1201,7 +1218,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="31">
+																						<FileRef Id="47">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - breaks/CV1 TOP PERCS/TOP PERCS 7.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - breaks/CV1 TOP PERCS/TOP PERCS 7.wav" />
@@ -6247,7 +6264,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="31">
+																						<FileRef Id="47">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3ClHat-01.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3ClHat-01.wav" />
@@ -8943,7 +8960,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="31">
+																						<FileRef Id="47">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3ClHat-02.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3ClHat-02.wav" />
@@ -10386,7 +10403,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="31">
+																						<FileRef Id="47">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3ClHat-03.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3ClHat-03.wav" />
@@ -11829,7 +11846,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="31">
+																						<FileRef Id="47">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3ClHat-04.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3ClHat-04.wav" />
@@ -13272,7 +13289,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="31">
+																						<FileRef Id="47">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3OpHat-01.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3OpHat-01.wav" />
@@ -14716,7 +14733,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="31">
+																						<FileRef Id="47">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3OpHat-02.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3OpHat-02.wav" />
@@ -16172,7 +16189,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="31">
+																						<FileRef Id="47">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3OpHat-03.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3OpHat-03.wav" />
@@ -17617,7 +17634,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="31">
+																						<FileRef Id="47">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3OpHat-04.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - breaks/_Fanu/Drum Styles 5/Kit03/Hits/Hats/K3OpHat-04.wav" />
@@ -19366,7 +19383,7 @@
 										<NumAudioOutputs Value="1" />
 										<IsPlaceholderDevice Value="false" />
 										<Preset>
-											<Vst3Preset Id="30">
+											<Vst3Preset Id="46">
 												<OverwriteProtectionNumber Value="3076" />
 												<MpeEnabled Value="0" />
 												<MpeSettings>
@@ -23876,7 +23893,7 @@
 																<NumAudioOutputs Value="1" />
 																<IsPlaceholderDevice Value="false" />
 																<Preset>
-																	<Vst3Preset Id="31">
+																	<Vst3Preset Id="47">
 																		<OverwriteProtectionNumber Value="3076" />
 																		<MpeEnabled Value="0" />
 																		<MpeSettings>

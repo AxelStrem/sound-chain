@@ -13,14 +13,22 @@ beat-aligned.
 	`tracks` table (which tracks exist, their weight and progress range).
   - `sound_arrangement_<track>.json` — one per **track**, holding that track's
     own `start_segments` + `segments` (the transition graph). Currently
-    `pianoloops`, `noisestep`, `guitargods` (all natively 114 BPM), `aphex` and
-    `dnb` (natively 171 BPM). **These are the files you edit to change an
-    arrangement.**
-- **Audio:** `segments/*.wav` (+ Godot `.wav.import` sidecars). Files are named
+    `pianoloops`, `noisestep`, `guitargods`, `techno`, `anti` (all natively
+    114 BPM), `aphex` and `dnb` (natively 171 BPM). **These are the files you
+    edit to change an arrangement.**
+- **Audio:** `segments/*.ogg` (+ Godot `.ogg.import` sidecars). Files are named
   `<native-bpm>-<track><section>-<variation?>-<total-length>`; the slice's
   factual length is `total-length` beats **at its native BPM**, and its musical
   length is `total-length − tail`, where the tail that rings out under the next
   segment is **8 beats at 114 BPM** and **16 beats at 171 BPM**.
+- **Playback speed:** `set_playback_speed()` (temporary slow-motion effect,
+  pitch shifts with it) is implemented via the engine-global
+  `AudioServer.playback_speed_scale` — the only rate control that reaches below
+  `AudioStreamInteractive`, which silently ignores the player's `pitch_scale`.
+  All game audio slows with it, and nothing else may write that property.
+  Transition boundaries stay on the musical end at any speed because the clip
+  wrapper's reported bpm is re-calibrated at every queued switch (see
+  `_issue_switch()` in `sound_chain.gd`).
 
 ### Internal clock is 171 BPM (the "×3/2 trick")
 
@@ -71,7 +79,7 @@ Each entry in `segments`:
 | Field          | Meaning |
 |----------------|---------|
 | `name`         | Unique id (unique across **all** tracks — they share one merged lookup). Referenced by `start_segments` and every `next` table. |
-| `audio`        | **List** of interchangeable *variations* — one is picked at random every time the segment starts (they're musically equivalent, so it doesn't matter which). A single-entry list always plays that entry. Each entry is an audio file **without extension**, resolved as `res://segments/<entry>.wav` (falls back to `.ogg`); it may also be a bare filename with extension or a full `res://`/absolute path. |
+| `audio`        | **List** of interchangeable *variations* — one is picked at random every time the segment starts (they're musically equivalent, so it doesn't matter which). A single-entry list always plays that entry. Each entry is an audio file **without extension**, resolved as `res://segments/<entry>.ogg` (falls back to `.wav`); it may also be a bare filename with extension or a full `res://`/absolute path. |
 | `progress`     | List of `[lo, hi]` intervals in `[0, 1]`. The segment is only eligible when the current `progress` value (set via `set_progress()`) falls inside one of them. `[[0.0, 1.0]]` = always eligible. |
 | `length_beats` | Length in **internal (171 BPM) beats** — determines when the next segment fires. Derived as `(total_length − tail) × 171 / native_bpm` (tail 8 @114, 16 @171; see the ×3/2 trick above). |
 | `repeat`       | How many times the segment plays back-to-back before consulting `next`. Default `1`. Each pass re-triggers the audio (a fresh `audio` variation may be picked) but does **not** re-select from `next` until the last pass. |
@@ -284,3 +292,49 @@ winddown ─▶ outro ─▶ END_TRACK
   `beat 2 jingle`, `beat 3 jingle`); the ~2:1 self-vs-`breakdown` weight keeps it
   grooving ~3 bars before the drop. `fullon` variations: `dnb fullon` and
   `dnb fullon choir` — both 48-beat slices (musical 32), fully interchangeable.
+
+## Track: Techno (`sound_arrangement_techno.json`)
+
+Native 114 BPM. A staged climb: each stage self-loops a while, then advances —
+only forward, never back — until the drop, which is also the only exit.
+
+```
+intro (start) ─▶ inbeat ⇄ (self | loop)
+loop ⇄ (self | buildup)
+buildup ⇄ (self | buildup-final)
+buildup-final ─▶ breakdown ─▶ drop ⇄ (self | END_TRACK)
+```
+
+| Segment         | Vars | len(171) | `next` |
+|-----------------|------|----------|--------|
+| `intro`         | 1    | 48 | `inbeat` 1.0 |
+| `inbeat`        | 3    | 48 | self 1.0 · `loop` 1.0 |
+| `loop`          | 3    | 48 | self 2.0 · `buildup` 1.0 |
+| `buildup`       | 3    | 48 | self 1.0 · `buildup-final` 1.0 |
+| `buildup-final` | 1    | 48 | `breakdown` 1.0 |
+| `breakdown`     | 1    | 96 | `drop` 1.0 |
+| `drop`          | 3    | 48 | self 3.0 · `END_TRACK` 1.0 |
+
+- Track-specific rules: strictly one-directional (no stage ever returns to an
+  earlier one); `breakdown` (the only 64-beat-musical segment) sits right
+  before `drop`; **only `drop` ends the track**, and its 3:1 self-loop keeps it
+  pounding ~4 passes before handing off.
+
+## Track: Anti (`sound_arrangement_anti.json`)
+
+Native 114 BPM. Minimal three-parter of long 64-beat-musical (72-beat slice)
+sections: intro → beat groove → fake outro, then out.
+
+```
+intro (start) ─▶ beat ⇄ (self | fake-outro)
+fake-outro ─▶ END_TRACK
+```
+
+| Segment      | Vars | len(171) | `next` |
+|--------------|------|----------|--------|
+| `intro`      | 1    | 96 | `beat` 1.0 |
+| `beat`       | 2    | 96 | self 2.0 · `fake-outro` 1.0 |
+| `fake-outro` | 1    | 96 | `END_TRACK` 1.0 |
+
+- `beat` alternates two takes (`rides` / `choir`) via its self-loop, averaging
+  ~3 passes before the exit. **Only `fake-outro` ends the track.**

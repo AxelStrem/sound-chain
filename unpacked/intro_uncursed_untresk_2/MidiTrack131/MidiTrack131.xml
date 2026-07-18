@@ -146,6 +146,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="147990">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="147991">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="2">
 								<Send>
 									<LomId Value="0" />
@@ -1114,7 +1131,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="44">
+																						<FileRef Id="60">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - oneshots/GOTH/[KB6]_Roland_R8_MKII/Clave1.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - oneshots/GOTH/[KB6]_Roland_R8_MKII/Clave1.wav" />
@@ -2405,7 +2422,7 @@
 																									<SourceContext>
 																										<SourceContext Id="0">
 																											<OriginalFileRef>
-																												<FileRef Id="157">
+																												<FileRef Id="173">
 																													<RelativePathType Value="5" />
 																													<RelativePath Value="Samples/One Shots/Drums/Rim/Rim 909.aif" />
 																													<Path Value="/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Core Library/Samples/One Shots/Drums/Rim/Rim 909.aif" />
@@ -42997,7 +43014,7 @@
 																									<SourceContext>
 																										<SourceContext Id="0">
 																											<OriginalFileRef>
-																												<FileRef Id="48">
+																												<FileRef Id="64">
 																													<RelativePathType Value="1" />
 																													<RelativePath Value="../../../../../Samples/__Digitakt samples/909 from mars/07. Cymbal/Crash 909 05.wav" />
 																													<Path Value="/Users/notumschaltung/Samples/__Digitakt samples/909 from mars/07. Cymbal/Crash 909 05.wav" />
@@ -53499,7 +53516,7 @@
 										<NumAudioOutputs Value="1" />
 										<IsPlaceholderDevice Value="false" />
 										<Preset>
-											<Vst3Preset Id="90">
+											<Vst3Preset Id="106">
 												<OverwriteProtectionNumber Value="3076" />
 												<MpeEnabled Value="0" />
 												<MpeSettings>

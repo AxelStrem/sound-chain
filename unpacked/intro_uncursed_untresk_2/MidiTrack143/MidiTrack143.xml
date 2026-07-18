@@ -46,8 +46,8 @@
 						<AreAdditionalAutomationLanesFolded Value="false" />
 					</AutomationLanes>
 					<ClipEnvelopeChooserViewState>
-						<SelectedDevice Value="4" />
-						<SelectedEnvelope Value="4" />
+						<SelectedDevice Value="0" />
+						<SelectedEnvelope Value="0" />
 						<PreferModulationVisible Value="true" />
 					</ClipEnvelopeChooserViewState>
 					<AudioInputRouting>
@@ -141,6 +141,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="133622">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="148072">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="148073">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>
@@ -953,7 +970,7 @@
 										<NumAudioOutputs Value="1" />
 										<IsPlaceholderDevice Value="false" />
 										<Preset>
-											<Vst3Preset Id="132">
+											<Vst3Preset Id="148">
 												<OverwriteProtectionNumber Value="3076" />
 												<MpeEnabled Value="0" />
 												<MpeSettings>

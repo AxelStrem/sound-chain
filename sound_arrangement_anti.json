@@ -1,0 +1,42 @@
+{
+  "start_segments": {
+    "114-anti-intro": 1.0
+  },
+  "segments": [
+    {
+      "name": "114-anti-intro",
+      "audio": [
+        "114-anti intro-72"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 96,
+      "next": {
+        "114-anti-beat": 1.0
+      }
+    },
+    {
+      "name": "114-anti-beat",
+      "audio": [
+        "114-anti beat rides-72",
+        "114-anti beat choir-72"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 96,
+      "next": {
+        "114-anti-beat": 2.0,
+        "114-anti-fake-outro": 1.0
+      }
+    },
+    {
+      "name": "114-anti-fake-outro",
+      "audio": [
+        "114-anti-fake-outro-72"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 96,
+      "next": {
+        "END_TRACK": 1.0
+      }
+    }
+  ]
+}

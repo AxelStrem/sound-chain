@@ -26,10 +26,9 @@
 	  "probability": 1.0,
 	  "progress": [ [0.0, 0.48] ]
 	},
-	"angle rytm guide": {
+	"anti": {
 	  "probability": 1.0,
-	  "progress": [ [0.0, 0.25] ],
-	  "file": "sound_arrangement_angle.json"
+	  "progress": [ [0.0, 0.25] ]
 	}
   }
 }

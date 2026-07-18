@@ -146,6 +146,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="147992">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="147993">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="2">
 								<Send>
 									<LomId Value="0" />
@@ -3022,7 +3039,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="73">
+																						<FileRef Id="89">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 268 SH Ride soft - Deep Fry.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 268 SH Ride soft - Deep Fry.wav" />
@@ -4219,7 +4236,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="73">
+																						<FileRef Id="89">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 262 SH Ride mid - Deep Fry.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 262 SH Ride mid - Deep Fry.wav" />
@@ -5417,7 +5434,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="75">
+																						<FileRef Id="91">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 256 SH Ride hard - Deep Fry.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/_packs/Hainbach NUCLEAR DRUMS/Hainbach - Nuclear Drum Loops - 256 SH Ride hard - Deep Fry.wav" />
@@ -7107,7 +7124,7 @@
 								<MidiInputsListWrapper LomId="0" />
 								<PatchSlot>
 									<Value>
-										<MxPatchRef Id="0">
+										<MxPatchRef Id="1">
 											<FileRef>
 												<RelativePathType Value="7" />
 												<RelativePath Value="Devices/Audio Effects/LFO/Ableton Folder Info/LFO.amxd" />
@@ -7116,10 +7133,10 @@
 												<LivePackName Value="" />
 												<LivePackId Value="" />
 												<OriginalFileSize Value="542384" />
-												<OriginalCrc Value="50438" />
+												<OriginalCrc Value="34038" />
 												<SourceHint Value="" />
 											</FileRef>
-											<LastModDate Value="1778262299" />
+											<LastModDate Value="1784072496" />
 											<SourceContext />
 											<SampleUsageHint Value="0" />
 										</MxPatchRef>
@@ -8832,7 +8849,7 @@
 								</IdRefList>
 								<BlobSlot>
 									<Value>
-										<MxDBlob Id="1">
+										<MxDBlob Id="2">
 											<Blob />
 											<HasData Value="true" />
 										</MxDBlob>

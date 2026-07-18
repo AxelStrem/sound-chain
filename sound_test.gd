@@ -39,6 +39,7 @@ var _tree              : Tree
 var _status            : RichTextLabel
 var _slider            : HSlider
 var _map               : TrackMap
+var _speed_readout     : Label
 
 var _issues_by_target  : Dictionary = {}   ## target name → Array[String] messages
 var _track_items       : Dictionary = {}   ## track name → TreeItem
@@ -103,10 +104,28 @@ func _build_ui() -> void:
 	_add_button(transport, "⏹ Stop", _on_stop)
 	_add_button(transport, "⏭ Next", _on_next)
 
-	# Push the volume control to the right edge.
+	# Push the speed + volume controls to the right edge.
 	var spacer := Control.new()
 	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	transport.add_child(spacer)
+
+	# Playback speed (slow-motion effect; engine-global, pitch shifts with it).
+	var spd_label := Label.new()
+	spd_label.text = "Speed"
+	transport.add_child(spd_label)
+	var spd := HSlider.new()
+	spd.min_value = 0.25
+	spd.max_value = 2.0
+	spd.step = 0.05
+	spd.value = SoundChain.get_playback_speed()
+	spd.custom_minimum_size = Vector2(160, 24)
+	spd.value_changed.connect(_on_speed_changed)
+	transport.add_child(spd)
+	_speed_readout = Label.new()
+	_speed_readout.text = "%.2f×" % SoundChain.get_playback_speed()
+	_speed_readout.custom_minimum_size = Vector2(52, 0)
+	transport.add_child(_speed_readout)
+
 	var vol_label := Label.new()
 	vol_label.text = "Vol"
 	transport.add_child(vol_label)
@@ -283,6 +302,11 @@ func _on_next() -> void:   SoundChain.skip()
 func _on_volume_changed(v: float) -> void:
 	SoundChain.set_volume(v)
 	SoundTestConstants.save_volume(v)
+
+
+func _on_speed_changed(v: float) -> void:
+	SoundChain.set_playback_speed(v)
+	_speed_readout.text = "%.2f×" % v
 
 
 func _on_progress_changed(v: float) -> void:

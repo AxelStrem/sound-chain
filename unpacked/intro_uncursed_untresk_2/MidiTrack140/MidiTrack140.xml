@@ -146,6 +146,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="148002">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="148003">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="2">
 								<Send>
 									<LomId Value="641" />
@@ -1081,7 +1098,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="30">
+																						<FileRef Id="46">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - oneshots/02-snares/CV1 SNARES/SNARE 3.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - oneshots/02-snares/CV1 SNARES/SNARE 3.wav" />
@@ -2275,7 +2292,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="30">
+																						<FileRef Id="46">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - oneshots/02-snares/CV1 SNARES/SNARE 4.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - oneshots/02-snares/CV1 SNARES/SNARE 4.wav" />
@@ -3469,7 +3486,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="30">
+																						<FileRef Id="46">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - oneshots/02-snares/CV1 SNARES/SNARE 5.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - oneshots/02-snares/CV1 SNARES/SNARE 5.wav" />
@@ -4664,7 +4681,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="26">
+																						<FileRef Id="42">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - oneshots/02-snares/Acid House - Snares/11 AHT Snare.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - oneshots/02-snares/Acid House - Snares/11 AHT Snare.wav" />
@@ -5857,7 +5874,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="26">
+																						<FileRef Id="42">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - oneshots/02-snares/hardstyle - dms/snare 11.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - oneshots/02-snares/hardstyle - dms/snare 11.wav" />
@@ -7050,7 +7067,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="30">
+																						<FileRef Id="46">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - oneshots/02-snares/CV1 SNARES/SNARE 3.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - oneshots/02-snares/CV1 SNARES/SNARE 3.wav" />
@@ -8936,7 +8953,7 @@
 										<NumAudioOutputs Value="1" />
 										<IsPlaceholderDevice Value="false" />
 										<Preset>
-											<Vst3Preset Id="26">
+											<Vst3Preset Id="42">
 												<OverwriteProtectionNumber Value="3076" />
 												<MpeEnabled Value="0" />
 												<MpeSettings>

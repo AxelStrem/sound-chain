@@ -32,11 +32,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<MidiClip Id="7" Time="548.47460534257414">
+									<MidiClip Id="7" Time="340.47460534257408">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="548.47460534257414" />
-										<CurrentEnd Value="551.22440007908756" />
+										<CurrentStart Value="340.47460534257408" />
+										<CurrentEnd Value="343.22440007908756" />
 										<Loop>
 											<LoopStart Value="0.86240530303030305" />
 											<LoopEnd Value="3.6122000395437897" />
@@ -142,11 +142,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="6" Time="551.22440007908756">
+									<MidiClip Id="6" Time="343.22440007908756">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="551.22440007908756" />
-										<CurrentEnd Value="551.61220003954384" />
+										<CurrentStart Value="343.22440007908756" />
+										<CurrentEnd Value="343.61220003954378" />
 										<Loop>
 											<LoopStart Value="3.6122000395437897" />
 											<LoopEnd Value="4" />
@@ -252,11 +252,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="2" Time="580.47460534257414">
+									<MidiClip Id="2" Time="372.47460534257408">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="580.47460534257414" />
-										<CurrentEnd Value="583.61220003954384" />
+										<CurrentStart Value="372.47460534257408" />
+										<CurrentEnd Value="375.61220003954378" />
 										<Loop>
 											<LoopStart Value="0.86240530303030305" />
 											<LoopEnd Value="4" />
@@ -379,11 +379,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<MidiClip Id="10" Time="520">
+									<MidiClip Id="10" Time="312">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="520" />
-										<CurrentEnd Value="551.22440007908756" />
+										<CurrentStart Value="312" />
+										<CurrentEnd Value="343.22440007908756" />
 										<Loop>
 											<LoopStart Value="4.3877999604562108" />
 											<LoopEnd Value="35.612200039543787" />
@@ -525,11 +525,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="8" Time="551.22440007908756">
+									<MidiClip Id="8" Time="343.22440007908756">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="551.22440007908756" />
-										<CurrentEnd Value="551.61220003954384" />
+										<CurrentStart Value="343.22440007908756" />
+										<CurrentEnd Value="343.61220003954378" />
 										<Loop>
 											<LoopStart Value="35.612200039543787" />
 											<LoopEnd Value="36" />
@@ -671,11 +671,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="2" Time="551.61220003954384">
+									<MidiClip Id="2" Time="343.61220003954378">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="551.61220003954384" />
-										<CurrentEnd Value="583.61220003954384" />
+										<CurrentStart Value="343.61220003954378" />
+										<CurrentEnd Value="375.61220003954378" />
 										<Loop>
 											<LoopStart Value="4" />
 											<LoopEnd Value="36" />
@@ -834,11 +834,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<MidiClip Id="10" Time="520">
+									<MidiClip Id="10" Time="312">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="520" />
-										<CurrentEnd Value="551.22440007908756" />
+										<CurrentStart Value="312" />
+										<CurrentEnd Value="343.22440007908756" />
 										<Loop>
 											<LoopStart Value="36.387799960456213" />
 											<LoopEnd Value="67.612200039543794" />
@@ -993,11 +993,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="8" Time="551.22440007908756">
+									<MidiClip Id="8" Time="343.22440007908756">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="551.22440007908756" />
-										<CurrentEnd Value="551.61220003954384" />
+										<CurrentStart Value="343.22440007908756" />
+										<CurrentEnd Value="343.61220003954378" />
 										<Loop>
 											<LoopStart Value="67.612200039543794" />
 											<LoopEnd Value="68" />
@@ -1152,11 +1152,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="2" Time="551.61220003954384">
+									<MidiClip Id="2" Time="343.61220003954378">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="551.61220003954384" />
-										<CurrentEnd Value="583.61220003954384" />
+										<CurrentStart Value="343.61220003954378" />
+										<CurrentEnd Value="375.61220003954378" />
 										<Loop>
 											<LoopStart Value="36" />
 											<LoopEnd Value="68" />
@@ -1328,11 +1328,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<MidiClip Id="10" Time="520">
+									<MidiClip Id="10" Time="312">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="520" />
-										<CurrentEnd Value="551.22440007908756" />
+										<CurrentStart Value="312" />
+										<CurrentEnd Value="343.22440007908756" />
 										<Loop>
 											<LoopStart Value="68.387799960456206" />
 											<LoopEnd Value="99.612200039543794" />
@@ -1500,11 +1500,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="8" Time="551.22440007908756">
+									<MidiClip Id="8" Time="343.22440007908756">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="551.22440007908756" />
-										<CurrentEnd Value="551.61220003954384" />
+										<CurrentStart Value="343.22440007908756" />
+										<CurrentEnd Value="343.61220003954378" />
 										<Loop>
 											<LoopStart Value="99.612200039543794" />
 											<LoopEnd Value="100" />
@@ -1672,11 +1672,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="2" Time="551.61220003954384">
+									<MidiClip Id="2" Time="343.61220003954378">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="551.61220003954384" />
-										<CurrentEnd Value="583.61220003954384" />
+										<CurrentStart Value="343.61220003954378" />
+										<CurrentEnd Value="375.61220003954378" />
 										<Loop>
 											<LoopStart Value="68" />
 											<LoopEnd Value="100" />
@@ -1971,6 +1971,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="41339">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="148030">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="148031">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>
@@ -2783,7 +2800,7 @@
 										<NumAudioOutputs Value="1" />
 										<IsPlaceholderDevice Value="false" />
 										<Preset>
-											<Vst3Preset Id="129">
+											<Vst3Preset Id="145">
 												<OverwriteProtectionNumber Value="3076" />
 												<MpeEnabled Value="0" />
 												<MpeSettings>

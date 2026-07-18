@@ -8,7 +8,7 @@
 					<IsValueSampleBased Value="false" />
 				</TrackDelay>
 				<Name>
-					<EffectiveName Value="44-Sitar" />
+					<EffectiveName Value="45-Sitar" />
 					<UserName Value="" />
 					<Annotation Value="" />
 					<MemorizedFirstClipName Value="" />
@@ -32,11 +32,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<MidiClip Id="7" Time="527.0390625">
+									<MidiClip Id="7" Time="319.0390625">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="527.0390625" />
-										<CurrentEnd Value="551.22440007908756" />
+										<CurrentStart Value="319.0390625" />
+										<CurrentEnd Value="343.22440007908756" />
 										<Loop>
 											<LoopStart Value="3.4268624604562103" />
 											<LoopEnd Value="27.61220003954379" />
@@ -160,11 +160,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="6" Time="551.22440007908756">
+									<MidiClip Id="6" Time="343.22440007908756">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="551.22440007908756" />
-										<CurrentEnd Value="551.61220003954384" />
+										<CurrentStart Value="343.22440007908756" />
+										<CurrentEnd Value="343.61220003954378" />
 										<Loop>
 											<LoopStart Value="27.61220003954379" />
 											<LoopEnd Value="28" />
@@ -288,11 +288,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="2" Time="559.0390625">
+									<MidiClip Id="2" Time="351.0390625">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="559.0390625" />
-										<CurrentEnd Value="583.61220003954384" />
+										<CurrentStart Value="351.0390625" />
+										<CurrentEnd Value="375.61220003954378" />
 										<Loop>
 											<LoopStart Value="3.4268624604562103" />
 											<LoopEnd Value="28" />
@@ -433,11 +433,11 @@
 							<IsContentSelectedInDocument Value="false" />
 							<ClipAutomation>
 								<Events>
-									<MidiClip Id="10" Time="520">
+									<MidiClip Id="10" Time="312">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="520" />
-										<CurrentEnd Value="551.22440007908756" />
+										<CurrentStart Value="312" />
+										<CurrentEnd Value="343.22440007908756" />
 										<Loop>
 											<LoopStart Value="28.38779996045621" />
 											<LoopEnd Value="59.612200039543787" />
@@ -569,11 +569,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="8" Time="551.22440007908756">
+									<MidiClip Id="8" Time="343.22440007908756">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="551.22440007908756" />
-										<CurrentEnd Value="551.61220003954384" />
+										<CurrentStart Value="343.22440007908756" />
+										<CurrentEnd Value="343.61220003954378" />
 										<Loop>
 											<LoopStart Value="59.612200039543787" />
 											<LoopEnd Value="60" />
@@ -705,11 +705,11 @@
 											<Fixed Value="false" />
 										</ExpressionGrid>
 									</MidiClip>
-									<MidiClip Id="2" Time="551.61220003954384">
+									<MidiClip Id="2" Time="343.61220003954378">
 										<LomId Value="0" />
 										<LomIdView Value="0" />
-										<CurrentStart Value="551.61220003954384" />
-										<CurrentEnd Value="583.61220003954384" />
+										<CurrentStart Value="343.61220003954378" />
+										<CurrentEnd Value="375.61220003954378" />
 										<Loop>
 											<LoopStart Value="28" />
 											<LoopEnd Value="60" />
@@ -968,6 +968,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="42974">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="148060">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="148061">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>

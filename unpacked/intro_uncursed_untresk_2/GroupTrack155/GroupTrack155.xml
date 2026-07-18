@@ -8,8 +8,8 @@
 					<IsValueSampleBased Value="false" />
 				</TrackDelay>
 				<Name>
-					<EffectiveName Value="59-Group" />
-					<UserName Value="" />
+					<EffectiveName Value="Crunchy dnb beats" />
+					<UserName Value="Crunchy dnb beats" />
 					<Annotation Value="" />
 					<MemorizedFirstClipName Value="" />
 				</Name>
@@ -60,7 +60,7 @@
 					<AutomationLanes>
 						<AutomationLanes>
 							<AutomationLane Id="0">
-								<SelectedDevice Value="2" />
+								<SelectedDevice Value="3" />
 								<SelectedEnvelope Value="2" />
 								<IsContentSelectedInDocument Value="false" />
 								<LaneHeight Value="51" />
@@ -169,6 +169,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="148090">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="148091">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="1">
 								<Send>
 									<LomId Value="0" />
@@ -261,7 +278,7 @@
 						</SplitStereoPanR>
 						<Volume>
 							<LomId Value="788" />
-							<Manual Value="0.7498940825" />
+							<Manual Value="0.9225714803" />
 							<MidiControllerRange>
 								<Min Value="0.0003162277571" />
 								<Max Value="1.99526238" />
@@ -289,6 +306,256 @@
 					</Mixer>
 					<DeviceChain>
 						<Devices>
+							<StereoGain Id="1">
+								<LomId Value="0" />
+								<LomIdView Value="0" />
+								<IsExpanded Value="true" />
+								<BreakoutIsExpanded Value="false" />
+								<On>
+									<LomId Value="0" />
+									<Manual Value="true" />
+									<AutomationTarget Id="153971">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<MidiCCOnOffThresholds>
+										<Min Value="64" />
+										<Max Value="127" />
+									</MidiCCOnOffThresholds>
+								</On>
+								<ModulationSourceCount Value="0" />
+								<ParametersListWrapper LomId="0" />
+								<Pointee Id="153972" />
+								<LastSelectedTimeableIndex Value="9" />
+								<LastSelectedClipEnvelopeIndex Value="0" />
+								<LastPresetRef>
+									<Value>
+										<AbletonDefaultPresetRef Id="0">
+											<FileRef>
+												<RelativePathType Value="7" />
+												<RelativePath Value="Devices/Audio Effects/Utility" />
+												<Path Value="/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Builtin/Devices/Audio Effects/Utility" />
+												<Type Value="2" />
+												<LivePackName Value="" />
+												<LivePackId Value="" />
+												<OriginalFileSize Value="0" />
+												<OriginalCrc Value="0" />
+												<SourceHint Value="" />
+											</FileRef>
+											<DeviceId Name="StereoGain" />
+										</AbletonDefaultPresetRef>
+									</Value>
+								</LastPresetRef>
+								<LockedScripts />
+								<IsFolded Value="false" />
+								<ShouldShowPresetName Value="true" />
+								<UserName Value="" />
+								<Annotation Value="" />
+								<SourceContext>
+									<Value>
+										<BranchSourceContext Id="0">
+											<OriginalFileRef>
+												<FileRef Id="0">
+													<RelativePathType Value="7" />
+													<RelativePath Value="Devices/Audio Effects/Utility" />
+													<Path Value="/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Builtin/Devices/Audio Effects/Utility" />
+													<Type Value="2" />
+													<LivePackName Value="" />
+													<LivePackId Value="" />
+													<OriginalFileSize Value="0" />
+													<OriginalCrc Value="0" />
+													<SourceHint Value="" />
+												</FileRef>
+											</OriginalFileRef>
+											<BrowserContentPath Value="view:X-AudioFx#Utility" />
+											<LocalFiltersJson Value="" />
+											<PresetRef>
+												<AbletonDefaultPresetRef Id="0">
+													<FileRef>
+														<RelativePathType Value="7" />
+														<RelativePath Value="Devices/Audio Effects/Utility" />
+														<Path Value="/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Builtin/Devices/Audio Effects/Utility" />
+														<Type Value="2" />
+														<LivePackName Value="" />
+														<LivePackId Value="" />
+														<OriginalFileSize Value="0" />
+														<OriginalCrc Value="0" />
+														<SourceHint Value="" />
+													</FileRef>
+													<DeviceId Name="StereoGain" />
+												</AbletonDefaultPresetRef>
+											</PresetRef>
+											<BranchDeviceId Value="device:ableton:audiofx:StereoGain" />
+										</BranchSourceContext>
+									</Value>
+								</SourceContext>
+								<MpePitchBendUsesTuning Value="true" />
+								<ViewData Value="{}" />
+								<OverwriteProtectionNumber Value="3076" />
+								<PhaseInvertL>
+									<LomId Value="0" />
+									<Manual Value="false" />
+									<AutomationTarget Id="153973">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<MidiCCOnOffThresholds>
+										<Min Value="64" />
+										<Max Value="127" />
+									</MidiCCOnOffThresholds>
+								</PhaseInvertL>
+								<PhaseInvertR>
+									<LomId Value="0" />
+									<Manual Value="false" />
+									<AutomationTarget Id="153974">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<MidiCCOnOffThresholds>
+										<Min Value="64" />
+										<Max Value="127" />
+									</MidiCCOnOffThresholds>
+								</PhaseInvertR>
+								<ChannelMode>
+									<LomId Value="0" />
+									<Manual Value="1" />
+									<AutomationTarget Id="153975">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<MidiControllerRange>
+										<Min Value="0" />
+										<Max Value="3" />
+									</MidiControllerRange>
+								</ChannelMode>
+								<StereoWidth>
+									<LomId Value="986" />
+									<Manual Value="1" />
+									<MidiControllerRange>
+										<Min Value="0" />
+										<Max Value="4" />
+									</MidiControllerRange>
+									<AutomationTarget Id="153976">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="153977">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</StereoWidth>
+								<MidSideBalance>
+									<LomId Value="0" />
+									<Manual Value="1" />
+									<MidiControllerRange>
+										<Min Value="0" />
+										<Max Value="2" />
+									</MidiControllerRange>
+									<AutomationTarget Id="153978">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="153979">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</MidSideBalance>
+								<MidSideBalanceOn Value="false" />
+								<Mono>
+									<LomId Value="0" />
+									<Manual Value="false" />
+									<AutomationTarget Id="153980">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<MidiCCOnOffThresholds>
+										<Min Value="64" />
+										<Max Value="127" />
+									</MidiCCOnOffThresholds>
+								</Mono>
+								<BassMono>
+									<LomId Value="0" />
+									<Manual Value="false" />
+									<AutomationTarget Id="153981">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<MidiCCOnOffThresholds>
+										<Min Value="64" />
+										<Max Value="127" />
+									</MidiCCOnOffThresholds>
+								</BassMono>
+								<BassMonoAudition Value="false" />
+								<BassMonoFrequency>
+									<LomId Value="0" />
+									<Manual Value="120" />
+									<MidiControllerRange>
+										<Min Value="50" />
+										<Max Value="500" />
+									</MidiControllerRange>
+									<AutomationTarget Id="153982">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="153983">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</BassMonoFrequency>
+								<Balance>
+									<LomId Value="0" />
+									<Manual Value="0" />
+									<MidiControllerRange>
+										<Min Value="-1" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="153984">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="153985">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Balance>
+								<Gain>
+									<LomId Value="987" />
+									<Manual Value="0.2448436618" />
+									<MidiControllerRange>
+										<Min Value="0" />
+										<Max Value="56.2341309" />
+									</MidiControllerRange>
+									<AutomationTarget Id="153986">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="153987">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Gain>
+								<LegacyGain>
+									<LomId Value="0" />
+									<Manual Value="0" />
+									<MidiControllerRange>
+										<Min Value="-35" />
+										<Max Value="35" />
+									</MidiControllerRange>
+									<AutomationTarget Id="153988">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="153989">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</LegacyGain>
+								<Mute>
+									<LomId Value="0" />
+									<Manual Value="false" />
+									<AutomationTarget Id="153990">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<MidiCCOnOffThresholds>
+										<Min Value="64" />
+										<Max Value="127" />
+									</MidiCCOnOffThresholds>
+								</Mute>
+								<DcFilter>
+									<LomId Value="0" />
+									<Manual Value="false" />
+									<AutomationTarget Id="153991">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<MidiCCOnOffThresholds>
+										<Min Value="64" />
+										<Max Value="127" />
+									</MidiCCOnOffThresholds>
+								</DcFilter>
+								<LegacyMode Value="false" />
+							</StereoGain>
 							<DrumBuss Id="0">
 								<LomId Value="0" />
 								<LomIdView Value="0" />
@@ -308,7 +575,7 @@
 								<ModulationSourceCount Value="0" />
 								<ParametersListWrapper LomId="0" />
 								<Pointee Id="137669" />
-								<LastSelectedTimeableIndex Value="13" />
+								<LastSelectedTimeableIndex Value="6" />
 								<LastSelectedClipEnvelopeIndex Value="0" />
 								<LastPresetRef>
 									<Value>
@@ -439,8 +706,8 @@
 									</ModulationTarget>
 								</DampingFrequency>
 								<TransientShaping>
-									<LomId Value="0" />
-									<Manual Value="0" />
+									<LomId Value="976" />
+									<Manual Value="0.2698412836" />
 									<MidiControllerRange>
 										<Min Value="-1" />
 										<Max Value="1" />
@@ -535,7 +802,7 @@
 								</OutputGain>
 								<DryWet>
 									<LomId Value="745" />
-									<Manual Value="0.6875" />
+									<Manual Value="0.6484375" />
 									<MidiControllerRange>
 										<Min Value="0" />
 										<Max Value="1" />

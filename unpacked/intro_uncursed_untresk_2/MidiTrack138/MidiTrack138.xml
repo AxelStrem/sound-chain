@@ -146,6 +146,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="148004">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="148005">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="2">
 								<Send>
 									<LomId Value="0" />
@@ -1104,7 +1121,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="30">
+																						<FileRef Id="46">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - oneshots/01-bassdrums/MED_Kick_10.wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - oneshots/01-bassdrums/MED_Kick_10.wav" />
@@ -2297,7 +2314,7 @@
 																			<SourceContext>
 																				<SourceContext Id="0">
 																					<OriginalFileRef>
-																						<FileRef Id="30">
+																						<FileRef Id="46">
 																							<RelativePathType Value="1" />
 																							<RelativePath Value="../../../../../Samples/drums - oneshots/01-bassdrums/(Freeze).wav" />
 																							<Path Value="/Users/notumschaltung/Samples/drums - oneshots/01-bassdrums/(Freeze).wav" />

@@ -154,8 +154,8 @@
 						<Sends>
 							<TrackSendHolder Id="0">
 								<Send>
-									<LomId Value="0" />
-									<Manual Value="0.0003162277571" />
+									<LomId Value="999" />
+									<Manual Value="0.8317637444" />
 									<MidiControllerRange>
 										<Min Value="0.0003162277571" />
 										<Max Value="1" />
@@ -164,6 +164,23 @@
 										<LockEnvelope Value="0" />
 									</AutomationTarget>
 									<ModulationTarget Id="81732">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="148074">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="148075">
 										<LockEnvelope Value="0" />
 									</ModulationTarget>
 								</Send>
@@ -261,7 +278,7 @@
 						</SplitStereoPanR>
 						<Volume>
 							<LomId Value="665" />
-							<Manual Value="0.901571095" />
+							<Manual Value="0.3981071115" />
 							<MidiControllerRange>
 								<Min Value="0.0003162277571" />
 								<Max Value="1.99526238" />

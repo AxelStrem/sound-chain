@@ -1,6 +1,6 @@
-<Ableton MajorVersion="5" MinorVersion="12.0_12402" SchemaChangeCount="2" Creator="Ableton Live 12.4.2" Revision="a687113d716f39a6a38af4d25e05391da53174c6">
+<Ableton MajorVersion="5" MinorVersion="12.0_12402" SchemaChangeCount="5" Creator="Ableton Live 12.4.3" Revision="e3d8be4d07c71dbd4de9e4183bf90652f680375b">
 	<LiveSet>
-		<NextPointeeId Value="139601" />
+		<NextPointeeId Value="154580" />
 		<OverwriteProtectionNumber Value="3076" />
 		<LomId Value="4" />
 		<LomIdView Value="2" />
@@ -43,6 +43,8 @@
 				</MidiTrack>
 			<MidiTrack Id="95" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
+			<GroupTrack Id="168" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
+				</GroupTrack>
 			<MidiTrack Id="135" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
 				</MidiTrack>
 			<MidiTrack Id="146" SelectedToolPanel="2" SelectedTransformationName="Quantize" SelectedGeneratorName="Rhythm">
@@ -121,29 +123,43 @@
 				</AudioTrack>
 			<AudioTrack Id="88" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
 				</AudioTrack>
+			<MidiTrack Id="164" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
 			<GroupTrack Id="155" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
 				</GroupTrack>
 			<AudioTrack Id="158" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
 				</AudioTrack>
-			<AudioTrack Id="152" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
+			<MidiTrack Id="172" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
+			<GroupTrack Id="178" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
+				</GroupTrack>
+			<AudioTrack Id="182" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
+				</AudioTrack>
+			<AudioTrack Id="180" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
+				</AudioTrack>
+			<AudioTrack Id="179" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
 				</AudioTrack>
 			<AudioTrack Id="154" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
 				</AudioTrack>
-			<AudioTrack Id="156" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
+			<AudioTrack Id="161" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
 				</AudioTrack>
-			<AudioTrack Id="148" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
-				</AudioTrack>
-			<AudioTrack Id="159" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
-				</AudioTrack>
-			<AudioTrack Id="160" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
-				</AudioTrack>
-			<GroupTrack Id="151" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
+			<GroupTrack Id="170" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
 				</GroupTrack>
-			<AudioTrack Id="149" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
+			<AudioTrack Id="167" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
 				</AudioTrack>
-			<AudioTrack Id="150" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
+			<AudioTrack Id="175" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
 				</AudioTrack>
+			<AudioTrack Id="174" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
+				</AudioTrack>
+			<AudioTrack Id="171" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
+				</AudioTrack>
+			<AudioTrack Id="166" SelectedToolPanel="3" SelectedTransformationName="" SelectedGeneratorName="">
+				</AudioTrack>
+			<MidiTrack Id="162" SelectedToolPanel="2" SelectedTransformationName="Arpeggiate" SelectedGeneratorName="Rhythm">
+				</MidiTrack>
 			<ReturnTrack Id="2" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
+				</ReturnTrack>
+			<ReturnTrack Id="173" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
 				</ReturnTrack>
 			<ReturnTrack Id="141" SelectedToolPanel="7" SelectedTransformationName="" SelectedGeneratorName="">
 				</ReturnTrack>
@@ -188,9 +204,12 @@
 						</EnvelopeTarget>
 						<Automation>
 							<Events>
-								<FloatEvent Id="5266" Time="-63072000" Value="114" />
-								<FloatEvent Id="5732" Time="504" Value="114" />
-								<FloatEvent Id="5733" Time="504" Value="171" />
+								<FloatEvent Id="5901" Time="-63072000" Value="110" />
+								<FloatEvent Id="5994" Time="0" Value="110" />
+								<FloatEvent Id="5992" Time="0" Value="114" />
+								<FloatEvent Id="6022" Time="3.9010601377788876" Value="114" />
+								<FloatEvent Id="5966" Time="288" Value="114" />
+								<FloatEvent Id="5926" Time="288" Value="171" />
 							</Events>
 							<AutomationTransformViewState>
 								<IsTransformPending Value="false" />
@@ -218,14 +237,14 @@
 						<AutomationLane Id="0">
 							<SelectedDevice Value="3" />
 							<SelectedEnvelope Value="2" />
-							<IsContentSelectedInDocument Value="false" />
+							<IsContentSelectedInDocument Value="true" />
 							<LaneHeight Value="85" />
 						</AutomationLane>
 						<AutomationLane Id="1">
 							<SelectedDevice Value="3" />
 							<SelectedEnvelope Value="3" />
 							<IsContentSelectedInDocument Value="false" />
-							<LaneHeight Value="34" />
+							<LaneHeight Value="51" />
 						</AutomationLane>
 					</AutomationLanes>
 					<AreAdditionalAutomationLanesFolded Value="false" />
@@ -451,6 +470,9 @@
 					</CrossFade>
 					<TempoAutomationViewBottom Value="60" />
 					<TempoAutomationViewTop Value="200" />
+					<UserTempoAutomation>
+						<Value />
+					</UserTempoAutomation>
 				</Mixer>
 				<FreezeSequencer>
 					<AudioSequencer Id="0">
@@ -584,7 +606,7 @@
 						<SampleOffsetModulationScrollPosition Value="-1073741824" />
 						<Recorder>
 							<IsArmed Value="false" />
-							<TakeCounter Value="52" />
+							<TakeCounter Value="55" />
 						</Recorder>
 					</AudioSequencer>
 				</FreezeSequencer>
@@ -634,13 +656,13 @@
 							<ViewData Value="{}" />
 							<PluginDesc>
 								<Vst3PluginInfo Id="0">
-									<WinPosX Value="385" />
-									<WinPosY Value="875" />
+									<WinPosX Value="256" />
+									<WinPosY Value="575" />
 									<NumAudioInputs Value="1" />
 									<NumAudioOutputs Value="1" />
 									<IsPlaceholderDevice Value="false" />
 									<Preset>
-										<Vst3Preset Id="133">
+										<Vst3Preset Id="149">
 											<OverwriteProtectionNumber Value="3076" />
 											<MpeEnabled Value="0" />
 											<MpeSettings>
@@ -4824,6 +4846,7 @@
 		</PreHearTrack>
 		<SendsPre>
 			<SendPreBool Id="0" Value="false" />
+			<SendPreBool Id="3" Value="false" />
 			<SendPreBool Id="2" Value="false" />
 			<SendPreBool Id="1" Value="false" />
 		</SendsPre>
@@ -5016,17 +5039,17 @@
 		<Transport>
 			<PhaseNudgeTempo Value="10" />
 			<LoopOn Value="true" />
-			<LoopStart Value="216" />
-			<LoopLength Value="64" />
+			<LoopStart Value="144" />
+			<LoopLength Value="72" />
 			<LoopIsSongStart Value="false" />
-			<CurrentTime Value="504" />
+			<CurrentTime Value="8" />
 			<PunchIn Value="false" />
 			<PunchOut Value="false" />
 			<MetronomeTickDuration Value="0" />
 			<DrawMode Value="false" />
 		</Transport>
 		<SessionScrollPos X="-2953" Y="0" />
-		<SelectedBreakpointValue Value="158.120819" />
+		<SelectedBreakpointValue Value="114" />
 		<SignalModulations />
 		<GlobalQuantisation Value="4" />
 		<AutoQuantisation Value="0" />
@@ -5045,15 +5068,15 @@
 		<InKey Value="true" />
 		<SmpteFormat Value="0" />
 		<TimeSelection>
-			<AnchorTime Value="504" />
-			<OtherTime Value="504" />
+			<AnchorTime Value="8" />
+			<OtherTime Value="8" />
 		</TimeSelection>
 		<SequencerNavigator>
 			<BeatTimeHelper>
-				<CurrentZoom Value="0.24369230769230768" />
+				<CurrentZoom Value="0.390106007067137828" />
 			</BeatTimeHelper>
-			<ScrollerPos X="-1284" Y="-3369" />
-			<ClientSize X="1181" Y="604" />
+			<ScrollerPos X="0" Y="-3230" />
+			<ClientSize X="1181" Y="748" />
 		</SequencerNavigator>
 		<IsContentSplitterOpen Value="true" />
 		<IsExpressionSplitterOpen Value="true" />
@@ -5111,14 +5134,14 @@
 			<Locators>
 				<Locator Id="48">
 					<LomId Value="0" />
-					<Time Value="584" />
+					<Time Value="376" />
 					<Name Value="END" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
 				<Locator Id="86">
 					<LomId Value="0" />
-					<Time Value="504" />
+					<Time Value="288" />
 					<Name Value="171-fake-tune" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
@@ -5126,49 +5149,28 @@
 				<Locator Id="87">
 					<LomId Value="0" />
 					<Time Value="0" />
-					<Name Value="114-Angle rytm guide intro" />
+					<Name Value="114-anti intro" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
-				<Locator Id="88">
-					<LomId Value="0" />
-					<Time Value="72" />
-					<Name Value="114-Angle rytm guide pre" />
-					<Annotation Value="" />
-					<IsSongStart Value="false" />
-				</Locator>
-				<Locator Id="89">
-					<LomId Value="0" />
-					<Time Value="144" />
-					<Name Value="114-Angle rytm guide beat" />
-					<Annotation Value="" />
-					<IsSongStart Value="false" />
-				</Locator>
-				<Locator Id="90">
+				<Locator Id="102">
 					<LomId Value="0" />
 					<Time Value="216" />
-					<Name Value="114-Angle rytm guide beat 2" />
+					<Name Value="114-anti-fake-outro" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
-				<Locator Id="91">
+				<Locator Id="106">
 					<LomId Value="0" />
-					<Time Value="288" />
-					<Name Value="114-Angle rytm guide breakdown" />
+					<Time Value="72" />
+					<Name Value="114-anti beat choir" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
-				<Locator Id="92">
+				<Locator Id="114">
 					<LomId Value="0" />
-					<Time Value="360" />
-					<Name Value="114-Angle rytm guide drop 1" />
-					<Annotation Value="" />
-					<IsSongStart Value="false" />
-				</Locator>
-				<Locator Id="93">
-					<LomId Value="0" />
-					<Time Value="432" />
-					<Name Value="114-Angle rytm guide drop 2" />
+					<Time Value="144" />
+					<Name Value="114-anti beat rides" />
 					<Annotation Value="" />
 					<IsSongStart Value="false" />
 				</Locator>
@@ -5186,19 +5188,19 @@
 		<SoloInPlace Value="true" />
 		<CrossfadeCurve Value="2" />
 		<LatencyCompensation Value="2" />
-		<HighlightedTrackIndex Value="59" />
+		<HighlightedTrackIndex Value="-4" />
 		<GroovePool>
 			<LomId Value="0" />
 			<Grooves />
 			<DefaultGrooveId Value="-1" />
 			<GroovesListWrapper LomId="0" />
 		</GroovePool>
-		<AutomationMode Value="true" />
+		<AutomationMode Value="false" />
 		<SnapAutomationToGrid Value="true" />
 		<ArrangementOverdub Value="true" />
 		<ColorSequenceIndex Value="879298550" />
 		<AutoColorPickerForPlayerAndGroupTracks>
-			<NextColorIndex Value="14" />
+			<NextColorIndex Value="2" />
 		</AutoColorPickerForPlayerAndGroupTracks>
 		<AutoColorPickerForReturnAndMainTracks>
 			<NextColorIndex Value="16" />
@@ -5214,9 +5216,6 @@
 			<LinkedTrackGroup Id="1">
 				<Uuid Value="8D965010-B381-40C3-B052-C70AF5265D40" />
 			</LinkedTrackGroup>
-			<LinkedTrackGroup Id="2">
-				<Uuid Value="8D8F5D78-DD5F-4A06-9407-3ABDF80BBE5E" />
-			</LinkedTrackGroup>
 		</LinkedTrackGroups>
 		<NoteSpellingPreference Value="0" />
 		<AccidentalSpellingPreference Value="3" />
@@ -5226,10 +5225,10 @@
 		<ShowVideoWindow Value="true" />
 		<TuningSystems />
 		<TrackHeaderWidth Value="119" />
-		<ViewStateMainWindowClipDetailOpen Value="true" />
+		<ViewStateMainWindowClipDetailOpen Value="false" />
 		<ViewStateMainWindowHiddenOtherDocViewTypeClipDetailOpen Value="false" />
 		<ViewStateMainWindowHiddenOtherDocViewTypeDeviceDetailOpen Value="true" />
-		<ViewStateMainWindowDeviceDetailOpen Value="false" />
+		<ViewStateMainWindowDeviceDetailOpen Value="true" />
 		<ViewStateSecondWindowClipDetailOpen Value="false" />
 		<ViewStateSecondWindowDeviceDetailOpen Value="false" />
 		<ViewStates>
@@ -5260,18 +5259,18 @@
 			<PitchFilterAlgorithm Id="0">
 				<NamedKeyMidiRemoteables />
 				<PitchClasses>
-					<RemoteableBool Id="386256" Value="false" />
-					<RemoteableBool Id="386257" Value="false" />
-					<RemoteableBool Id="386258" Value="false" />
-					<RemoteableBool Id="386259" Value="false" />
-					<RemoteableBool Id="386260" Value="false" />
-					<RemoteableBool Id="386261" Value="false" />
-					<RemoteableBool Id="386262" Value="false" />
-					<RemoteableBool Id="386263" Value="false" />
-					<RemoteableBool Id="386264" Value="false" />
-					<RemoteableBool Id="386265" Value="false" />
-					<RemoteableBool Id="386266" Value="false" />
-					<RemoteableBool Id="386267" Value="false" />
+					<RemoteableBool Id="416592" Value="false" />
+					<RemoteableBool Id="416593" Value="false" />
+					<RemoteableBool Id="416594" Value="false" />
+					<RemoteableBool Id="416595" Value="false" />
+					<RemoteableBool Id="416596" Value="false" />
+					<RemoteableBool Id="416597" Value="false" />
+					<RemoteableBool Id="416598" Value="false" />
+					<RemoteableBool Id="416599" Value="false" />
+					<RemoteableBool Id="416600" Value="false" />
+					<RemoteableBool Id="416601" Value="false" />
+					<RemoteableBool Id="416602" Value="false" />
+					<RemoteableBool Id="416603" Value="false" />
 				</PitchClasses>
 				<DrumPad Value="128" />
 				<Invert Value="false" />
@@ -5285,11 +5284,11 @@
 			</TimeFilterAlgorithm>
 			<ArpeggiateAlgorithm Id="2">
 				<NamedKeyMidiRemoteables>
-					<NamedRemoteableKeyMidi Id="70" Name="Rate" />
-					<NamedRemoteableKeyMidi Id="71" Name="Steps" />
-					<NamedRemoteableKeyMidi Id="72" Name="Distance" />
-					<NamedRemoteableKeyMidi Id="73" Name="Gate" />
-					<NamedRemoteableKeyMidi Id="74" Name="Style" />
+					<NamedRemoteableKeyMidi Id="80" Name="Rate" />
+					<NamedRemoteableKeyMidi Id="81" Name="Steps" />
+					<NamedRemoteableKeyMidi Id="82" Name="Distance" />
+					<NamedRemoteableKeyMidi Id="83" Name="Gate" />
+					<NamedRemoteableKeyMidi Id="84" Name="Style" />
 				</NamedKeyMidiRemoteables>
 				<Rate Value="10" />
 				<Steps Value="2" />
@@ -5299,26 +5298,26 @@
 			</ArpeggiateAlgorithm>
 			<RhythmAlgorithm Id="3">
 				<NamedKeyMidiRemoteables>
-					<NamedRemoteableKeyMidi Id="196" Name="Density" />
-					<NamedRemoteableKeyMidi Id="197" Name="Repetitions" />
-					<NamedRemoteableKeyMidi Id="198" Name="Pattern" />
-					<NamedRemoteableKeyMidi Id="199" Name="Steps" />
-					<NamedRemoteableKeyMidi Id="200" Name="Pitch" />
-					<NamedRemoteableKeyMidi Id="201" Name="Velocity" />
-					<NamedRemoteableKeyMidi Id="202" Name="Accent" />
-					<NamedRemoteableKeyMidi Id="203" Name="Period" />
-					<NamedRemoteableKeyMidi Id="204" Name="Offset" />
-					<NamedRemoteableKeyMidi Id="205" Name="Shift" />
-					<NamedRemoteableKeyMidi Id="206" Name="StepDuration" />
-					<NamedRemoteableKeyMidi Id="207" Name="Split" />
-					<NamedRemoteableKeyMidi Id="208" Name="VelocityOffsetIncrement" />
-					<NamedRemoteableKeyMidi Id="209" Name="VelocityOffsetDecrement" />
+					<NamedRemoteableKeyMidi Id="224" Name="Density" />
+					<NamedRemoteableKeyMidi Id="225" Name="Repetitions" />
+					<NamedRemoteableKeyMidi Id="226" Name="Pattern" />
+					<NamedRemoteableKeyMidi Id="227" Name="Steps" />
+					<NamedRemoteableKeyMidi Id="228" Name="Pitch" />
+					<NamedRemoteableKeyMidi Id="229" Name="Velocity" />
+					<NamedRemoteableKeyMidi Id="230" Name="Accent" />
+					<NamedRemoteableKeyMidi Id="231" Name="Period" />
+					<NamedRemoteableKeyMidi Id="232" Name="Offset" />
+					<NamedRemoteableKeyMidi Id="233" Name="Shift" />
+					<NamedRemoteableKeyMidi Id="234" Name="StepDuration" />
+					<NamedRemoteableKeyMidi Id="235" Name="Split" />
+					<NamedRemoteableKeyMidi Id="236" Name="VelocityOffsetIncrement" />
+					<NamedRemoteableKeyMidi Id="237" Name="VelocityOffsetDecrement" />
 				</NamedKeyMidiRemoteables>
 				<Density Value="4" />
 				<Repetitions Value="1" />
 				<Pattern Value="14" />
 				<PatternLength Value="8" />
-				<Pitch Value="39" />
+				<Pitch Value="36" />
 				<Velocity Value="100" />
 				<Accent Value="127" />
 				<Period Value="4" />
@@ -5329,11 +5328,11 @@
 			</RhythmAlgorithm>
 			<QuantizeAlgorithm Id="4">
 				<NamedKeyMidiRemoteables>
-					<NamedRemoteableKeyMidi Id="65" Name="TripletReference" />
-					<NamedRemoteableKeyMidi Id="66" Name="QuantizeReference" />
-					<NamedRemoteableKeyMidi Id="67" Name="Amount" />
-					<NamedRemoteableKeyMidi Id="68" Name="QuantizeNoteStarts" />
-					<NamedRemoteableKeyMidi Id="69" Name="QuantizeNoteEnds" />
+					<NamedRemoteableKeyMidi Id="75" Name="TripletReference" />
+					<NamedRemoteableKeyMidi Id="76" Name="QuantizeReference" />
+					<NamedRemoteableKeyMidi Id="77" Name="Amount" />
+					<NamedRemoteableKeyMidi Id="78" Name="QuantizeNoteStarts" />
+					<NamedRemoteableKeyMidi Id="79" Name="QuantizeNoteEnds" />
 				</NamedKeyMidiRemoteables>
 				<Reference Value="5" />
 				<TripletReference Value="false" />

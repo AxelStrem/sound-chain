@@ -158,6 +158,23 @@
 								</Send>
 								<EnabledByUser Value="true" />
 							</TrackSendHolder>
+							<TrackSendHolder Id="3">
+								<Send>
+									<LomId Value="0" />
+									<Manual Value="0.0003162277571" />
+									<MidiControllerRange>
+										<Min Value="0.0003162277571" />
+										<Max Value="1" />
+									</MidiControllerRange>
+									<AutomationTarget Id="147980">
+										<LockEnvelope Value="0" />
+									</AutomationTarget>
+									<ModulationTarget Id="147981">
+										<LockEnvelope Value="0" />
+									</ModulationTarget>
+								</Send>
+								<EnabledByUser Value="true" />
+							</TrackSendHolder>
 							<TrackSendHolder Id="2">
 								<Send>
 									<LomId Value="0" />
@@ -1030,7 +1047,7 @@
 													<SourceContext>
 														<SourceContext Id="0">
 															<OriginalFileRef>
-																<FileRef Id="99">
+																<FileRef Id="115">
 																	<RelativePathType Value="5" />
 																	<RelativePath Value="Samples/Konkrete 1/Ninja Drums/Kick/Ninja Kick4.aif" />
 																	<Path Value="/Users/notumschaltung/Music/Ableton/Factory Packs/Konkrete Breaks/Samples/Konkrete 1/Ninja Drums/Kick/Ninja Kick4.aif" />
@@ -2377,7 +2394,7 @@
 										<NumAudioOutputs Value="1" />
 										<IsPlaceholderDevice Value="false" />
 										<Preset>
-											<Vst3Preset Id="102">
+											<Vst3Preset Id="118">
 												<OverwriteProtectionNumber Value="3076" />
 												<MpeEnabled Value="0" />
 												<MpeSettings>

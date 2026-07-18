@@ -46,8 +46,21 @@ extends Node
 ##     change: the walk advances purely on that event.  It also means the
 ##     pending clip is never the one currently sounding, making the variation
 ##     pool swap race-free.
-## A frame-delta clock remains only to emit [signal beat_advanced] — it plays
-## no part in scheduling.
+##   * The interactive playback mixes its sub-clips at a hardcoded 1.0 rate, so
+##     the player's pitch_scale is silently ignored.  set_playback_speed()
+##     therefore uses AudioServer.playback_speed_scale, which is applied inside
+##     AudioStreamPlaybackResampled::mix — *below* the interactive layer — and
+##     thus slows every clip (ogg and wav alike).  Note it is engine-GLOBAL:
+##     all game audio slows, which is the point of a slow-motion effect.
+##     Timing: the engine snapshots an END boundary as (musical end − position)
+##     in *content* seconds but counts it down in *wall* seconds, while the
+##     slowed audio advances content at speed × wall.  So the wrapper bpm of
+##     the outgoing clip is re-calibrated from its current content position at
+##     every switch_to_clip() — see _issue_switch() — making the boundary land
+##     on the musical end at any speed, including speed changes mid-clip.
+## A frame-delta clock remains to emit [signal beat_advanced] and to estimate
+## the current clip's content position for the speed calibration above — it
+## plays no part in normal-speed scheduling.
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -130,8 +143,14 @@ var _clips_of   := {}   ## segment name → Array of clip indices ([primary] or 
 var _clip_seg   : Array[String] = []  ## clip index → segment name
 var _wrappers   := {}   ## clip index → BeatSyncStream
 var _variations := {}   ## segment name → { streams: Array, names: Array }
+# Content-position tracker for the currently-sounding clip (see _issue_switch):
+# content time = seconds of audio material consumed, advancing at
+# _playback_speed × wall time.  Folded forward on every speed change.
+var _clip_content_usec := 0.0  ## Content-usec consumed before _clip_wall_mark
+var _clip_wall_mark    := 0    ## _play_elapsed_usec at the last fold
 
-# Beat clock for the beat_advanced signal only (no scheduling role).
+# Beat clock for the beat_advanced signal + the clip content tracker below
+# (pause-aware wall time; no role in normal-speed scheduling).
 var _play_elapsed_usec := 0
 var _beat_usec         := 500_000
 
@@ -439,8 +458,7 @@ func set_progress(value: float) -> void:
 				_pending_seg = _next_name
 				_pending_clip = _pick_clip(_pending_seg)
 				_pending_variation = _arm_clip(_pending_clip, _pending_seg)
-				if _playback:
-					_playback.switch_to_clip(_pending_clip)
+				_issue_switch()
 
 
 ## Returns true when playback is active and not paused.
@@ -480,13 +498,17 @@ func get_volume() -> float:
 
 
 ## Set playback speed (1.0 = normal, 0.5 = half, 2.0 = double).
-## Changes pitch as well — intended for temporary sound effects.  The engine's
-## transition timing scales with the audio automatically.
+## Changes pitch as well — intended for temporary slow-motion-style effects;
+## safe to ramp every frame from a tween.  Implemented via the engine-GLOBAL
+## AudioServer.playback_speed_scale (the only rate control that reaches below
+## AudioStreamInteractive, which ignores the player's pitch_scale) — so ALL
+## game audio slows with it, and nothing else should write that property.
 func set_playback_speed(speed: float) -> void:
+	_fold_clip_clock()
 	_playback_speed = maxf(0.05, speed)
 	_recalc_beat_usec()
-	if _player and is_instance_valid(_player):
-		_player.pitch_scale = _playback_speed
+	AudioServer.playback_speed_scale = _playback_speed
+	_issue_switch()  # re-snapshot the queued boundary against the new speed
 
 
 ## Read-only accessors (useful for debug / UI).
@@ -565,7 +587,6 @@ func set_track_progress(track_name: String, progress: Array) -> void:
 func _ready() -> void:
 	_player = AudioStreamPlayer.new()
 	_player.bus = _bus_name
-	_player.pitch_scale = _playback_speed
 	_player.finished.connect(_on_player_finished)
 	add_child(_player)
 
@@ -623,6 +644,8 @@ func _promote(seg_name: String, clip: int, fresh: bool, variation: String) -> vo
 	_cur_track = _seg_track.get(seg_name, _cur_track)
 	_cur_variation = variation
 	_cur_clip = clip
+	_clip_content_usec = 0.0
+	_clip_wall_mark = _play_elapsed_usec
 
 	if fresh:
 		_reps_left = maxi(1, int(_cur_seg.get("repeat", 1))) - 1
@@ -663,8 +686,37 @@ func _queue_successor() -> void:
 	_pending_seg = target
 	_pending_clip = _pick_clip(target)
 	_pending_variation = _arm_clip(_pending_clip, target)
-	if _playback and _pending_clip >= 0:
-		_playback.switch_to_clip(_pending_clip)
+	_issue_switch()
+
+
+## Fold the wall time since the last mark into the current clip's content
+## position at the speed that was active.  Call before changing the speed.
+func _fold_clip_clock() -> void:
+	_clip_content_usec += float(_play_elapsed_usec - _clip_wall_mark) * _playback_speed
+	_clip_wall_mark = _play_elapsed_usec
+
+
+## Content seconds (seconds of audio material) the current clip has consumed.
+func _clip_content_secs() -> float:
+	return (_clip_content_usec + float(_play_elapsed_usec - _clip_wall_mark) * _playback_speed) / 1_000_000.0
+
+
+## (Re)issue the pending switch, first calibrating the current clip's reported
+## bpm: the engine snapshots (musical end − position) in content seconds but
+## counts it down in wall seconds, while content advances at _playback_speed ×
+## wall — so the reported end must sit at position + remaining_content / speed.
+## At speed 1.0 this reduces to sync_bpm = _bpm exactly.  Runs on EVERY
+## switch_to_clip so the snapshot is always taken against fresh values.
+func _issue_switch() -> void:
+	if _playback == null or _pending_clip < 0 or _cur_clip < 0:
+		return
+	var beats := get_current_length_beats()
+	var end_content := beats * _beat_secs
+	var pos := _clip_content_secs()
+	var end_reported := pos + maxf(0.0, end_content - pos) / _playback_speed
+	if end_reported > 0.0:
+		(_wrappers[_cur_clip] as BeatSyncStream).sync_bpm = beats * 60.0 / end_reported
+	_playback.switch_to_clip(_pending_clip)
 
 
 ## The clip index a hop into [param seg_name] should use: the twin of the
@@ -938,6 +990,8 @@ func _stop_all() -> void:
 	_pending_variation = ""
 	_beat      = 0
 	_play_elapsed_usec = 0
+	_clip_content_usec = 0.0
+	_clip_wall_mark = 0
 	_history.clear()
 
 	segment_changed.emit("", "")
