@@ -76,6 +76,17 @@ const MAX_INTERACTIVE_CLIPS := 63
 ## [method _select_new_track].
 const END_TRACK := "END_TRACK"
 
+## Wall-clock margin (seconds) before the queued boundary inside which
+## _issue_switch() leaves the engine's snapshot alone.  The content-position
+## estimate drifts slightly from the real playhead, so re-calibrating when the
+## musical end is (nearly) reached places the reported end relative to the
+## *estimate*: behind the real playhead the engine computes a negative wait
+## (out-of-bounds mix buffer offset — crashes), ahead of it the boundary
+## recedes forever and the walk stalls.  Within the margin the last snapshot
+## is final; a speed change this close to the seam shifts it by at most the
+## margin.
+const SWITCH_FREEZE_SECS := 1.0
+
 
 ## Clip stream wrapper: holds the currently-chosen audio variation (pool of
 ## exactly one stream, swapped by [method _arm_clip]) and reports the beat
@@ -504,8 +515,11 @@ func get_volume() -> float:
 ## AudioStreamInteractive, which ignores the player's pitch_scale) — so ALL
 ## game audio slows with it, and nothing else should write that property.
 func set_playback_speed(speed: float) -> void:
+	var clamped := maxf(0.05, speed)
+	if is_equal_approx(clamped, _playback_speed):
+		return  # no change — don't re-arm the engine's switch request for nothing
 	_fold_clip_clock()
-	_playback_speed = maxf(0.05, speed)
+	_playback_speed = clamped
 	_recalc_beat_usec()
 	AudioServer.playback_speed_scale = _playback_speed
 	_issue_switch()  # re-snapshot the queued boundary against the new speed
@@ -710,10 +724,22 @@ func _clip_content_secs() -> float:
 func _issue_switch() -> void:
 	if _playback == null or _pending_clip < 0 or _cur_clip < 0:
 		return
+	# The queued switch may already have EXECUTED on the audio thread (the clip
+	# index flips at the boundary; _process only promotes it a frame later).
+	# Re-issuing then would ask the engine to transition from the new clip to
+	# itself — _queue() aliases from/to state and restarts the live playback
+	# from inside the mix callback.  Skip; _promote() re-queues the successor
+	# against the current speed anyway.
+	if _playback.get_current_clip_index() != _cur_clip:
+		return
 	var beats := get_current_length_beats()
 	var end_content := beats * _beat_secs
 	var pos := _clip_content_secs()
-	var end_reported := pos + maxf(0.0, end_content - pos) / _playback_speed
+	# Boundary imminent (or passed): freeze — see SWITCH_FREEZE_SECS.  The
+	# switch already queued by the previous issue fires on its own.
+	if end_content - pos < SWITCH_FREEZE_SECS * _playback_speed:
+		return
+	var end_reported := pos + (end_content - pos) / _playback_speed
 	if end_reported > 0.0:
 		(_wrappers[_cur_clip] as BeatSyncStream).sync_bpm = beats * 60.0 / end_reported
 	_playback.switch_to_clip(_pending_clip)

@@ -28,7 +28,14 @@ beat-aligned.
   All game audio slows with it, and nothing else may write that property.
   Transition boundaries stay on the musical end at any speed because the clip
   wrapper's reported bpm is re-calibrated at every queued switch (see
-  `_issue_switch()` in `sound_chain.gd`).
+  `_issue_switch()` in `sound_chain.gd`).  Two guards make this safe to ramp
+  every frame: re-issuing is skipped once the engine has already executed the
+  queued switch (re-queuing the now-current clip restarts it mid-mix), and the
+  boundary is *frozen* once it is within ~1 s wall time (`SWITCH_FREEZE_SECS`)
+  — re-calibrating there chases the drifting position estimate past the real
+  playhead: estimate behind → the engine computes a negative wait and mixes
+  out of bounds (crash); estimate ahead → the reported end recedes forever
+  (walk stalls).  `test_speed_ramp.gd` is the headless regression for this.
 
 ### Internal clock is 171 BPM (the "×3/2 trick")
 
