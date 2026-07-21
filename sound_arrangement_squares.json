@@ -1,0 +1,95 @@
+{
+  "start_segments": {
+    "114-squares-intro": 1.0
+  },
+  "segments": [
+    {
+      "name": "114-squares-intro",
+      "audio": [
+        "114-squares intro-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-squares-inbeat": 1.0
+      }
+    },
+    {
+      "name": "114-squares-inbeat",
+      "audio": [
+        "114-squares inbeat-24",
+        "114-squares inbeat displaced-24"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 24,
+      "repeat": 2,
+      "next": {
+        "114-squares-beat": 1.0
+      }
+    },
+    {
+      "name": "114-squares-beat",
+      "audio": [
+        "114-squares-beat-40",
+        "114-squares-beat displaced-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-squares-beat-2": 1.0,
+        "114-squares-beat-claps": 1.0
+      }
+    },
+    {
+      "name": "114-squares-beat-2",
+      "audio": [
+        "114-squares-beat 2-40",
+        "114-squares-beat 2 displaced-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-squares-beat-claps": 1.0,
+        "114-squares-winddown-1": 0.6,
+        "END_TRACK": 0.4
+      }
+    },
+    {
+      "name": "114-squares-beat-claps",
+      "audio": [
+        "114-squares-beat claps-40",
+        "114-squares-beat claps displaced-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-squares-beat-2": 1.0,
+        "114-squares-winddown-1": 0.6,
+        "END_TRACK": 0.4
+      }
+    },
+    {
+      "name": "114-squares-winddown-1",
+      "audio": [
+        "114-squares-winddown 1-40",
+        "114-squares-winddown 1 displaced-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "114-squares-winddown-2": 1.0
+      }
+    },
+    {
+      "name": "114-squares-winddown-2",
+      "audio": [
+        "114-squares-winddown 2-40"
+      ],
+      "progress": [ [0.0, 1.0] ],
+      "length_beats": 48,
+      "next": {
+        "END_TRACK": 1.0
+      }
+    }
+  ]
+}
