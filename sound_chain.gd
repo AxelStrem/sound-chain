@@ -46,21 +46,15 @@ extends Node
 ##     change: the walk advances purely on that event.  It also means the
 ##     pending clip is never the one currently sounding, making the variation
 ##     pool swap race-free.
-##   * The interactive playback mixes its sub-clips at a hardcoded 1.0 rate, so
-##     the player's pitch_scale is silently ignored.  set_playback_speed()
-##     therefore uses AudioServer.playback_speed_scale, which is applied inside
-##     AudioStreamPlaybackResampled::mix — *below* the interactive layer — and
-##     thus slows every clip (ogg and wav alike).  Note it is engine-GLOBAL:
-##     all game audio slows, which is the point of a slow-motion effect.
-##     Timing: the engine snapshots an END boundary as (musical end − position)
-##     in *content* seconds but counts it down in *wall* seconds, while the
-##     slowed audio advances content at speed × wall.  So the wrapper bpm of
-##     the outgoing clip is re-calibrated from its current content position at
-##     every switch_to_clip() — see _issue_switch() — making the boundary land
-##     on the musical end at any speed, including speed changes mid-clip.
-## A frame-delta clock remains to emit [signal beat_advanced] and to estimate
-## the current clip's content position for the speed calibration above — it
-## plays no part in normal-speed scheduling.
+##   * AudioStreamPlaybackInteractive now passes pitch_scale through to its
+##     child streams (engine fix), so set_playback_speed() simply sets
+##     _player.pitch_scale.  This affects only this player — SFX and other
+##     audio play at normal speed.  The child stream's playback position
+##     naturally tracks speed-adjusted content time, so the END transition
+##     fires at the correct musical moment at any speed with no compensatory
+##     BPM hack needed — sync_bpm is simply the nominal BPM.
+## A frame-delta clock remains to emit [signal beat_advanced] — it
+## plays no part in transition scheduling.
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -510,10 +504,10 @@ func get_volume() -> float:
 
 ## Set playback speed (1.0 = normal, 0.5 = half, 2.0 = double).
 ## Changes pitch as well — intended for temporary slow-motion-style effects;
-## safe to ramp every frame from a tween.  Implemented via the engine-GLOBAL
-## AudioServer.playback_speed_scale (the only rate control that reaches below
-## AudioStreamInteractive, which ignores the player's pitch_scale) — so ALL
-## game audio slows with it, and nothing else should write that property.
+## safe to ramp every frame from a tween.  Implemented via the player's
+## pitch_scale (requires the engine fix that passes pitch_scale through
+## AudioStreamPlaybackInteractive to child streams).  Only the SoundChain
+## player is affected — SFX and other audio play at normal speed.
 func set_playback_speed(speed: float) -> void:
 	var clamped := maxf(0.05, speed)
 	if is_equal_approx(clamped, _playback_speed):
@@ -521,7 +515,7 @@ func set_playback_speed(speed: float) -> void:
 	_fold_clip_clock()
 	_playback_speed = clamped
 	_recalc_beat_usec()
-	AudioServer.playback_speed_scale = _playback_speed
+	_player.pitch_scale = _playback_speed
 	_issue_switch()  # re-snapshot the queued boundary against the new speed
 
 
@@ -715,12 +709,11 @@ func _clip_content_secs() -> float:
 	return (_clip_content_usec + float(_play_elapsed_usec - _clip_wall_mark) * _playback_speed) / 1_000_000.0
 
 
-## (Re)issue the pending switch, first calibrating the current clip's reported
-## bpm: the engine snapshots (musical end − position) in content seconds but
-## counts it down in wall seconds, while content advances at _playback_speed ×
-## wall — so the reported end must sit at position + remaining_content / speed.
-## At speed 1.0 this reduces to sync_bpm = _bpm exactly.  Runs on EVERY
-## switch_to_clip so the snapshot is always taken against fresh values.
+## (Re)issue the pending switch.  With pitch_scale passed through to child
+## streams (engine fix), the child's playback position naturally tracks
+## the speed-adjusted content time — no compensatory BPM hack needed.
+## sync_bpm is simply reset to the nominal BPM so the engine's transition
+## math fires at the correct musical moment at any speed.
 func _issue_switch() -> void:
 	if _playback == null or _pending_clip < 0 or _cur_clip < 0:
 		return
@@ -739,9 +732,7 @@ func _issue_switch() -> void:
 	# switch already queued by the previous issue fires on its own.
 	if end_content - pos < SWITCH_FREEZE_SECS * _playback_speed:
 		return
-	var end_reported := pos + (end_content - pos) / _playback_speed
-	if end_reported > 0.0:
-		(_wrappers[_cur_clip] as BeatSyncStream).sync_bpm = beats * 60.0 / end_reported
+	(_wrappers[_cur_clip] as BeatSyncStream).sync_bpm = _bpm
 	_playback.switch_to_clip(_pending_clip)
 
 
